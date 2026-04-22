@@ -49,7 +49,7 @@ app.get('/', (c) => {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sovereign Productization Command Center v5.0 — PT Waskita Cakrawarti Digital</title>
+<title>Sovereign Productization Command Center v6.0 — PT Waskita Cakrawarti Digital</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
 <style>
@@ -514,10 +514,10 @@ app.get('/', (c) => {
 <!-- SIDEBAR -->
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-badge">Founder Level · v5.0</div>
+    <div class="logo-badge">Founder Level · v6.0</div>
     <div class="logo-title">Sovereign Productization<br>Command Center</div>
     <div class="logo-sub">PT WASKITA CAKRAWARTI DIGITAL · 2026</div>
-    <div class="logo-version">● P5 LIVE-VERIFIED / HUB-24 MATURE · v5.0</div>
+    <div class="logo-version">● P6 ENHANCED / HUB-27 · v6.0</div>
   </div>
 
   <div class="nav-section">
@@ -620,6 +620,19 @@ app.get('/', (c) => {
     </a>
     <a class="nav-item" onclick="showPage('quicknotes')" href="#">
       <i class="fas fa-sticky-note"></i> Quick Notes Pad <span class="nav-badge nb-orange">v5</span>
+    </a>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">v6 Enhancements</div>
+    <a class="nav-item" onclick="showPage('dailylog')" href="#">
+      <i class="fas fa-book"></i> Daily Command Log <span class="nav-badge nb-orange">v6</span>
+    </a>
+    <a class="nav-item" onclick="showPage('pipeline')" href="#">
+      <i class="fas fa-funnel-dollar"></i> Client Pipeline CRM <span class="nav-badge nb-gold">v6</span>
+    </a>
+    <a class="nav-item" onclick="showPage('healthkpi')" href="#">
+      <i class="fas fa-heartbeat"></i> Ecosystem Health KPI <span class="nav-badge nb-green">v6</span>
     </a>
   </div>
 
@@ -2547,6 +2560,268 @@ Format: A. Objective | B. Decisions | C. Deliverables | D. Tasks
     </div>
   </div>
 
+
+  <!-- ========================= v6.0 — DAILY COMMAND LOG ========================= -->
+  <div class="page" id="page-dailylog">
+    <div class="section-header">
+      <div>
+        <div class="section-title"><i class="fas fa-book" style="color:#e67e22;margin-right:8px;"></i>Daily Command Log
+          <span style="background:rgba(230,126,34,0.15);border:1px solid rgba(230,126,34,0.3);color:#e67e22;font-size:9px;font-weight:900;padding:4px 10px;border-radius:20px;margin-left:8px;">v6.0 NEW</span>
+        </div>
+        <div class="section-sub">Jurnal harian founder — catat eksekusi, blocker, win, dan refleksi setiap hari. Auto-save ke localStorage.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
+      <div class="card">
+        <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:10px;"><i class="fas fa-edit" style="margin-right:6px;"></i>Entri Hari Ini</div>
+        <div style="margin-bottom:10px;">
+          <label style="font-size:10px;font-weight:700;color:var(--text-muted);display:block;margin-bottom:4px;">Tanggal</label>
+          <input type="date" id="dl-date" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(230,126,34,0.3);border-radius:5px;padding:7px 10px;color:var(--text-main);font-size:11px;outline:none;">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+          <div>
+            <label style="font-size:10px;font-weight:700;color:#27ae60;display:block;margin-bottom:4px;"><i class="fas fa-trophy"></i> Win / Progress</label>
+            <textarea id="dl-win" rows="3" placeholder="Apa yang berhasil hari ini?" style="width:100%;background:rgba(39,174,96,0.05);border:1px solid rgba(39,174,96,0.3);border-radius:5px;padding:8px 10px;color:var(--text-main);font-size:11px;outline:none;resize:vertical;"></textarea>
+          </div>
+          <div>
+            <label style="font-size:10px;font-weight:700;color:#e74c3c;display:block;margin-bottom:4px;"><i class="fas fa-exclamation-triangle"></i> Blocker</label>
+            <textarea id="dl-block" rows="3" placeholder="Apa yang menghambat?" style="width:100%;background:rgba(231,76,60,0.05);border:1px solid rgba(231,76,60,0.3);border-radius:5px;padding:8px 10px;color:var(--text-main);font-size:11px;outline:none;resize:vertical;"></textarea>
+          </div>
+        </div>
+        <div style="margin-bottom:10px;">
+          <label style="font-size:10px;font-weight:700;color:#3498db;display:block;margin-bottom:4px;"><i class="fas fa-brain"></i> Refleksi / Insight</label>
+          <textarea id="dl-reflect" rows="3" placeholder="Pelajaran, keputusan, dan refleksi strategis..." style="width:100%;background:rgba(52,152,219,0.05);border:1px solid rgba(52,152,219,0.3);border-radius:5px;padding:8px 10px;color:var(--text-main);font-size:11px;outline:none;resize:vertical;"></textarea>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px;">
+          <div>
+            <label style="font-size:10px;font-weight:700;color:var(--text-muted);display:block;margin-bottom:4px;">Mood Energi (1-10)</label>
+            <input type="number" id="dl-mood" min="1" max="10" value="7" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.3);border-radius:5px;padding:7px 10px;color:var(--text-main);font-size:11px;outline:none;">
+          </div>
+          <div>
+            <label style="font-size:10px;font-weight:700;color:var(--text-muted);display:block;margin-bottom:4px;">Jam Fokus</label>
+            <input type="number" id="dl-hours" min="0" max="16" step="0.5" value="4" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.3);border-radius:5px;padding:7px 10px;color:var(--text-main);font-size:11px;outline:none;">
+          </div>
+          <div>
+            <label style="font-size:10px;font-weight:700;color:var(--text-muted);display:block;margin-bottom:4px;">Fase</label>
+            <select id="dl-phase" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.3);border-radius:5px;padding:7px 10px;color:var(--text-main);font-size:11px;outline:none;">
+              <option value="F1">Fase 1 — Cashflow</option>
+              <option value="F2">Fase 2 — Repeatable</option>
+              <option value="F3">Fase 3 — White-Label</option>
+              <option value="F4">Fase 4 — Enterprise</option>
+              <option value="F5">Fase 5 — Marketplace</option>
+            </select>
+          </div>
+        </div>
+        <button onclick="saveDailyLog()" style="width:100%;background:linear-gradient(135deg,#e67e22,#d35400);border:none;color:white;padding:9px;border-radius:6px;font-size:11px;font-weight:800;cursor:pointer;">
+          <i class="fas fa-save" style="margin-right:6px;"></i>Simpan Entri Hari Ini
+        </button>
+      </div>
+
+      <div class="card">
+        <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:10px;"><i class="fas fa-chart-line" style="margin-right:6px;"></i>Statistik 7 Hari</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+          <div style="padding:10px;background:rgba(39,174,96,0.07);border:1px solid rgba(39,174,96,0.2);border-radius:6px;">
+            <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Total Entri</div>
+            <div id="dl-stat-total" style="font-size:18px;font-weight:900;color:#27ae60;">0</div>
+          </div>
+          <div style="padding:10px;background:rgba(52,152,219,0.07);border:1px solid rgba(52,152,219,0.2);border-radius:6px;">
+            <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Avg Mood</div>
+            <div id="dl-stat-mood" style="font-size:18px;font-weight:900;color:#3498db;">—</div>
+          </div>
+          <div style="padding:10px;background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.2);border-radius:6px;">
+            <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Total Jam Fokus</div>
+            <div id="dl-stat-hours" style="font-size:18px;font-weight:900;color:var(--gold);">0</div>
+          </div>
+          <div style="padding:10px;background:rgba(230,126,34,0.07);border:1px solid rgba(230,126,34,0.2);border-radius:6px;">
+            <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Streak Hari</div>
+            <div id="dl-stat-streak" style="font-size:18px;font-weight:900;color:#e67e22;">0</div>
+          </div>
+        </div>
+        <div style="font-size:10.5px;font-weight:700;color:var(--gold-light);margin-bottom:8px;">Riwayat Entri (7 Terakhir)</div>
+        <div id="dl-history" style="max-height:260px;overflow-y:auto;">
+          <div style="font-size:10.5px;color:var(--text-muted);text-align:center;padding:20px;">Belum ada entri. Mulai log hari ini!</div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px;">
+          <button onclick="exportDailyLog()" style="flex:1;background:rgba(52,152,219,0.1);border:1px solid rgba(52,152,219,0.3);color:#3498db;padding:6px;border-radius:5px;font-size:10px;font-weight:700;cursor:pointer;"><i class="fas fa-download"></i> Export JSON</button>
+          <button onclick="clearDailyLog()" style="flex:1;background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);color:#e74c3c;padding:6px;border-radius:5px;font-size:10px;font-weight:700;cursor:pointer;"><i class="fas fa-trash"></i> Hapus Semua</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= v6.0 — CLIENT PIPELINE CRM ========================= -->
+  <div class="page" id="page-pipeline">
+    <div class="section-header">
+      <div>
+        <div class="section-title"><i class="fas fa-funnel-dollar" style="color:#9b59b6;margin-right:8px;"></i>Client Pipeline CRM
+          <span style="background:rgba(155,89,182,0.15);border:1px solid rgba(155,89,182,0.3);color:#9b59b6;font-size:9px;font-weight:900;padding:4px 10px;border-radius:20px;margin-left:8px;">v6.0 NEW</span>
+        </div>
+        <div class="section-sub">Pipeline klien prospek — track dari lead sampai closed. Stage-based Kanban dengan nilai deal.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px;">
+      <div class="card" style="padding:12px;text-align:center;">
+        <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:4px;">Total Leads</div>
+        <div id="pl-total" style="font-size:20px;font-weight:900;color:var(--gold);">0</div>
+      </div>
+      <div class="card" style="padding:12px;text-align:center;">
+        <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:4px;">Pipeline Value</div>
+        <div id="pl-value" style="font-size:15px;font-weight:900;color:#27ae60;">Rp 0</div>
+      </div>
+      <div class="card" style="padding:12px;text-align:center;">
+        <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:4px;">Won Deals</div>
+        <div id="pl-won" style="font-size:20px;font-weight:900;color:#2ecc71;">0</div>
+      </div>
+      <div class="card" style="padding:12px;text-align:center;">
+        <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:4px;">Won Revenue</div>
+        <div id="pl-won-val" style="font-size:15px;font-weight:900;color:#2ecc71;">Rp 0</div>
+      </div>
+      <div class="card" style="padding:12px;text-align:center;">
+        <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:4px;">Win Rate</div>
+        <div id="pl-rate" style="font-size:20px;font-weight:900;color:#3498db;">0%</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:14px;">
+      <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:10px;"><i class="fas fa-plus-circle" style="margin-right:6px;"></i>Tambah Lead Baru</div>
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr auto;gap:8px;">
+        <input type="text" id="pl-name" placeholder="Nama klien / perusahaan" style="background:rgba(255,255,255,0.05);border:1px solid rgba(155,89,182,0.3);border-radius:5px;padding:7px 10px;color:var(--text-main);font-size:11px;outline:none;">
+        <select id="pl-tier" style="background:rgba(255,255,255,0.05);border:1px solid rgba(155,89,182,0.3);border-radius:5px;padding:7px 10px;color:var(--text-main);font-size:11px;outline:none;">
+          <option value="Entry">Entry</option>
+          <option value="Core">Core</option>
+          <option value="White-Label">White-Label</option>
+          <option value="Enterprise">Enterprise</option>
+        </select>
+        <input type="number" id="pl-setup" placeholder="Setup (jt)" min="0" step="0.5" style="background:rgba(255,255,255,0.05);border:1px solid rgba(155,89,182,0.3);border-radius:5px;padding:7px 10px;color:var(--text-main);font-size:11px;outline:none;">
+        <input type="number" id="pl-monthly" placeholder="Monthly (jt)" min="0" step="0.1" style="background:rgba(255,255,255,0.05);border:1px solid rgba(155,89,182,0.3);border-radius:5px;padding:7px 10px;color:var(--text-main);font-size:11px;outline:none;">
+        <select id="pl-stage" style="background:rgba(255,255,255,0.05);border:1px solid rgba(155,89,182,0.3);border-radius:5px;padding:7px 10px;color:var(--text-main);font-size:11px;outline:none;">
+          <option value="lead">Lead</option>
+          <option value="contact">Contacted</option>
+          <option value="pitch">Pitching</option>
+          <option value="nego">Negotiation</option>
+          <option value="won">Won</option>
+          <option value="lost">Lost</option>
+        </select>
+        <button onclick="addLead()" style="background:linear-gradient(135deg,#9b59b6,#8e44ad);border:none;color:white;padding:7px 14px;border-radius:6px;font-size:11px;font-weight:800;cursor:pointer;"><i class="fas fa-plus"></i> Add</button>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;">
+      <div style="background:rgba(149,165,166,0.05);border:1px solid rgba(149,165,166,0.2);border-radius:8px;padding:10px;">
+        <div style="font-size:10px;font-weight:900;color:#95a5a6;margin-bottom:8px;text-transform:uppercase;"><i class="fas fa-seedling"></i> Lead <span id="pl-c-lead" style="float:right;">0</span></div>
+        <div id="pl-col-lead" style="min-height:100px;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div style="background:rgba(52,152,219,0.05);border:1px solid rgba(52,152,219,0.2);border-radius:8px;padding:10px;">
+        <div style="font-size:10px;font-weight:900;color:#3498db;margin-bottom:8px;text-transform:uppercase;"><i class="fas fa-phone"></i> Contacted <span id="pl-c-contact" style="float:right;">0</span></div>
+        <div id="pl-col-contact" style="min-height:100px;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div style="background:rgba(243,156,18,0.05);border:1px solid rgba(243,156,18,0.2);border-radius:8px;padding:10px;">
+        <div style="font-size:10px;font-weight:900;color:#f39c12;margin-bottom:8px;text-transform:uppercase;"><i class="fas fa-bullhorn"></i> Pitching <span id="pl-c-pitch" style="float:right;">0</span></div>
+        <div id="pl-col-pitch" style="min-height:100px;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div style="background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:10px;">
+        <div style="font-size:10px;font-weight:900;color:var(--gold);margin-bottom:8px;text-transform:uppercase;"><i class="fas fa-handshake"></i> Negotiation <span id="pl-c-nego" style="float:right;">0</span></div>
+        <div id="pl-col-nego" style="min-height:100px;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div style="background:rgba(46,204,113,0.07);border:1px solid rgba(46,204,113,0.3);border-radius:8px;padding:10px;">
+        <div style="font-size:10px;font-weight:900;color:#2ecc71;margin-bottom:8px;text-transform:uppercase;"><i class="fas fa-trophy"></i> Won <span id="pl-c-won" style="float:right;">0</span></div>
+        <div id="pl-col-won" style="min-height:100px;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div style="background:rgba(231,76,60,0.05);border:1px solid rgba(231,76,60,0.2);border-radius:8px;padding:10px;">
+        <div style="font-size:10px;font-weight:900;color:#e74c3c;margin-bottom:8px;text-transform:uppercase;"><i class="fas fa-times-circle"></i> Lost <span id="pl-c-lost" style="float:right;">0</span></div>
+        <div id="pl-col-lost" style="min-height:100px;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;display:flex;gap:8px;">
+      <button onclick="exportPipeline()" style="background:rgba(52,152,219,0.1);border:1px solid rgba(52,152,219,0.3);color:#3498db;padding:7px 14px;border-radius:6px;font-size:10.5px;font-weight:700;cursor:pointer;"><i class="fas fa-download"></i> Export CSV</button>
+      <button onclick="seedPipelineDemo()" style="background:rgba(155,89,182,0.1);border:1px solid rgba(155,89,182,0.3);color:#9b59b6;padding:7px 14px;border-radius:6px;font-size:10.5px;font-weight:700;cursor:pointer;"><i class="fas fa-magic"></i> Load Demo</button>
+      <button onclick="clearPipeline()" style="background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);color:#e74c3c;padding:7px 14px;border-radius:6px;font-size:10.5px;font-weight:700;cursor:pointer;"><i class="fas fa-trash"></i> Clear All</button>
+    </div>
+  </div>
+
+  <!-- ========================= v6.0 — ECOSYSTEM HEALTH KPI ========================= -->
+  <div class="page" id="page-healthkpi">
+    <div class="section-header">
+      <div>
+        <div class="section-title"><i class="fas fa-heartbeat" style="color:#e91e63;margin-right:8px;"></i>Ecosystem Health KPI
+          <span style="background:rgba(233,30,99,0.15);border:1px solid rgba(233,30,99,0.3);color:#e91e63;font-size:9px;font-weight:900;padding:4px 10px;border-radius:20px;margin-left:8px;">v6.0 NEW</span>
+        </div>
+        <div class="section-sub">Dashboard kesehatan ekosistem — metrik agregat real-time dari semua modul v5+v6. Skor kesehatan + rekomendasi aksi.</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:14px;background:linear-gradient(135deg,rgba(233,30,99,0.08),rgba(201,168,76,0.05));border:1px solid rgba(233,30,99,0.2);">
+      <div style="display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;">
+        <div style="text-align:center;">
+          <div style="font-size:10px;color:var(--text-muted);margin-bottom:4px;">Skor Kesehatan</div>
+          <div id="hk-score" style="font-size:56px;font-weight:900;line-height:1;color:var(--gold);">—</div>
+          <div id="hk-grade" style="font-size:13px;font-weight:800;color:var(--gold-light);margin-top:2px;">Loading...</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:8px;"><i class="fas fa-stethoscope"></i> Sovereign Health Diagnosis</div>
+          <div id="hk-diagnosis" style="font-size:11.5px;color:var(--text-muted);line-height:1.7;">
+            Memuat data dari semua modul tracking...
+          </div>
+        </div>
+        <div>
+          <button onclick="refreshHealthKPI()" style="background:linear-gradient(135deg,#e91e63,#c2185b);border:none;color:white;padding:10px 16px;border-radius:6px;font-size:11px;font-weight:800;cursor:pointer;">
+            <i class="fas fa-sync-alt" style="margin-right:6px;"></i>Refresh
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <div class="card" style="border-left:3px solid #27ae60;">
+        <div style="font-size:10.5px;font-weight:800;color:#27ae60;margin-bottom:6px;"><i class="fas fa-tasks"></i> Sprint Execution</div>
+        <div style="font-size:28px;font-weight:900;color:var(--text-main);"><span id="hk-sprint-pct">0</span>%</div>
+        <div style="font-size:9.5px;color:var(--text-muted);margin:3px 0 8px;">Progress checklist 4 minggu</div>
+        <div class="progress-bar" style="height:6px;"><div class="progress-fill" id="hk-sprint-bar" style="width:0%;background:#27ae60;"></div></div>
+      </div>
+      <div class="card" style="border-left:3px solid #9b59b6;">
+        <div style="font-size:10.5px;font-weight:800;color:#9b59b6;margin-bottom:6px;"><i class="fas fa-funnel-dollar"></i> Pipeline Momentum</div>
+        <div style="font-size:28px;font-weight:900;color:var(--text-main);"><span id="hk-pl-count">0</span></div>
+        <div style="font-size:9.5px;color:var(--text-muted);margin:3px 0 8px;">Active leads · <span id="hk-pl-won">0</span> won</div>
+        <div class="progress-bar" style="height:6px;"><div class="progress-fill" id="hk-pl-bar" style="width:0%;background:#9b59b6;"></div></div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--gold);">
+        <div style="font-size:10.5px;font-weight:800;color:var(--gold);margin-bottom:6px;"><i class="fas fa-coins"></i> Revenue Projection</div>
+        <div style="font-size:22px;font-weight:900;color:var(--text-main);">Rp <span id="hk-rev-total">0</span></div>
+        <div style="font-size:9.5px;color:var(--text-muted);margin:3px 0 8px;">Total mix (dari Calculator)</div>
+        <div class="progress-bar" style="height:6px;"><div class="progress-fill" id="hk-rev-bar" style="width:0%;background:var(--gold);"></div></div>
+      </div>
+      <div class="card" style="border-left:3px solid #3498db;">
+        <div style="font-size:10.5px;font-weight:800;color:#3498db;margin-bottom:6px;"><i class="fas fa-chart-bar"></i> Founder Scorecard</div>
+        <div style="font-size:28px;font-weight:900;color:var(--text-main);"><span id="hk-sc-pct">0</span>%</div>
+        <div style="font-size:9.5px;color:var(--text-muted);margin:3px 0 8px;">KPI target tercapai</div>
+        <div class="progress-bar" style="height:6px;"><div class="progress-fill" id="hk-sc-bar" style="width:0%;background:#3498db;"></div></div>
+      </div>
+      <div class="card" style="border-left:3px solid #f39c12;">
+        <div style="font-size:10.5px;font-weight:800;color:#f39c12;margin-bottom:6px;"><i class="fas fa-snowflake"></i> Canon Decisions</div>
+        <div style="font-size:28px;font-weight:900;color:var(--text-main);"><span id="hk-canon-count">0</span></div>
+        <div style="font-size:9.5px;color:var(--text-muted);margin:3px 0 8px;">Keputusan dibekukan</div>
+        <div class="progress-bar" style="height:6px;"><div class="progress-fill" id="hk-canon-bar" style="width:0%;background:#f39c12;"></div></div>
+      </div>
+      <div class="card" style="border-left:3px solid #e91e63;">
+        <div style="font-size:10.5px;font-weight:800;color:#e91e63;margin-bottom:6px;"><i class="fas fa-book"></i> Daily Discipline</div>
+        <div style="font-size:28px;font-weight:900;color:var(--text-main);"><span id="hk-log-streak">0</span></div>
+        <div style="font-size:9.5px;color:var(--text-muted);margin:3px 0 8px;">Streak hari log aktif</div>
+        <div class="progress-bar" style="height:6px;"><div class="progress-fill" id="hk-log-bar" style="width:0%;background:#e91e63;"></div></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:10px;"><i class="fas fa-lightbulb" style="margin-right:6px;"></i>Rekomendasi Aksi Sovereign</div>
+      <div id="hk-actions" style="font-size:11px;color:var(--text-muted);line-height:1.8;">
+        Loading recommendations...
+      </div>
+    </div>
+  </div>
+
+
 </main><!-- end main-content -->
 
 <script>
@@ -2685,6 +2960,9 @@ const pageMap = {
   'scorecard': ['Founder Scorecard','KPI Tracker founder — lacak kemajuan nyata mingguan · v5'],
   'canonfreeze': ['Canon Freeze Board','Bekukan keputusan strategis Sovereign · v5'],
   'quicknotes': ['Quick Notes Pad','Catatan cepat founder — ide, keputusan, insight · v5'],
+  'dailylog': ['Daily Command Log','Jurnal harian founder — win, blocker, refleksi · v6'],
+  'pipeline': ['Client Pipeline CRM','Kanban pipeline klien dari lead ke closed · v6'],
+  'healthkpi': ['Ecosystem Health KPI','Dashboard agregat kesehatan ekosistem · v6'],
 };
 
 function showPage(id) {
@@ -3563,6 +3841,352 @@ function resetCalc() {
 }
 
 // ========================= INIT =========================
+
+
+// ========================= v6.0 — DAILY COMMAND LOG =========================
+const DL_KEY = 'sovereign_dailylog_v6';
+function getDailyLogs() { return JSON.parse(localStorage.getItem(DL_KEY) || '[]'); }
+function setDailyLogs(arr) { localStorage.setItem(DL_KEY, JSON.stringify(arr)); }
+
+function saveDailyLog() {
+  const date = document.getElementById('dl-date').value;
+  if (!date) { alert('Pilih tanggal dulu, gys!'); return; }
+  const entry = {
+    date: date,
+    win: document.getElementById('dl-win').value.trim(),
+    blocker: document.getElementById('dl-block').value.trim(),
+    reflect: document.getElementById('dl-reflect').value.trim(),
+    mood: parseInt(document.getElementById('dl-mood').value) || 5,
+    hours: parseFloat(document.getElementById('dl-hours').value) || 0,
+    phase: document.getElementById('dl-phase').value,
+    ts: Date.now()
+  };
+  let logs = getDailyLogs();
+  logs = logs.filter(l => l.date !== date);
+  logs.push(entry);
+  logs.sort((a,b) => b.date.localeCompare(a.date));
+  setDailyLogs(logs);
+  renderDailyLog();
+  document.getElementById('dl-win').value = '';
+  document.getElementById('dl-block').value = '';
+  document.getElementById('dl-reflect').value = '';
+}
+
+function renderDailyLog() {
+  const logs = getDailyLogs();
+  const last7 = logs.slice(0, 7);
+  document.getElementById('dl-stat-total').textContent = logs.length;
+  if (last7.length > 0) {
+    const avgMood = (last7.reduce((s,l) => s+(l.mood||0), 0) / last7.length).toFixed(1);
+    const totalHrs = last7.reduce((s,l) => s+(l.hours||0), 0).toFixed(1);
+    document.getElementById('dl-stat-mood').textContent = avgMood;
+    document.getElementById('dl-stat-hours').textContent = totalHrs;
+  } else {
+    document.getElementById('dl-stat-mood').textContent = '—';
+    document.getElementById('dl-stat-hours').textContent = '0';
+  }
+  // Streak
+  let streak = 0;
+  const today = new Date();
+  for (let i = 0; i < 30; i++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const dStr = d.toISOString().slice(0,10);
+    if (logs.find(l => l.date === dStr)) streak++;
+    else if (i > 0) break;
+  }
+  document.getElementById('dl-stat-streak').textContent = streak;
+
+  const hist = document.getElementById('dl-history');
+  if (last7.length === 0) {
+    hist.innerHTML = '<div style="font-size:10.5px;color:var(--text-muted);text-align:center;padding:20px;">Belum ada entri. Mulai log hari ini!</div>';
+  } else {
+    hist.innerHTML = last7.map(l => {
+      const win = l.win ? '<div style="font-size:10px;color:#27ae60;margin-top:3px;"><i class="fas fa-trophy"></i> ' + escHtml(l.win.substring(0,80)) + (l.win.length>80?'...':'') + '</div>' : '';
+      const blk = l.blocker ? '<div style="font-size:10px;color:#e74c3c;margin-top:3px;"><i class="fas fa-exclamation-triangle"></i> ' + escHtml(l.blocker.substring(0,80)) + (l.blocker.length>80?'...':'') + '</div>' : '';
+      return '<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(230,126,34,0.15);border-radius:6px;padding:8px 10px;margin-bottom:6px;">' +
+        '<div style="display:flex;justify-content:space-between;align-items:center;">' +
+          '<div style="font-size:10.5px;font-weight:800;color:var(--gold);">' + l.date + ' · ' + l.phase + '</div>' +
+          '<div style="font-size:9px;color:var(--text-muted);">Mood ' + l.mood + '/10 · ' + l.hours + 'h</div>' +
+        '</div>' +
+        win + blk +
+      '</div>';
+    }).join('');
+  }
+}
+function escHtml(s) { return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+function exportDailyLog() {
+  const data = JSON.stringify(getDailyLogs(), null, 2);
+  const blob = new Blob([data], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'sovereign-dailylog-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click(); URL.revokeObjectURL(url);
+}
+function clearDailyLog() {
+  if (confirm('Hapus semua entri daily log?')) { setDailyLogs([]); renderDailyLog(); }
+}
+
+// ========================= v6.0 — CLIENT PIPELINE CRM =========================
+const PL_KEY = 'sovereign_pipeline_v6';
+function getLeads() { return JSON.parse(localStorage.getItem(PL_KEY) || '[]'); }
+function setLeads(arr) { localStorage.setItem(PL_KEY, JSON.stringify(arr)); }
+
+function addLead() {
+  const name = document.getElementById('pl-name').value.trim();
+  if (!name) { alert('Nama klien wajib diisi, gys!'); return; }
+  const lead = {
+    id: 'ld_' + Date.now() + '_' + Math.random().toString(36).substring(2,6),
+    name: name,
+    tier: document.getElementById('pl-tier').value,
+    setup: parseFloat(document.getElementById('pl-setup').value) || 0,
+    monthly: parseFloat(document.getElementById('pl-monthly').value) || 0,
+    stage: document.getElementById('pl-stage').value,
+    created: new Date().toISOString().slice(0,10)
+  };
+  const leads = getLeads();
+  leads.push(lead);
+  setLeads(leads);
+  renderPipeline();
+  document.getElementById('pl-name').value = '';
+  document.getElementById('pl-setup').value = '';
+  document.getElementById('pl-monthly').value = '';
+}
+
+function moveStage(id, newStage) {
+  const leads = getLeads();
+  const lead = leads.find(l => l.id === id);
+  if (lead) { lead.stage = newStage; setLeads(leads); renderPipeline(); }
+}
+
+function deleteLead(id) {
+  if (!confirm('Hapus lead ini?')) return;
+  setLeads(getLeads().filter(l => l.id !== id));
+  renderPipeline();
+}
+
+function fmtIDRshort(n) {
+  if (n >= 1000) return 'Rp ' + (n/1000).toFixed(1) + 'M';
+  if (n >= 1) return 'Rp ' + n.toFixed(1) + 'jt';
+  return 'Rp ' + (n*1000).toFixed(0) + 'rb';
+}
+
+function renderPipeline() {
+  const leads = getLeads();
+  const stages = ['lead','contact','pitch','nego','won','lost'];
+  const stageOrder = {'lead':0,'contact':1,'pitch':2,'nego':3,'won':4,'lost':5};
+  const tierColors = {'Entry':'#3498db','Core':'#27ae60','White-Label':'#f39c12','Enterprise':'#9b59b6'};
+
+  stages.forEach(s => {
+    const col = document.getElementById('pl-col-' + s);
+    const cnt = document.getElementById('pl-c-' + s);
+    const items = leads.filter(l => l.stage === s);
+    cnt.textContent = items.length;
+    if (items.length === 0) {
+      col.innerHTML = '<div style="font-size:9px;color:var(--text-muted);text-align:center;padding:15px 5px;opacity:0.5;">Kosong</div>';
+    } else {
+      col.innerHTML = items.map(l => {
+        const totalVal = l.setup + (l.monthly * 12);
+        const prev = stageOrder[l.stage] > 0 ? stages[stageOrder[l.stage]-1] : null;
+        const next = stageOrder[l.stage] < 5 && l.stage !== 'won' && l.stage !== 'lost' ? stages[stageOrder[l.stage]+1] : null;
+        return '<div style="background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.1);border-radius:5px;padding:6px 8px;font-size:9.5px;">' +
+          '<div style="font-weight:800;color:var(--text-main);font-size:10px;margin-bottom:3px;">' + escHtml(l.name) + '</div>' +
+          '<div style="color:' + (tierColors[l.tier]||'#aaa') + ';font-size:8.5px;font-weight:700;">' + l.tier + '</div>' +
+          '<div style="color:var(--text-muted);font-size:8.5px;margin-top:2px;">' + fmtIDRshort(totalVal) + '/yr</div>' +
+          '<div style="display:flex;gap:3px;margin-top:5px;">' +
+            (prev ? '<button data-act="move" data-id="' + l.id + '" data-to="' + prev + '" title="Back" style="flex:1;background:rgba(255,255,255,0.05);border:none;color:var(--text-muted);padding:2px;border-radius:3px;font-size:8px;cursor:pointer;">←</button>' : '') +
+            (next ? '<button data-act="move" data-id="' + l.id + '" data-to="' + next + '" title="Forward" style="flex:1;background:rgba(46,204,113,0.15);border:none;color:#2ecc71;padding:2px;border-radius:3px;font-size:8px;cursor:pointer;">→</button>' : '') +
+            '<button data-act="del" data-id="' + l.id + '" title="Delete" style="background:rgba(231,76,60,0.15);border:none;color:#e74c3c;padding:2px 5px;border-radius:3px;font-size:8px;cursor:pointer;">×</button>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+  });
+
+  // Summary
+  const active = leads.filter(l => l.stage !== 'won' && l.stage !== 'lost');
+  const won = leads.filter(l => l.stage === 'won');
+  const lost = leads.filter(l => l.stage === 'lost');
+  const pipelineVal = active.reduce((s,l) => s + l.setup + l.monthly*12, 0);
+  const wonVal = won.reduce((s,l) => s + l.setup + l.monthly*12, 0);
+  const closed = won.length + lost.length;
+  const winRate = closed > 0 ? Math.round(won.length / closed * 100) : 0;
+
+  document.getElementById('pl-total').textContent = leads.length;
+  document.getElementById('pl-value').textContent = fmtIDRshort(pipelineVal);
+  document.getElementById('pl-won').textContent = won.length;
+  document.getElementById('pl-won-val').textContent = fmtIDRshort(wonVal);
+  document.getElementById('pl-rate').textContent = winRate + '%';
+
+  // Attach event delegation to Kanban columns (once per render)
+  ['lead','contact','pitch','nego','won','lost'].forEach(s => {
+    const col = document.getElementById('pl-col-' + s);
+    if (col && !col.__bound) {
+      col.__bound = true;
+      col.addEventListener('click', function(e) {
+        const btn = e.target.closest('button[data-act]');
+        if (!btn) return;
+        const act = btn.getAttribute('data-act');
+        const id = btn.getAttribute('data-id');
+        if (act === 'move') moveStage(id, btn.getAttribute('data-to'));
+        else if (act === 'del') deleteLead(id);
+      });
+    }
+  });
+}
+
+function exportPipeline() {
+  const leads = getLeads();
+  const NL = String.fromCharCode(10);
+  const header = 'Name,Tier,Setup (jt),Monthly (jt),Total Yr (jt),Stage,Created' + NL;
+  const rows = leads.map(l => [l.name, l.tier, l.setup, l.monthly, (l.setup+l.monthly*12).toFixed(1), l.stage, l.created].join(',')).join(NL);
+  const blob = new Blob([header + rows], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'sovereign-pipeline-' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click(); URL.revokeObjectURL(url);
+}
+
+function seedPipelineDemo() {
+  if (!confirm('Load demo data? Ini akan menambah 8 lead sample.')) return;
+  const demo = [
+    {name:'Barbershop Sumber Rejeki',tier:'Entry',setup:5,monthly:0.5,stage:'won'},
+    {name:'Coffee Shop Joglo',tier:'Entry',setup:6,monthly:0.75,stage:'pitch'},
+    {name:'Kedai Kopi Merdeka',tier:'Entry',setup:4,monthly:0.5,stage:'contact'},
+    {name:'Franchise Kita Barber',tier:'Core',setup:15,monthly:2,stage:'nego'},
+    {name:'PT Kuliner Nusantara',tier:'White-Label',setup:25,monthly:4,stage:'pitch'},
+    {name:'Warung Selamat Group',tier:'Entry',setup:5,monthly:0.5,stage:'lead'},
+    {name:'PT Retail Global',tier:'Enterprise',setup:80,monthly:10,stage:'contact'},
+    {name:'UMKM Salon Cantik',tier:'Entry',setup:3,monthly:0.3,stage:'lost'}
+  ];
+  const leads = getLeads();
+  demo.forEach(d => {
+    leads.push({
+      id: 'ld_' + Date.now() + '_' + Math.random().toString(36).substring(2,8),
+      ...d,
+      created: new Date().toISOString().slice(0,10)
+    });
+  });
+  setLeads(leads);
+  renderPipeline();
+}
+
+function clearPipeline() {
+  if (confirm('Hapus SEMUA lead di pipeline?')) { setLeads([]); renderPipeline(); }
+}
+
+// ========================= v6.0 — ECOSYSTEM HEALTH KPI =========================
+function refreshHealthKPI() {
+  // Sprint progress — count 'done' keys in state (v2 sprint state)
+  const sprintState = JSON.parse(localStorage.getItem('sovereign_sprint_v2') || '{}');
+  const doneCount = Object.keys(sprintState).filter(k => sprintState[k] === true).length;
+  const totalTasks = document.querySelectorAll('.checklist-item').length || 80;
+  const sprintPct = Math.min(100, Math.round(doneCount / totalTasks * 100));
+
+  // Pipeline
+  const leads = getLeads();
+  const active = leads.filter(l => l.stage !== 'won' && l.stage !== 'lost').length;
+  const won = leads.filter(l => l.stage === 'won').length;
+  const plPct = Math.min(100, Math.round((active + won*2) / 15 * 100));
+
+  // Revenue (pull from calculator state)
+  const t1c = parseFloat(document.getElementById('t1-clients')?.value) || 0;
+  const t1s = parseFloat(document.getElementById('t1-setup')?.value) || 0;
+  const t1m = parseFloat(document.getElementById('t1-monthly')?.value) || 0;
+  const t1mo = parseFloat(document.getElementById('t1-months')?.value) || 0;
+  const t2c = parseFloat(document.getElementById('t2-clients')?.value) || 0;
+  const t2s = parseFloat(document.getElementById('t2-setup')?.value) || 0;
+  const t2m = parseFloat(document.getElementById('t2-monthly')?.value) || 0;
+  const t2mo = parseFloat(document.getElementById('t2-months')?.value) || 0;
+  const t3c = parseFloat(document.getElementById('t3-clients')?.value) || 0;
+  const t3s = parseFloat(document.getElementById('t3-setup')?.value) || 0;
+  const t3m = parseFloat(document.getElementById('t3-monthly')?.value) || 0;
+  const t3mo = parseFloat(document.getElementById('t3-months')?.value) || 0;
+  const t4c = parseFloat(document.getElementById('t4-clients')?.value) || 0;
+  const t4s = parseFloat(document.getElementById('t4-setup')?.value) || 0;
+  const t4m = parseFloat(document.getElementById('t4-monthly')?.value) || 0;
+  const t4mo = parseFloat(document.getElementById('t4-months')?.value) || 0;
+  const revTotal = t1c*(t1s+t1m*t1mo) + t2c*(t2s+t2m*t2mo) + t3c*(t3s+t3m*t3mo) + t4c*(t4s+t4m*t4mo);
+  const revPct = Math.min(100, Math.round(revTotal / 500 * 100));
+
+  // Scorecard (v5)
+  const scState = JSON.parse(localStorage.getItem('sovereign_scorecard_v5') || '{}');
+  const scVals = Object.values(scState).filter(v => typeof v === 'number');
+  const scPct = scVals.length > 0 ? Math.min(100, Math.round(scVals.reduce((s,v) => s+v, 0) / scVals.length)) : 0;
+
+  // Canon
+  const canon = JSON.parse(localStorage.getItem('sovereign_canon_v5') || '[]');
+  const canonCount = Array.isArray(canon) ? canon.length : 0;
+
+  // Daily log streak
+  const dlLogs = getDailyLogs();
+  let streak = 0;
+  const today = new Date();
+  for (let i = 0; i < 30; i++) {
+    const d = new Date(today); d.setDate(d.getDate() - i);
+    if (dlLogs.find(l => l.date === d.toISOString().slice(0,10))) streak++;
+    else if (i > 0) break;
+  }
+
+  // Update UI
+  document.getElementById('hk-sprint-pct').textContent = sprintPct;
+  document.getElementById('hk-sprint-bar').style.width = sprintPct + '%';
+  document.getElementById('hk-pl-count').textContent = active;
+  document.getElementById('hk-pl-won').textContent = won;
+  document.getElementById('hk-pl-bar').style.width = plPct + '%';
+  document.getElementById('hk-rev-total').textContent = revTotal.toFixed(1) + ' jt';
+  document.getElementById('hk-rev-bar').style.width = revPct + '%';
+  document.getElementById('hk-sc-pct').textContent = scPct;
+  document.getElementById('hk-sc-bar').style.width = scPct + '%';
+  document.getElementById('hk-canon-count').textContent = canonCount;
+  document.getElementById('hk-canon-bar').style.width = Math.min(100, canonCount * 10) + '%';
+  document.getElementById('hk-log-streak').textContent = streak;
+  document.getElementById('hk-log-bar').style.width = Math.min(100, streak * 10) + '%';
+
+  // Overall health score (weighted)
+  const score = Math.round(
+    sprintPct * 0.20 +
+    plPct * 0.20 +
+    revPct * 0.20 +
+    scPct * 0.15 +
+    Math.min(100, canonCount * 10) * 0.10 +
+    Math.min(100, streak * 10) * 0.15
+  );
+  document.getElementById('hk-score').textContent = score;
+  let grade = '', gcolor = '';
+  if (score >= 80) { grade = 'SOVEREIGN 🏆'; gcolor = '#2ecc71'; }
+  else if (score >= 60) { grade = 'STRONG 💪'; gcolor = '#27ae60'; }
+  else if (score >= 40) { grade = 'BUILDING 🏗️'; gcolor = '#f39c12'; }
+  else if (score >= 20) { grade = 'EARLY ⚡'; gcolor = '#e67e22'; }
+  else { grade = 'IGNITE 🔥'; gcolor = '#e74c3c'; }
+  document.getElementById('hk-grade').textContent = grade;
+  document.getElementById('hk-grade').style.color = gcolor;
+  document.getElementById('hk-score').style.color = gcolor;
+
+  // Diagnosis
+  let diag = '';
+  if (score === 0) diag = 'Belum ada data aktivitas. Mulai dari Sprint 4 Minggu, tambah lead di Pipeline, atau set target di Founder Scorecard.';
+  else if (score < 30) diag = '🔥 <strong>IGNITE Phase:</strong> Ekosistem baru menyala. Prioritas: selesaikan 3-5 task Sprint Minggu 1, tambah 2 lead Entry ke pipeline, dan mulai Daily Log untuk bangun disiplin.';
+  else if (score < 50) diag = '⚡ <strong>EARLY Phase:</strong> Eksekusi sudah mulai. Perlu lebih banyak momentum di pipeline (tambah leads) dan konsistensi daily log. Revenue projection masih rendah — set parameter realistis di Calculator.';
+  else if (score < 70) diag = '🏗️ <strong>BUILDING Phase:</strong> Ekosistem sudah solid. Fokus convert leads di stage Pitching ke Negotiation. Pastikan Scorecard KPI tercapai mingguan dan Canon keputusan terbekukan.';
+  else if (score < 85) diag = '💪 <strong>STRONG Phase:</strong> Ekosistem sudah matang. Pertahankan pipeline velocity, naikkan ke White-Label tier, pertimbangkan approach Enterprise. Streak daily log → 30 hari = Sovereign Discipline.';
+  else diag = '🏆 <strong>SOVEREIGN Phase:</strong> Full-stack ecosystem berjalan. Fokus scaling: 1-2 Enterprise clients, optimisasi recurring revenue, publikasi Canon sebagai governance doctrine.';
+  document.getElementById('hk-diagnosis').innerHTML = diag;
+
+  // Actions
+  let actions = [];
+  if (sprintPct < 50) actions.push('🎯 <strong>Sprint:</strong> Selesaikan minimal 5 task checklist Minggu 1-2 minggu ini.');
+  if (active < 3) actions.push('🚀 <strong>Pipeline:</strong> Tambah minimal ' + (3-active) + ' lead baru ke kolom "Lead" atau "Contacted".');
+  if (revTotal < 50) actions.push('💰 <strong>Revenue:</strong> Buka Revenue Calculator, set minimal 3 klien Entry + 2 klien Core untuk target MRR Rp 10jt/bulan.');
+  if (scPct < 50) actions.push('📊 <strong>Scorecard:</strong> Update Founder Scorecard dengan target mingguan yang realistis.');
+  if (canonCount < 3) actions.push('🧊 <strong>Canon:</strong> Bekukan minimal 3 keputusan strategis (positioning, pricing, tier).');
+  if (streak < 3) actions.push('📖 <strong>Daily Log:</strong> Mulai log harian - target streak 7 hari berturut.');
+  if (actions.length === 0) actions.push('✅ <strong>All Systems Go:</strong> Semua modul sehat. Pertahankan ritme dan mulai expand ke tier berikutnya.');
+  document.getElementById('hk-actions').innerHTML = actions.map(a => '<div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">' + a + '</div>').join('');
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
   restoreState();
   // Build 90-day tracker grids
@@ -3571,6 +4195,14 @@ document.addEventListener('DOMContentLoaded', () => {
   buildTrackerGrid(3, phase3Focus, 'phase3-grid', 'p3');
   // Init revenue calculator
   calcRevenue();
+  // v6.0 inits
+  try {
+    const dlDate = document.getElementById('dl-date');
+    if (dlDate) dlDate.value = new Date().toISOString().slice(0,10);
+    renderDailyLog();
+    renderPipeline();
+    refreshHealthKPI();
+  } catch(e) { console.error('v6 init error:', e); }
   // Focus terminal input when on terminal page
   const termInput = document.getElementById('terminal-input');
   if (termInput) termInput.addEventListener('focus', () => {});
