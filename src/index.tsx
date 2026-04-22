@@ -163,6 +163,7 @@ app.get('/', (c) => {
   .nb-red { background: rgba(231,76,60,0.2); color: var(--red); }
   .nb-blue { background: rgba(52,152,219,0.2); color: var(--blue-bright); }
   .nb-orange { background: rgba(230,126,34,0.2); color: var(--orange-bright); }
+  .nb-purple { background: rgba(155,89,182,0.22); color: #c39bd3; }
 
   /* ---- MAIN ---- */
   .main-content { margin-left: 268px; min-height: 100vh; padding: 0 0 80px; position: relative; z-index: 1; }
@@ -633,6 +634,28 @@ app.get('/', (c) => {
     </a>
     <a class="nav-item" onclick="showPage('healthkpi')" href="#">
       <i class="fas fa-heartbeat"></i> Ecosystem Health KPI <span class="nav-badge nb-green">v6</span>
+    </a>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">📚 v7 Strategic Docs</div>
+    <a class="nav-item" onclick="showPage('docindex')" href="#">
+      <i class="fas fa-sitemap"></i> Master Index <span class="nav-badge nb-gold">v7</span>
+    </a>
+    <a class="nav-item" onclick="showPage('docroadmap')" href="#">
+      <i class="fas fa-route"></i> Roadmap Master <span class="nav-badge nb-blue">v7</span>
+    </a>
+    <a class="nav-item" onclick="showPage('docjournal')" href="#">
+      <i class="fas fa-feather-alt"></i> Journal &amp; Build Log <span class="nav-badge nb-orange">v7</span>
+    </a>
+    <a class="nav-item" onclick="showPage('docimpl')" href="#">
+      <i class="fas fa-microchip"></i> Implementation Tech <span class="nav-badge nb-green">v7</span>
+    </a>
+    <a class="nav-item" onclick="showPage('docteam')" href="#">
+      <i class="fas fa-users-cog"></i> Team Building <span class="nav-badge nb-purple">v7</span>
+    </a>
+    <a class="nav-item" onclick="showPage('docestimate')" href="#">
+      <i class="fas fa-hourglass-half"></i> Estimasi Waktu <span class="nav-badge nb-red">v7</span>
     </a>
   </div>
 
@@ -2821,6 +2844,477 @@ Format: A. Objective | B. Decisions | C. Deliverables | D. Tasks
     </div>
   </div>
 
+  <!-- ========================= v7 STRATEGIC DOCS ========================= -->
+
+  <!-- DOC 00 · MASTER INDEX -->
+  <div class="page" id="page-docindex">
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-sitemap" style="color:var(--gold);margin-right:8px;"></i>📚 Master Index — 6 Dokumen Strategis v7</div>
+      <div class="section-sub">Peta lengkap semua dokumen strategis Sovereign Ecosystem</div>
+      <div style="padding:12px 14px;background:rgba(201,168,76,0.06);border-left:3px solid var(--gold);border-radius:6px;margin:10px 0 16px;">
+        <div style="font-size:12.5px;font-weight:800;color:var(--gold);">🔥 v7.0 Documentation Suite — 22 April 2026</div>
+        <div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;line-height:1.7;">6 dokumen strategis · ~1700 baris · ~18.000 kata · Founder-level confidential</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+        <div class="card-mini" style="padding:14px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:8px;cursor:pointer;" onclick="showPage('docindex')">
+          <div style="font-size:11px;color:var(--gold);font-weight:800;">DOC 00</div>
+          <div style="font-size:13.5px;font-weight:900;color:var(--text-main);margin:4px 0;">Master Index</div>
+          <div style="font-size:10.5px;color:var(--text-muted);">Peta navigasi semua 6 dokumen</div>
+        </div>
+        <div class="card-mini" style="padding:14px;background:rgba(52,152,219,0.08);border:1px solid rgba(52,152,219,0.25);border-radius:8px;cursor:pointer;" onclick="showPage('docroadmap')">
+          <div style="font-size:11px;color:var(--blue-bright);font-weight:800;">DOC 01</div>
+          <div style="font-size:13.5px;font-weight:900;color:var(--text-main);margin:4px 0;">Roadmap Master</div>
+          <div style="font-size:10.5px;color:var(--text-muted);">18 bulan · 5 fase · pricing · monetisasi</div>
+        </div>
+        <div class="card-mini" style="padding:14px;background:rgba(230,126,34,0.08);border:1px solid rgba(230,126,34,0.25);border-radius:8px;cursor:pointer;" onclick="showPage('docjournal')">
+          <div style="font-size:11px;color:var(--orange-bright);font-weight:800;">DOC 02</div>
+          <div style="font-size:13.5px;font-weight:900;color:var(--text-main);margin:4px 0;">Journal &amp; Build Log</div>
+          <div style="font-size:10.5px;color:var(--text-muted);">Daily/weekly/monthly discipline</div>
+        </div>
+        <div class="card-mini" style="padding:14px;background:rgba(46,204,113,0.08);border:1px solid rgba(46,204,113,0.25);border-radius:8px;cursor:pointer;" onclick="showPage('docimpl')">
+          <div style="font-size:11px;color:var(--green-bright);font-weight:800;">DOC 03</div>
+          <div style="font-size:13.5px;font-weight:900;color:var(--text-main);margin:4px 0;">Implementation &amp; Tech</div>
+          <div style="font-size:10.5px;color:var(--text-muted);">Stack · 5 repo · security · 5 ADR</div>
+        </div>
+        <div class="card-mini" style="padding:14px;background:rgba(155,89,182,0.1);border:1px solid rgba(155,89,182,0.25);border-radius:8px;cursor:pointer;" onclick="showPage('docteam')">
+          <div style="font-size:11px;color:#c39bd3;font-weight:800;">DOC 04</div>
+          <div style="font-size:13.5px;font-weight:900;color:var(--text-main);margin:4px 0;">Team Building &amp; Hiring</div>
+          <div style="font-size:10.5px;color:var(--text-muted);">6 role · budget · platform hiring ID</div>
+        </div>
+        <div class="card-mini" style="padding:14px;background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.25);border-radius:8px;cursor:pointer;" onclick="showPage('docestimate')">
+          <div style="font-size:11px;color:var(--red);font-weight:800;">DOC 05</div>
+          <div style="font-size:13.5px;font-weight:900;color:var(--text-main);margin:4px 0;">Estimasi Waktu</div>
+          <div style="font-size:10.5px;color:var(--text-muted);">Timeline · cash flow · 10 critical path</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-compass" style="color:var(--blue-bright);margin-right:8px;"></i>Quick Navigation "Saya Butuh..."</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+        <thead><tr style="background:rgba(255,255,255,0.03);"><th style="padding:10px;text-align:left;color:var(--gold-light);font-weight:800;">Kebutuhan</th><th style="padding:10px;text-align:left;color:var(--gold-light);font-weight:800;">Dokumen</th><th style="padding:10px;text-align:left;color:var(--gold-light);font-weight:800;">Section</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:9px;border-bottom:1px solid rgba(255,255,255,0.04);">Lihat fase &amp; milestone</td><td style="color:var(--blue-bright);">DOC 01 Roadmap</td><td style="color:var(--text-muted);">§3 Phase-Based</td></tr>
+          <tr><td style="padding:9px;border-bottom:1px solid rgba(255,255,255,0.04);">Daftar 16 produk formal</td><td style="color:var(--blue-bright);">DOC 01 Roadmap</td><td style="color:var(--text-muted);">§2 Arsitektur Produk</td></tr>
+          <tr><td style="padding:9px;border-bottom:1px solid rgba(255,255,255,0.04);">Harga 5-tier final</td><td style="color:var(--blue-bright);">DOC 01 Roadmap</td><td style="color:var(--text-muted);">§4 Price Architecture</td></tr>
+          <tr><td style="padding:9px;border-bottom:1px solid rgba(255,255,255,0.04);">Mulai isi journal harian</td><td style="color:var(--orange-bright);">DOC 02 Journal</td><td style="color:var(--text-muted);">§4 Template Harian</td></tr>
+          <tr><td style="padding:9px;border-bottom:1px solid rgba(255,255,255,0.04);">Review stack teknologi</td><td style="color:var(--green-bright);">DOC 03 Implementation</td><td style="color:var(--text-muted);">§3 Tech Stack</td></tr>
+          <tr><td style="padding:9px;border-bottom:1px solid rgba(255,255,255,0.04);">Tulis JD untuk hire</td><td style="color:#c39bd3;">DOC 04 Team</td><td style="color:var(--text-muted);">§3 Role JD</td></tr>
+          <tr><td style="padding:9px;border-bottom:1px solid rgba(255,255,255,0.04);">Platform posting JD</td><td style="color:#c39bd3;">DOC 04 Team</td><td style="color:var(--text-muted);">§6 Platform Hiring</td></tr>
+          <tr><td style="padding:9px;border-bottom:1px solid rgba(255,255,255,0.04);">Kalender milestone</td><td style="color:var(--red);">DOC 05 Estimate</td><td style="color:var(--text-muted);">§4 Kalender Visual</td></tr>
+          <tr><td style="padding:9px;">Estimasi capital required</td><td style="color:var(--red);">DOC 05 Estimate</td><td style="color:var(--text-muted);">§3 Summary Table</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-bullseye" style="color:var(--green-bright);margin-right:8px;"></i>One-Line Elevator Pitch</div>
+      <div style="padding:16px 18px;background:rgba(46,204,113,0.06);border-left:3px solid var(--green-bright);border-radius:6px;font-size:13px;font-style:italic;color:var(--text-main);line-height:1.8;">
+        "Kami bukan pedagang AI, bukan pengguna AI. Kami <strong style="color:var(--gold);">Sovereign Engineer</strong> — membangun infrastruktur kendali AI untuk founder dan enterprise Indonesia yang butuh governance, bukan hype. <strong>4 platform live, 16 produk formal, 5-tier pricing</strong> dari Rp 3 juta sampai Rp 200 juta."
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-flag-checkered" style="color:var(--gold);margin-right:8px;"></i>7-Hari Next Actions</div>
+      <div id="docindex-7day" style="font-size:12px;line-height:2;">
+        <div style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:var(--gold);font-weight:800;">D+1:</span> Post 3 JD (Landing · Product Eng · Growth) di LinkedIn/Glints/Kalibrr</div>
+        <div style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:var(--gold);font-weight:800;">D+2:</span> Booking 5 intro calls dengan founder network</div>
+        <div style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:var(--gold);font-weight:800;">D+3:</span> Draft Sales One-Liner Deck 10 halaman</div>
+        <div style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:var(--gold);font-weight:800;">D+4:</span> Interview 3 Landing Engineer candidates</div>
+        <div style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:var(--gold);font-weight:800;">D+5:</span> Review offer letter + NDA template</div>
+        <div style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:var(--gold);font-weight:800;">D+6:</span> Finalize NDA/MSA/LOI dengan legal advisor</div>
+        <div style="padding:8px 12px;"><span style="color:var(--gold);font-weight:800;">D+7:</span> Publish Journal entry pertama + weekly review</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOC 01 · ROADMAP -->
+  <div class="page" id="page-docroadmap">
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-route" style="color:var(--blue-bright);margin-right:8px;"></i>🗺️ Roadmap Master — 18 Bulan Horizon</div>
+      <div class="section-sub">Fase 0-5 · April 2026 → Oktober 2027 · Target ARR Rp 2,4 M</div>
+      <div style="padding:14px;background:rgba(52,152,219,0.06);border-left:3px solid var(--blue-bright);border-radius:6px;margin:12px 0;">
+        <div style="font-size:12.5px;color:var(--blue-bright);font-weight:800;">🎯 North Star Metric</div>
+        <div style="font-size:11.5px;color:var(--text-main);margin-top:6px;line-height:1.7;"><strong>ARR Rp 2,4 M</strong> di akhir Bulan 18, dengan minimum <strong>5 tenant berbayar aktif</strong> tersebar di Tier 2–Tier 5.</div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-layer-group" style="color:var(--gold);margin-right:8px;"></i>5 Fase Phase-Based</div>
+      <div style="display:grid;gap:10px;">
+        <div style="padding:14px;background:rgba(46,204,113,0.08);border:1px solid rgba(46,204,113,0.3);border-radius:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:13px;font-weight:900;color:var(--green-bright);">✅ FASE 0 — Foundation Freeze</div>
+            <span class="tag tag-green">DONE</span>
+          </div>
+          <div style="font-size:10.5px;color:var(--text-muted);line-height:1.7;">Jan-Apr 2026 · 4 platform LIVE · v6 Hub · 16-produk catalog · 5-tier pricing</div>
+        </div>
+        <div style="padding:14px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:13px;font-weight:900;color:var(--gold-light);">🚀 FASE 1 — Pre-Revenue Readiness</div>
+            <span class="tag tag-gold">NEXT</span>
+          </div>
+          <div style="font-size:10.5px;color:var(--text-muted);line-height:1.7;">Mei-Jun 2026 · 8 minggu · Landing v1 · Sales Deck · 2 LOI signed · Budget Rp 60 jt</div>
+        </div>
+        <div style="padding:14px;background:rgba(230,126,34,0.08);border:1px solid rgba(230,126,34,0.3);border-radius:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:13px;font-weight:900;color:var(--orange-bright);">💰 FASE 2 — First Revenue</div>
+            <span class="tag tag-orange">Q3 2026</span>
+          </div>
+          <div style="font-size:10.5px;color:var(--text-muted);line-height:1.7;">Jul-Sep 2026 · 12 minggu · MRR ≥ Rp 5 jt · 3 client aktif · TCV ≥ Rp 50 jt</div>
+        </div>
+        <div style="padding:14px;background:rgba(52,152,219,0.08);border:1px solid rgba(52,152,219,0.3);border-radius:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:13px;font-weight:900;color:var(--blue-bright);">🏗️ FASE 3 — Scale White-Label</div>
+            <span class="tag tag-blue">Break-Even</span>
+          </div>
+          <div style="font-size:10.5px;color:var(--text-muted);line-height:1.7;">Okt 2026-Jan 2027 · 16 minggu · MRR ≥ Rp 25 jt · 8 client · 5 WL + 1 Founder T4</div>
+        </div>
+        <div style="padding:14px;background:rgba(155,89,182,0.1);border:1px solid rgba(155,89,182,0.3);border-radius:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:13px;font-weight:900;color:#c39bd3;">🏛️ FASE 4 — Enterprise Breakthrough</div>
+            <span class="tag tag-purple">1 Enterprise</span>
+          </div>
+          <div style="font-size:10.5px;color:var(--text-muted);line-height:1.7;">Feb-Jun 2027 · 20 minggu · 1 Enterprise logo T5 · ARR ≥ Rp 720 jt · NRR ≥ 110%</div>
+        </div>
+        <div style="padding:14px;background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.3);border-radius:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:13px;font-weight:900;color:var(--red);">🌐 FASE 5 — Marketplace &amp; Ecosystem</div>
+            <span class="tag tag-red">ARR 2,4M</span>
+          </div>
+          <div style="font-size:10.5px;color:var(--text-muted);line-height:1.7;">Jul-Okt 2027 · 16 minggu · Marketplace Publik · 10 partner · 2 enterprise logo · ARR Rp 2,4 M ✅</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-dollar-sign" style="color:var(--gold);margin-right:8px;"></i>Price Architecture 5-Tier (Frozen Canon)</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;">
+        <thead><tr style="background:rgba(255,255,255,0.04);"><th style="padding:10px;text-align:left;color:var(--gold-light);">Tier</th><th style="padding:10px;text-align:left;">Setup</th><th style="padding:10px;text-align:left;">Monthly</th><th style="padding:10px;text-align:left;">Target</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:10px;color:var(--green-bright);font-weight:800;">T1 · Fast Cash</td><td>Rp 3–7,5 jt</td><td>Rp 300–750rb</td><td>UMKM, F&amp;B</td></tr>
+          <tr><td style="padding:10px;color:var(--blue-bright);font-weight:800;">T2 · White-Label</td><td>Rp 10–25 jt</td><td>Rp 1–3 jt</td><td>Agency, Konsultan</td></tr>
+          <tr><td style="padding:10px;color:var(--orange-bright);font-weight:800;">T3 · Control</td><td>Rp 15–40 jt</td><td>Rp 2–6 jt</td><td>Operator, AI team</td></tr>
+          <tr><td style="padding:10px;color:#c39bd3;font-weight:800;">T4 · Founder</td><td>Rp 35–90 jt</td><td>Rp 5–15 jt</td><td>Founder, VB</td></tr>
+          <tr><td style="padding:10px;color:var(--red);font-weight:800;">T5 · Enterprise</td><td>Rp 50–200 jt</td><td>Rp 5–15 jt</td><td>Holding, Enterprise</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- DOC 02 · JOURNAL -->
+  <div class="page" id="page-docjournal">
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-feather-alt" style="color:var(--orange-bright);margin-right:8px;"></i>📖 Journal & Build Log</div>
+      <div class="section-sub">Format WBR: Win · Blocker · Reflection · Next</div>
+      <div style="padding:14px;background:rgba(230,126,34,0.06);border-left:3px solid var(--orange-bright);border-radius:6px;margin:12px 0;font-size:12px;color:var(--text-main);line-height:1.8;">
+        <em>"Journal = evidence. Evidence = proof. Proof = canon."</em>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-history" style="color:var(--blue-bright);margin-right:8px;"></i>Pre-Project Log (Jan-Apr 2026)</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;">
+        <thead><tr style="background:rgba(255,255,255,0.04);"><th style="padding:9px;text-align:left;color:var(--gold-light);">Versi</th><th style="padding:9px;text-align:left;">Tanggal</th><th style="padding:9px;text-align:left;">Milestone</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:9px;font-weight:800;">v0.1</td><td>15 Jan 2026</td><td>Konsep Sovereign Engineer digagas. Positioning "bukan pengguna AI" frozen.</td></tr>
+          <tr><td style="padding:9px;font-weight:800;">v1.0</td><td>28 Feb 2026</td><td>Repo pre-barber-and-coffee LIVE → Layer 4 PoC.</td></tr>
+          <tr><td style="padding:9px;font-weight:800;">v1.5</td><td>10 Mar 2026</td><td>Repo Lane-eco-budget-control LIVE → Layer 2.</td></tr>
+          <tr><td style="padding:9px;font-weight:800;">v2.0</td><td>25 Mar 2026</td><td>Repo Sovereign-os-platform LIVE → Layer 1.</td></tr>
+          <tr><td style="padding:9px;font-weight:800;">v2.5</td><td>5 Apr 2026</td><td>Repo Sovereign-ecosystem (Tower/Orchestrator) internal.</td></tr>
+          <tr><td style="padding:9px;font-weight:800;color:var(--gold);">v3.0-v6.0</td><td>14-22 Apr 2026</td><td>Command Center evolved: Catalog → Ladder → Scorecard → CRM/Health KPI.</td></tr>
+          <tr style="background:rgba(201,168,76,0.08);"><td style="padding:9px;font-weight:900;color:var(--gold);">v7.0</td><td style="color:var(--gold);">22 Apr 2026</td><td style="color:var(--gold);font-weight:700;">Docs Suite Live · 6 strategic documents · Hiring plan formal.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-clipboard-list" style="color:var(--gold);margin-right:8px;"></i>Template Entry Harian</div>
+      <pre style="background:rgba(0,0,0,0.35);padding:16px;border-radius:8px;font-size:11.5px;color:var(--text-main);line-height:1.8;border:1px solid rgba(255,255,255,0.05);overflow-x:auto;">
+### ENTRY #[NNN] · [Fase] · [Hari ke-N]
+**Tanggal:** DD MMM YYYY
+**Mood:** X/10 · **Focus Hours:** X · **Fase Aktif:** [1-5]
+
+#### ✅ WIN
+- 
+
+#### 🚧 BLOCKER
+- 
+
+#### 💭 REFLECTION
+- 
+
+#### 🎯 NEXT
+- [ ] 
+
+#### 💰 REVENUE TICKER
+- MRR: Rp 0
+- Pipeline: Rp 0
+- TCV YTD: Rp 0
+
+#### 👥 TEAM PULSE
+- Headcount aktif: X
+- Hires this week: X</pre>
+      <div style="margin-top:12px;padding:10px;background:rgba(201,168,76,0.06);border-radius:6px;font-size:11px;color:var(--text-muted);">
+        💡 Gunakan halaman <a onclick="showPage('dailylog')" href="#" style="color:var(--gold);text-decoration:underline;">Daily Command Log</a> (v6) untuk tracking otomatis dengan streak counter &amp; mood average.
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-shield-alt" style="color:var(--green-bright);margin-right:8px;"></i>Journal Discipline Rules</div>
+      <div style="font-size:11.5px;line-height:2;color:var(--text-main);">
+        <div>1. <strong>Isi journal setiap malam</strong> sebelum tidur — 5 menit cukup.</div>
+        <div>2. <strong>Jangan skip hari</strong> — walau hanya "rest day".</div>
+        <div>3. <strong>Mood &amp; Focus Hours selalu jujur</strong> — data honest &gt; data cantik.</div>
+        <div>4. <strong>Weekly review wajib</strong> tiap Minggu sore.</div>
+        <div>5. <strong>Monthly review wajib</strong> tiap tanggal 1 bulan berikutnya.</div>
+        <div>6. <strong>Canon decision dicatat 2 tempat:</strong> Journal + <a onclick="showPage('canonfreeze')" href="#" style="color:var(--gold);">Canon Freeze Board (v5)</a>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOC 03 · IMPLEMENTATION -->
+  <div class="page" id="page-docimpl">
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-microchip" style="color:var(--green-bright);margin-right:8px;"></i>🛠️ Implementation & Tech Architecture</div>
+      <div class="section-sub">Multi-repo, multi-layer, edge-first. Canon: boundary dulu, fleksibilitas belakangan.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-cubes" style="color:var(--blue-bright);margin-right:8px;"></i>5 Repo Inventory</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;">
+        <thead><tr style="background:rgba(255,255,255,0.04);"><th style="padding:9px;text-align:left;color:var(--gold-light);">Repo</th><th style="padding:9px;text-align:left;">Role</th><th style="padding:9px;text-align:left;">Layer</th><th style="padding:9px;text-align:left;">Status</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:9px;font-family:monospace;color:var(--gold);">webapp (CC)</td><td>HUB · Orchestrator UI</td><td><span class="tag tag-gold">Hub</span></td><td><span class="tag tag-green">LIVE v6</span></td></tr>
+          <tr><td style="padding:9px;font-family:monospace;color:var(--green-bright);">pre-barber-and-coffee</td><td>Entry Product · PoC</td><td><span class="tag tag-green">L4</span></td><td><span class="tag tag-green">LIVE v1</span></td></tr>
+          <tr><td style="padding:9px;font-family:monospace;color:var(--blue-bright);">Lane-eco-budget-control</td><td>Operational Governance</td><td><span class="tag tag-blue">L2</span></td><td><span class="tag tag-green">LIVE v1.6</span></td></tr>
+          <tr><td style="padding:9px;font-family:monospace;color:#c39bd3;">Sovereign-os-platform</td><td>Enterprise Governance</td><td><span class="tag tag-purple">L1</span></td><td><span class="tag tag-green">LIVE v2.2</span></td></tr>
+          <tr><td style="padding:9px;font-family:monospace;color:var(--orange-bright);">Sovereign-ecosystem</td><td>Tower/Orchestrator</td><td><span class="tag tag-orange">L3</span></td><td><span class="tag tag-orange">Internal</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-cogs" style="color:var(--gold);margin-right:8px;"></i>Tech Stack Hub (Command Center)</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;font-size:11.5px;">
+        <div style="padding:12px;background:rgba(255,255,255,0.03);border-radius:6px;"><div style="color:var(--gold);font-weight:800;font-size:11px;">Backend</div><div style="margin-top:4px;">Hono v4.12.12 · TypeScript strict</div></div>
+        <div style="padding:12px;background:rgba(255,255,255,0.03);border-radius:6px;"><div style="color:var(--gold);font-weight:800;font-size:11px;">Runtime</div><div style="margin-top:4px;">Cloudflare Workers/Pages · Edge</div></div>
+        <div style="padding:12px;background:rgba(255,255,255,0.03);border-radius:6px;"><div style="color:var(--gold);font-weight:800;font-size:11px;">Build</div><div style="margin-top:4px;">Vite v6.4.2 + Wrangler v4</div></div>
+        <div style="padding:12px;background:rgba(255,255,255,0.03);border-radius:6px;"><div style="color:var(--gold);font-weight:800;font-size:11px;">Frontend</div><div style="margin-top:4px;">Tailwind + FontAwesome CDN</div></div>
+        <div style="padding:12px;background:rgba(255,255,255,0.03);border-radius:6px;"><div style="color:var(--gold);font-weight:800;font-size:11px;">State</div><div style="margin-top:4px;">Browser localStorage (v1-v6)</div></div>
+        <div style="padding:12px;background:rgba(255,255,255,0.03);border-radius:6px;"><div style="color:var(--gold);font-weight:800;font-size:11px;">Future DB</div><div style="margin-top:4px;">Cloudflare D1 (Fase 2+) + KV + R2</div></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-book" style="color:var(--red);margin-right:8px;"></i>5 Architecture Decision Records (ADR)</div>
+      <div style="font-size:11.5px;line-height:1.9;">
+        <div style="padding:10px 12px;border-left:3px solid var(--blue-bright);background:rgba(52,152,219,0.05);margin-bottom:8px;border-radius:0 6px 6px 0;"><strong style="color:var(--blue-bright);">ADR-001:</strong> Choose Cloudflare over Vercel/Netlify — better edge, generous free tier, D1/KV/R2 built-in.</div>
+        <div style="padding:10px 12px;border-left:3px solid var(--orange-bright);background:rgba(230,126,34,0.05);margin-bottom:8px;border-radius:0 6px 6px 0;"><strong style="color:var(--orange-bright);">ADR-002:</strong> localStorage over DB (v1-v6) — no auth complexity, founder-only tool, privacy.</div>
+        <div style="padding:10px 12px;border-left:3px solid var(--green-bright);background:rgba(46,204,113,0.05);margin-bottom:8px;border-radius:0 6px 6px 0;"><strong style="color:var(--green-bright);">ADR-003:</strong> Multi-repo (bukan Turbo Monorepo) — canon "jual per layer" harus ada di level repo.</div>
+        <div style="padding:10px 12px;border-left:3px solid #c39bd3;background:rgba(155,89,182,0.05);margin-bottom:8px;border-radius:0 6px 6px 0;"><strong style="color:#c39bd3;">ADR-004:</strong> JSX Hono untuk SSR (bukan React/Next) — zero JS ship, edge-native.</div>
+        <div style="padding:10px 12px;border-left:3px solid var(--gold);background:rgba(201,168,76,0.05);border-radius:0 6px 6px 0;"><strong style="color:var(--gold);">ADR-005:</strong> 5-Tier Price Architecture Frozen (21 Apr 2026) — no change until Bulan 6 review.</div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-tasks" style="color:var(--orange-bright);margin-right:8px;"></i>Migration Roadmap (Tech Debt Plan)</div>
+      <div style="font-size:11.5px;line-height:1.9;color:var(--text-main);">
+        <div>✓ <strong>Fase 1:</strong> Tailwind CDN → built-in · Mobile responsive Kanban fix</div>
+        <div>✓ <strong>Fase 2:</strong> localStorage → D1 sync · Split index.tsx (4400 lines) ke modules · Auth guard · D1 migration scripts</div>
+        <div>✓ <strong>Fase 3:</strong> Chart.js integration (Health KPI trend) · PWA service worker</div>
+        <div>✓ <strong>Fase 4:</strong> SOC2-ready audit trail · Tenant isolation hardening</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOC 04 · TEAM BUILDING -->
+  <div class="page" id="page-docteam">
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-users-cog" style="color:#c39bd3;margin-right:8px;"></i>👥 Team Building & Hiring Plan</div>
+      <div class="section-sub">6 role · JD · budget · platform hiring Indonesia</div>
+      <div style="padding:14px;background:rgba(155,89,182,0.08);border-left:3px solid #c39bd3;border-radius:6px;margin:12px 0;font-size:12px;line-height:1.8;">
+        <em>"Hire slow, fire fast. Setiap hire harus mengangkat 1 fungsi — bukan membantu founder."</em>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-briefcase" style="color:var(--gold);margin-right:8px;"></i>6 Role Tim yang Akan Dirakit</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;">
+        <div style="padding:14px;background:rgba(52,152,219,0.06);border:1px solid rgba(52,152,219,0.2);border-radius:8px;">
+          <div style="font-size:12.5px;font-weight:900;color:var(--blue-bright);">🎨 Role 1 · Landing Engineer</div>
+          <div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;">Bangun &amp; iterasi landing page publik untuk convert leads.</div>
+          <div style="margin-top:8px;font-size:10.5px;"><strong style="color:var(--gold);">Hire:</strong> Bulan 1 · <strong style="color:var(--gold);">Rp:</strong> 4-7 jt PT / 10-15 jt FT</div>
+        </div>
+        <div style="padding:14px;background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.2);border-radius:8px;">
+          <div style="font-size:12.5px;font-weight:900;color:var(--green-bright);">🛠️ Role 2 · Product Engineer</div>
+          <div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;">Fullstack — build core AI-SDR product + governance backend.</div>
+          <div style="margin-top:8px;font-size:10.5px;"><strong style="color:var(--gold);">Hire:</strong> Bulan 1-2 · <strong style="color:var(--gold);">Rp:</strong> 12-20 jt (mid) / 20-35 jt (senior)</div>
+        </div>
+        <div style="padding:14px;background:rgba(230,126,34,0.06);border:1px solid rgba(230,126,34,0.2);border-radius:8px;">
+          <div style="font-size:12.5px;font-weight:900;color:var(--orange-bright);">📣 Role 3 · Growth Marketer</div>
+          <div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;">GTM · content calendar · 20+ inbound leads/bulan.</div>
+          <div style="margin-top:8px;font-size:10.5px;"><strong style="color:var(--gold);">Hire:</strong> Bulan 2 · <strong style="color:var(--gold);">Rp:</strong> 5-8 jt PT / 10-18 jt FT</div>
+        </div>
+        <div style="padding:14px;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:8px;">
+          <div style="font-size:12.5px;font-weight:900;color:var(--gold);">📞 Role 4 · Outbound Sales Rep</div>
+          <div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;">Run outbound pipeline · dogfood platform sendiri.</div>
+          <div style="margin-top:8px;font-size:10.5px;"><strong style="color:var(--gold);">Hire:</strong> Bulan 3 · <strong style="color:var(--gold);">Rp:</strong> 6-10 jt base + 5-10% komisi</div>
+        </div>
+        <div style="padding:14px;background:rgba(155,89,182,0.07);border:1px solid rgba(155,89,182,0.2);border-radius:8px;">
+          <div style="font-size:12.5px;font-weight:900;color:#c39bd3;">⚖️ Role 5 · Finance &amp; Legal Officer</div>
+          <div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;">Incorporation · MSA/NDA/LOI · compliance · P&amp;L.</div>
+          <div style="margin-top:8px;font-size:10.5px;"><strong style="color:var(--gold);">Hire:</strong> Bulan 1 · <strong style="color:var(--gold);">Rp:</strong> 3-5 jt retainer / 8-12 jt PT</div>
+        </div>
+        <div style="padding:14px;background:rgba(231,76,60,0.06);border:1px solid rgba(231,76,60,0.2);border-radius:8px;">
+          <div style="font-size:12.5px;font-weight:900;color:var(--red);">🎧 Role 6 · Customer Support</div>
+          <div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;">Handle inquiries · onboarding · docs · FAQ.</div>
+          <div style="margin-top:8px;font-size:10.5px;"><strong style="color:var(--gold);">Hire:</strong> Bulan 4 · <strong style="color:var(--gold);">Rp:</strong> 4-6 jt PT / 7-10 jt FT</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-money-bill-wave" style="color:var(--green-bright);margin-right:8px;"></i>Budget Tim Per Scenario</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+        <thead><tr style="background:rgba(255,255,255,0.04);"><th style="padding:10px;text-align:left;color:var(--gold-light);">Scenario</th><th style="padding:10px;text-align:left;">Periode</th><th style="padding:10px;text-align:left;">Monthly Burn</th><th style="padding:10px;text-align:left;">Total Periode</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:10px;color:var(--green-bright);font-weight:800;">A · Lean Start</td><td>Bulan 1-3</td><td>Rp 30 jt/bln</td><td>Rp 90 jt</td></tr>
+          <tr><td style="padding:10px;color:var(--blue-bright);font-weight:800;">B · Growth</td><td>Bulan 4-9</td><td>Rp 56 jt/bln</td><td>Rp 336 jt</td></tr>
+          <tr><td style="padding:10px;color:var(--gold);font-weight:800;">C · Scaling</td><td>Bulan 10-18</td><td>Rp 123 jt/bln</td><td>Rp 1.107 jt</td></tr>
+          <tr style="background:rgba(231,76,60,0.06);"><td style="padding:10px;color:var(--red);font-weight:900;">TOTAL 18 BULAN</td><td colspan="2"></td><td style="color:var(--red);font-weight:900;">± Rp 1,53 M</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-globe" style="color:var(--blue-bright);margin-right:8px;"></i>Platform Hiring Rekomendasi Indonesia</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;font-size:11px;">
+        <a href="https://www.linkedin.com/jobs/" target="_blank" style="padding:12px;background:rgba(52,152,219,0.06);border-radius:6px;text-decoration:none;color:var(--text-main);display:block;"><div style="font-weight:800;color:var(--blue-bright);">LinkedIn Jobs</div><div style="margin-top:4px;color:var(--text-muted);font-size:10px;">Product Eng, Growth, AE — wajib</div></a>
+        <a href="https://glints.com/id" target="_blank" style="padding:12px;background:rgba(46,204,113,0.06);border-radius:6px;text-decoration:none;color:var(--text-main);display:block;"><div style="font-weight:800;color:var(--green-bright);">Glints</div><div style="margin-top:4px;color:var(--text-muted);font-size:10px;">Mid-level Indonesia, filter bagus</div></a>
+        <a href="https://www.kalibrr.id" target="_blank" style="padding:12px;background:rgba(230,126,34,0.06);border-radius:6px;text-decoration:none;color:var(--text-main);display:block;"><div style="font-weight:800;color:var(--orange-bright);">Kalibrr</div><div style="margin-top:4px;color:var(--text-muted);font-size:10px;">Tech roles, kurasi B2B heavy</div></a>
+        <a href="https://dealls.com" target="_blank" style="padding:12px;background:rgba(201,168,76,0.06);border-radius:6px;text-decoration:none;color:var(--text-main);display:block;"><div style="font-weight:800;color:var(--gold);">Dealls</div><div style="margin-top:4px;color:var(--text-muted);font-size:10px;">Growth/marketing roles niche</div></a>
+        <a href="https://www.jobstreet.co.id" target="_blank" style="padding:12px;background:rgba(155,89,182,0.07);border-radius:6px;text-decoration:none;color:var(--text-main);display:block;"><div style="font-weight:800;color:#c39bd3;">JobStreet</div><div style="margin-top:4px;color:var(--text-muted);font-size:10px;">Legal/Finance/Generalist</div></a>
+        <a href="https://www.upwork.com" target="_blank" style="padding:12px;background:rgba(231,76,60,0.06);border-radius:6px;text-decoration:none;color:var(--text-main);display:block;"><div style="font-weight:800;color:var(--red);">Upwork</div><div style="margin-top:4px;color:var(--text-muted);font-size:10px;">Global freelance (landing, content)</div></a>
+        <a href="https://www.sribu.com" target="_blank" style="padding:12px;background:rgba(52,152,219,0.06);border-radius:6px;text-decoration:none;color:var(--text-main);display:block;"><div style="font-weight:800;color:var(--blue-bright);">Sribu</div><div style="margin-top:4px;color:var(--text-muted);font-size:10px;">Indonesia freelance (design, content)</div></a>
+        <a href="https://fastwork.id" target="_blank" style="padding:12px;background:rgba(46,204,113,0.06);border-radius:6px;text-decoration:none;color:var(--text-main);display:block;"><div style="font-weight:800;color:var(--green-bright);">Fastwork</div><div style="margin-top:4px;color:var(--text-muted);font-size:10px;">Indonesia profesional freelance</div></a>
+      </div>
+      <div style="margin-top:14px;padding:10px;background:rgba(201,168,76,0.05);border-radius:6px;font-size:11px;color:var(--text-muted);">
+        💎 <strong style="color:var(--gold);">Highest signal:</strong> Tech in Asia Slack · IDN Discord · Founders ID Telegram · Referral dari LinkedIn network — close rate tercepat.
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-question-circle" style="color:var(--orange-bright);margin-right:8px;"></i>Butuh Tim? Atau Solo + AI?</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:11px;">
+        <div style="padding:14px;background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.2);border-radius:8px;">
+          <div style="font-weight:900;color:var(--green-bright);margin-bottom:8px;">✅ Solo + AI (Bulan 0-3)</div>
+          <div style="color:var(--text-main);line-height:1.8;">Cocok kalau: goal PoC validation, runway limited (&lt;Rp 100 jt), belum ada paid client, founder teknis capable.</div>
+          <div style="margin-top:8px;color:var(--gold);font-weight:700;">Tools AI:</div>
+          <div style="color:var(--text-muted);font-size:10.5px;">Claude/GPT · Cursor · v0.dev · Clay.com · Xendit · Notion AI</div>
+        </div>
+        <div style="padding:14px;background:rgba(52,152,219,0.06);border:1px solid rgba(52,152,219,0.2);border-radius:8px;">
+          <div style="font-weight:900;color:var(--blue-bright);margin-bottom:8px;">👥 Butuh Tim (Bulan 3+)</div>
+          <div style="color:var(--text-main);line-height:1.8;">Trigger hire: MRR ≥ Rp 15 jt · Waiting list ≥ 5 prospect · Founder &gt; 60 jam/minggu · Technical debt &gt; 2 feature · Ada 1 fungsi 100% delegable.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOC 05 · ESTIMATE -->
+  <div class="page" id="page-docestimate">
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-hourglass-half" style="color:var(--red);margin-right:8px;"></i>⏱️ Estimasi Waktu & Kalender Milestone</div>
+      <div class="section-sub">18 bulan · Break-even Jan 2027 · ARR Rp 2,4 M Okt 2027</div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-calendar-alt" style="color:var(--gold);margin-right:8px;"></i>Summary Table — Cumulative Cash Flow</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;">
+        <thead><tr style="background:rgba(255,255,255,0.04);"><th style="padding:10px;text-align:left;color:var(--gold-light);">Fase</th><th style="padding:10px;text-align:left;">Durasi</th><th style="padding:10px;text-align:left;">Team Cost</th><th style="padding:10px;text-align:left;">Revenue</th><th style="padding:10px;text-align:left;">Net</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:10px;color:var(--green-bright);font-weight:800;">F0</td><td>Done</td><td>Rp 15 jt</td><td>Rp 0</td><td style="color:var(--red);">-Rp 15 jt</td></tr>
+          <tr><td style="padding:10px;color:var(--gold);font-weight:800;">F1</td><td>2 bulan</td><td>Rp 60 jt</td><td>Rp 0</td><td style="color:var(--red);">-Rp 75 jt</td></tr>
+          <tr><td style="padding:10px;color:var(--orange-bright);font-weight:800;">F2</td><td>3 bulan</td><td>Rp 120 jt</td><td>Rp 60 jt</td><td style="color:var(--red);">-Rp 135 jt</td></tr>
+          <tr style="background:rgba(46,204,113,0.06);"><td style="padding:10px;color:var(--blue-bright);font-weight:800;">F3</td><td>4 bulan</td><td>Rp 224 jt</td><td>Rp 350 jt</td><td style="color:var(--green-bright);font-weight:800;">~Break-even</td></tr>
+          <tr><td style="padding:10px;color:#c39bd3;font-weight:800;">F4</td><td>5 bulan</td><td>Rp 400 jt</td><td>Rp 600 jt</td><td style="color:var(--green-bright);">+Rp 191 jt</td></tr>
+          <tr><td style="padding:10px;color:var(--red);font-weight:800;">F5</td><td>4 bulan</td><td>Rp 492 jt</td><td>Rp 900 jt</td><td style="color:var(--green-bright);">+Rp 599 jt</td></tr>
+          <tr style="background:rgba(201,168,76,0.1);"><td style="padding:10px;color:var(--gold);font-weight:900;">TOTAL</td><td style="color:var(--gold);font-weight:900;">18 bulan</td><td style="color:var(--gold);font-weight:900;">Rp 1,31 M</td><td style="color:var(--gold);font-weight:900;">Rp 1,91 M</td><td style="color:var(--green-bright);font-weight:900;">+Rp 599 jt</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;padding:12px;background:rgba(201,168,76,0.06);border-radius:6px;font-size:11.5px;color:var(--text-main);">
+        💰 <strong style="color:var(--gold);">Minimum capital needed:</strong> <strong>Rp 200 jt</strong> upfront untuk survive sampai break-even (Januari 2027).
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-flag" style="color:var(--blue-bright);margin-right:8px;"></i>Kalender 18 Bulan Month-by-Month</div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:10.5px;min-width:520px;">
+          <thead><tr style="background:rgba(255,255,255,0.04);"><th style="padding:8px;text-align:left;color:var(--gold-light);">Bulan</th><th style="padding:8px;text-align:left;">Fase</th><th style="padding:8px;text-align:left;">Top Milestone</th><th style="padding:8px;text-align:left;">KPI Target</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:7px;color:var(--green-bright);">Apr '26 · #0</td><td>F0 ✅</td><td>v6 LIVE</td><td>4 platform live</td></tr>
+            <tr><td style="padding:7px;">Mei '26 · #1</td><td>F1</td><td>Team core hired, landing v1</td><td>3 hire, LP 3% conv</td></tr>
+            <tr><td style="padding:7px;">Jun '26 · #2</td><td>F1</td><td>Sales deck ready, 2 LOI</td><td>2 LOI signed</td></tr>
+            <tr style="background:rgba(201,168,76,0.06);"><td style="padding:7px;color:var(--gold);font-weight:800;">Jul '26 · #3</td><td>F2</td><td>🔥 1st paid pilot T1</td><td>MRR Rp 500rb</td></tr>
+            <tr><td style="padding:7px;">Agu '26 · #4</td><td>F2</td><td>Pilot T2 + Marketplace MVP</td><td>MRR Rp 3 jt</td></tr>
+            <tr><td style="padding:7px;">Sep '26 · #5</td><td>F2</td><td>Pilot T2 ke-2, SLA doc</td><td>MRR Rp 5 jt</td></tr>
+            <tr><td style="padding:7px;">Okt '26 · #6</td><td>F3</td><td>Sector Playbook v1</td><td>MRR Rp 10 jt</td></tr>
+            <tr><td style="padding:7px;">Nov '26 · #7</td><td>F3</td><td>1st Founder System T4</td><td>MRR Rp 15 jt</td></tr>
+            <tr><td style="padding:7px;">Des '26 · #8</td><td>F3</td><td>Partner Program launch</td><td>MRR Rp 20 jt</td></tr>
+            <tr style="background:rgba(46,204,113,0.1);"><td style="padding:7px;color:var(--green-bright);font-weight:800;">Jan '27 · #9</td><td>F3</td><td>💥 BREAK-EVEN</td><td>MRR Rp 25 jt</td></tr>
+            <tr><td style="padding:7px;">Feb '27 · #10</td><td>F4</td><td>Enterprise discovery</td><td>3 prospect</td></tr>
+            <tr><td style="padding:7px;">Mar '27 · #11</td><td>F4</td><td>SOC2-ready docs</td><td>Audit trail live</td></tr>
+            <tr><td style="padding:7px;">Apr '27 · #12</td><td>F4</td><td>Tower Private v1</td><td>1 deployment</td></tr>
+            <tr style="background:rgba(155,89,182,0.1);"><td style="padding:7px;color:#c39bd3;font-weight:800;">Mei '27 · #13</td><td>F4</td><td>🏛️ 1st Enterprise signed</td><td>MRR Rp 40 jt</td></tr>
+            <tr><td style="padding:7px;">Jun '27 · #14</td><td>F4</td><td>Advisory board formed</td><td>ARR Rp 720 jt</td></tr>
+            <tr><td style="padding:7px;">Jul '27 · #15</td><td>F5</td><td>Marketplace publik</td><td>20 pack SKU</td></tr>
+            <tr><td style="padding:7px;">Agu '27 · #16</td><td>F5</td><td>5 partner aktif</td><td>MRR Rp 100 jt</td></tr>
+            <tr><td style="padding:7px;">Sep '27 · #17</td><td>F5</td><td>Enterprise logo ke-2</td><td>MRR Rp 150 jt</td></tr>
+            <tr style="background:rgba(201,168,76,0.12);"><td style="padding:7px;color:var(--gold);font-weight:900;">Okt '27 · #18</td><td>F5</td><td>🎯 ARR Rp 2,4 M</td><td>50+ customer ✅</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-exclamation-triangle" style="color:var(--orange-bright);margin-right:8px;"></i>Risk-Adjusted Scenarios</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;font-size:11px;">
+        <div style="padding:12px;background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.2);border-radius:8px;">
+          <div style="font-weight:900;color:var(--green-bright);">🎯 Optimistic (70%)</div>
+          <div style="margin-top:6px;color:var(--text-main);line-height:1.7;">Timeline tercapai tepat waktu.</div>
+        </div>
+        <div style="padding:12px;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:8px;">
+          <div style="font-weight:900;color:var(--gold);">⚖️ Realistic (90%)</div>
+          <div style="margin-top:6px;color:var(--text-main);line-height:1.7;">Slip 1-2 bulan/fase. Break-even mundur ke Maret 2027. ARR Rp 2,4 M Des 2027.</div>
+        </div>
+        <div style="padding:12px;background:rgba(230,126,34,0.06);border:1px solid rgba(230,126,34,0.2);border-radius:8px;">
+          <div style="font-weight:900;color:var(--orange-bright);">🧊 Conservative (99%)</div>
+          <div style="margin-top:6px;color:var(--text-main);line-height:1.7;">Slip 3-4 bulan. Fokus T2-T3 (skip enterprise). ARR Rp 1,5 M Okt 2027.</div>
+        </div>
+        <div style="padding:12px;background:rgba(231,76,60,0.06);border:1px solid rgba(231,76,60,0.2);border-radius:8px;">
+          <div style="font-weight:900;color:var(--red);">🚨 Plan B</div>
+          <div style="margin-top:6px;color:var(--text-main);line-height:1.7;">No pilot sampai Agu '26 → pivot consulting mode (Rp 20-50 jt/project) + 100% Layer 4 UMKM.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title"><i class="fas fa-bolt" style="color:var(--gold);margin-right:8px;"></i>10 Critical Path Items (Tidak Boleh Di-Skip)</div>
+      <div style="font-size:11.5px;line-height:2;">
+        <div>✅ 1. v6 Hub deployed (Apr 2026)</div>
+        <div>⏳ 2. Landing page v1 + 3 case study (Jun 2026)</div>
+        <div>⏳ 3. Legal entity + MSA/NDA ready (Jun 2026)</div>
+        <div>🔥 4. <strong style="color:var(--gold);">First paid pilot T1</strong> (Jul 2026) — CANNOT SKIP</div>
+        <div>⏳ 5. First paid pilot T2 White-Label (Aug 2026)</div>
+        <div>⏳ 6. Marketplace MVP revenue-generating (Aug 2026)</div>
+        <div>⏳ 7. Break-even MRR (Jan 2027)</div>
+        <div>🏛️ 8. <strong style="color:#c39bd3;">First enterprise pilot</strong> (Mei 2027) — UNLOCKS FASE 5</div>
+        <div>⏳ 9. Marketplace publik launch (Jul 2027)</div>
+        <div>🎯 10. <strong style="color:var(--gold);">ARR Rp 2,4 M</strong> (Okt 2027) — NORTH STAR</div>
+      </div>
+    </div>
+  </div>
 
 </main><!-- end main-content -->
 
@@ -2963,6 +3457,12 @@ const pageMap = {
   'dailylog': ['Daily Command Log','Jurnal harian founder — win, blocker, refleksi · v6'],
   'pipeline': ['Client Pipeline CRM','Kanban pipeline klien dari lead ke closed · v6'],
   'healthkpi': ['Ecosystem Health KPI','Dashboard agregat kesehatan ekosistem · v6'],
+  'docindex': ['Master Index Dokumen','Peta 6 dokumen strategis Sovereign Ecosystem · v7'],
+  'docroadmap': ['Roadmap Master 18-Bulan','Fase 0-5, milestone, pricing, monetisasi · v7'],
+  'docjournal': ['Journal & Build Log','Template & disiplin harian founder · v7'],
+  'docimpl': ['Implementation & Tech Architecture','Stack, repo, security, ADR · v7'],
+  'docteam': ['Team Building & Hiring Plan','6 role JD, budget, platform hiring · v7'],
+  'docestimate': ['Estimasi Waktu & Kalender','Timeline 18 bulan, cash flow, sprint · v7'],
 };
 
 function showPage(id) {
