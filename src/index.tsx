@@ -49,7 +49,7 @@ app.get('/', (c) => {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sovereign Productization Command Center v4.0 — PT Waskita Cakrawarti Digital</title>
+<title>Sovereign Productization Command Center v5.0 — PT Waskita Cakrawarti Digital</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
 <style>
@@ -514,10 +514,10 @@ app.get('/', (c) => {
 <!-- SIDEBAR -->
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-badge">Founder Level · v4.0</div>
+    <div class="logo-badge">Founder Level · v5.0</div>
     <div class="logo-title">Sovereign Productization<br>Command Center</div>
     <div class="logo-sub">PT WASKITA CAKRAWARTI DIGITAL · 2026</div>
-    <div class="logo-version">● P5 LIVE-VERIFIED / HUB-24 MATURE · v4.0</div>
+    <div class="logo-version">● P5 LIVE-VERIFIED / HUB-24 MATURE · v5.0</div>
   </div>
 
   <div class="nav-section">
@@ -611,6 +611,19 @@ app.get('/', (c) => {
   </div>
 
   <div class="nav-section">
+    <div class="nav-section-label">v5 Additions</div>
+    <a class="nav-item" onclick="showPage('scorecard')" href="#">
+      <i class="fas fa-chart-bar"></i> Founder Scorecard <span class="nav-badge nb-gold">v5</span>
+    </a>
+    <a class="nav-item" onclick="showPage('canonfreeze')" href="#">
+      <i class="fas fa-snowflake"></i> Canon Freeze Board <span class="nav-badge nb-blue">v5</span>
+    </a>
+    <a class="nav-item" onclick="showPage('quicknotes')" href="#">
+      <i class="fas fa-sticky-note"></i> Quick Notes Pad <span class="nav-badge nb-orange">v5</span>
+    </a>
+  </div>
+
+  <div class="nav-section">
     <div class="nav-section-label">Progress Stats</div>
     <div style="padding:8px 12px;">
       <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:5px;">Sprint 4 Minggu</div>
@@ -626,7 +639,7 @@ app.get('/', (c) => {
       <div style="margin-top: 3px; color: rgba(138,155,176,0.6);">21 April 2026 · CONFIDENTIAL</div>
       <div style="margin-top:6px;display:flex;gap:5px;">
         <span style="background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.3);color:var(--green-bright);font-size:8px;font-weight:800;padding:2px 6px;border-radius:10px;">● P5 LIVE</span>
-        <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:8px;font-weight:800;padding:2px 6px;border-radius:10px;">v4.0</span>
+        <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:8px;font-weight:800;padding:2px 6px;border-radius:10px;">v5.0</span>
       </div>
     </div>
   </div>
@@ -656,6 +669,11 @@ app.get('/', (c) => {
       <div><strong>Sovereign Engineer Mode Aktif.</strong> "Bukan pedagang. Bukan pengguna AI. Sovereign Engineer." — Haidar Faras Maulia · 21 April 2026</div>
     </div>
 
+    <div class="alert" style="border-color:rgba(52,152,219,0.35);background:rgba(52,152,219,0.06);margin-bottom:18px;">
+      <i class="fas fa-star" style="color:#3498db;margin-top:2px;flex-shrink:0;"></i>
+      <div><strong>v5.0 — 3 Fitur Baru:</strong> <span style="color:var(--gold)">Founder Scorecard</span> (KPI tracker mingguan) · <span style="color:#3498db">Canon Freeze Board</span> (bekukan keputusan strategis) · <span style="color:#f39c12">Quick Notes Pad</span> (catatan cepat dengan tag &amp; export). Akses via sidebar "v5 Additions".</div>
+    </div>
+
     <!-- METRICS -->
     <div class="metric-grid">
       <div class="metric-card">
@@ -681,6 +699,12 @@ app.get('/', (c) => {
         <div class="metric-value">16</div>
         <div class="metric-sub">6 Offer Stack · 5 Buyer Tiers</div>
         <div class="metric-trend trend-up"><i class="fas fa-box"></i> Pilot Target: 30hr</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Total Halaman v5</div>
+        <div class="metric-value">22</div>
+        <div class="metric-sub">+3 Halaman Baru v5.0</div>
+        <div class="metric-trend trend-up"><i class="fas fa-star"></i> Scorecard · Canon · Notes</div>
       </div>
     </div>
 
@@ -2009,6 +2033,181 @@ Format: A. Objective | B. Decisions | C. Deliverables | D. Tasks
   </div>
 
 
+  <!-- ========================= FOUNDER SCORECARD (v5) ========================= -->
+  <div class="page" id="page-scorecard">
+    <div class="section-header">
+      <div>
+        <div class="section-title"><i class="fas fa-chart-bar" style="color:var(--gold);margin-right:8px;"></i>Founder Scorecard</div>
+        <div class="section-sub">KPI Tracker founder — lacak kemajuan nyata tiap minggu, bukan ilusi aktivitas</div>
+      </div>
+      <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:9px;font-weight:900;padding:4px 10px;border-radius:20px;">v5.0 NEW</span>
+    </div>
+
+    <div class="alert alert-gold" style="margin-bottom:18px;">
+      <i class="fas fa-crown" style="color:var(--gold);margin-top:2px;flex-shrink:0;"></i>
+      <div><strong>Founder Scorecard</strong> bukan vanity metric. Ini alat kontrol mingguan: apakah Sovereign maju ke arah monetisasi nyata? Isi tiap minggu, jujur, dan bekukan hasilnya.</div>
+    </div>
+
+    <!-- Scorecard Grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:18px;">
+      ${[
+        {label:'Produk Terjual / Closing', icon:'fa-handshake', color:'var(--green-bright)', hint:'Jumlah closing deal minggu ini', id:'sc-deals', placeholder:'0'},
+        {label:'Pipeline Aktif', icon:'fa-funnel-dollar', color:'var(--gold)', hint:'Jumlah calon buyer dalam pipeline', id:'sc-pipeline', placeholder:'0'},
+        {label:'Demo/Pitching Dilakukan', icon:'fa-presentation', color:'#3498db', hint:'Berapa kali demo/pitch minggu ini', id:'sc-demos', placeholder:'0'},
+        {label:'Fitur Deploy ke Production', icon:'fa-rocket', color:'#e74c3c', hint:'Berapa fitur masuk production', id:'sc-deploy', placeholder:'0'},
+        {label:'Dokumen Canon Di-freeze', icon:'fa-snowflake', color:'#9b59b6', hint:'Keputusan strategis yang dibekukan', id:'sc-canon', placeholder:'0'},
+        {label:'Validasi Market (interviews)', icon:'fa-comments', color:'#1abc9c', hint:'Berapa user/buyer di-interview', id:'sc-validate', placeholder:'0'},
+      ].map(s => `
+      <div class="card" style="padding:14px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fas ${s.icon}" style="color:${s.color};font-size:14px;"></i>
+          </div>
+          <div>
+            <div style="font-size:10.5px;font-weight:800;color:var(--text-main);">${s.label}</div>
+            <div style="font-size:9px;color:var(--text-muted);">${s.hint}</div>
+          </div>
+        </div>
+        <input type="number" id="${s.id}" min="0" placeholder="${s.placeholder}" onchange="updateScorecard()"
+          style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:6px;padding:8px 12px;font-size:22px;font-weight:900;color:${s.color};text-align:center;outline:none;">
+        <div style="font-size:9px;color:var(--text-muted);margin-top:5px;text-align:center;">minggu ini</div>
+      </div>`).join('')}
+    </div>
+
+    <!-- Score Summary -->
+    <div class="card-gold" style="margin-bottom:16px;">
+      <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:10px;"><i class="fas fa-trophy" style="margin-right:6px;"></i>Score Minggu Ini</div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;">
+        <div style="text-align:center;">
+          <div style="font-size:36px;font-weight:900;color:var(--gold);" id="sc-total-score">0</div>
+          <div style="font-size:9px;color:var(--text-muted);">Total Aksi</div>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <div id="sc-verdict" style="font-size:12px;font-weight:700;color:var(--text-main);margin-bottom:6px;">Isi scorecard untuk melihat verdict.</div>
+          <div class="progress-bar"><div class="progress-fill" id="sc-progress-bar" style="width:0%;background:var(--gold);"></div></div>
+        </div>
+        <button onclick="resetScorecard()" style="background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);color:#e74c3c;padding:7px 14px;border-radius:6px;font-size:10.5px;font-weight:700;cursor:pointer;">Reset</button>
+      </div>
+    </div>
+
+    <!-- Weekly Log -->
+    <div class="card">
+      <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:10px;"><i class="fas fa-history" style="margin-right:6px;"></i>Catatan Minggu Ini</div>
+      <textarea id="sc-notes" rows="3" placeholder="Catatan refleksi minggu ini — apa yang berhasil, apa yang stuck, keputusan apa yang dibuat..."
+        style="width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px;font-size:11px;color:var(--text-main);resize:vertical;outline:none;line-height:1.6;"></textarea>
+      <button onclick="saveScorecard()" style="margin-top:8px;background:var(--gold);color:#0b1120;padding:8px 20px;border-radius:6px;font-size:10.5px;font-weight:800;cursor:pointer;border:none;">Simpan Log Minggu Ini</button>
+      <div id="sc-saved-log" style="margin-top:12px;"></div>
+    </div>
+  </div>
+
+
+  <!-- ========================= CANON FREEZE BOARD (v5) ========================= -->
+  <div class="page" id="page-canonfreeze">
+    <div class="section-header">
+      <div>
+        <div class="section-title"><i class="fas fa-snowflake" style="color:#3498db;margin-right:8px;"></i>Canon Freeze Board</div>
+        <div class="section-sub">Bekukan keputusan strategis Sovereign — tidak boleh di-override tanpa deliberasi founder</div>
+      </div>
+      <span style="background:rgba(52,152,219,0.15);border:1px solid rgba(52,152,219,0.3);color:#3498db;font-size:9px;font-weight:900;padding:4px 10px;border-radius:20px;">v5.0 NEW</span>
+    </div>
+
+    <div class="alert" style="border-color:rgba(52,152,219,0.35);background:rgba(52,152,219,0.06);margin-bottom:18px;">
+      <i class="fas fa-snowflake" style="color:#3498db;margin-top:2px;flex-shrink:0;"></i>
+      <div><strong>Canon Freeze</strong> adalah mekanisme governance tertinggi Sovereign. Begitu sebuah keputusan di-freeze, ia tidak boleh diubah sembarangan. Ini yang membedakan Sovereign dari sistem AI biasa yang mudah di-override.</div>
+    </div>
+
+    <!-- Pre-Loaded Canon Items -->
+    <div class="card" style="margin-bottom:14px;">
+      <div style="font-size:11px;font-weight:800;color:#3498db;margin-bottom:12px;"><i class="fas fa-lock" style="margin-right:6px;"></i>Canon Baku — Frozen Since 21 April 2026</div>
+      ${[
+        {id:'CF-001',title:'Positioning Tunggal',status:'FROZEN',desc:'Sovereign = governance-first business operating engine. Bukan pedagang. Bukan pengguna AI. Sovereign Engineer.'},
+        {id:'CF-002',title:'Layer 1 = Human',status:'FROZEN',desc:'Manusia tetap Layer 1. AI hanya Layer 2 Assist. Sovereign tidak boleh diposisikan sebagai AI yang menggantikan founder.'},
+        {id:'CF-003',title:'Product Ladder Order',status:'FROZEN',desc:'Urutan: Jual hasil → Jual replikasi → Jual kontrol → Jual orkestrasi → Jual sistem → Jual ekosistem. TIDAK boleh dibalik.'},
+        {id:'CF-004',title:'Repo Boundary',status:'FROZEN',desc:'OS = L1, Lane = L2, Tower/Ecosystem = L3, Barber+Coffee = L4. Tidak boleh di-merge atau di-overlap.'},
+        {id:'CF-005',title:'Tower adalah Private Layer',status:'FROZEN',desc:'Tower bukan mass market app. Tower adalah premium/private layer untuk founder, venture builder, atau buyer yang sudah naik kelas.'},
+      ].map(c => `
+      <div style="display:flex;gap:12px;padding:12px;border:1px solid rgba(52,152,219,0.15);border-radius:8px;margin-bottom:8px;background:rgba(52,152,219,0.03);">
+        <div style="flex-shrink:0;width:60px;text-align:center;">
+          <div style="font-size:8px;font-weight:900;color:rgba(52,152,219,0.6);letter-spacing:1px;">${c.id}</div>
+          <span style="background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.3);color:var(--green-bright);font-size:7px;font-weight:900;padding:2px 6px;border-radius:8px;margin-top:4px;display:inline-block;">${c.status}</span>
+        </div>
+        <div style="flex:1;">
+          <div style="font-size:11.5px;font-weight:800;color:var(--text-main);margin-bottom:4px;">${c.title}</div>
+          <div style="font-size:10.5px;color:var(--text-muted);line-height:1.5;">${c.desc}</div>
+        </div>
+        <div style="flex-shrink:0;">
+          <i class="fas fa-snowflake" style="color:#3498db;font-size:18px;opacity:0.5;"></i>
+        </div>
+      </div>`).join('')}
+    </div>
+
+    <!-- Add Custom Canon -->
+    <div class="card">
+      <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:12px;"><i class="fas fa-plus" style="margin-right:6px;"></i>Tambah Canon Baru</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <input type="text" id="cf-new-title" placeholder="Judul keputusan canon (contoh: Barber adalah entry product)"
+          style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:6px;padding:9px 12px;font-size:11.5px;color:var(--text-main);outline:none;">
+        <textarea id="cf-new-desc" rows="2" placeholder="Deskripsi lengkap keputusan yang di-freeze..."
+          style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:6px;padding:9px 12px;font-size:11px;color:var(--text-main);resize:vertical;outline:none;line-height:1.5;"></textarea>
+        <button onclick="addCanon()" style="background:var(--gold);color:#0b1120;padding:9px 20px;border-radius:6px;font-size:10.5px;font-weight:800;cursor:pointer;border:none;width:fit-content;">Freeze Canon Ini</button>
+      </div>
+      <div id="cf-custom-list" style="margin-top:12px;"></div>
+    </div>
+  </div>
+
+
+  <!-- ========================= QUICK NOTES PAD (v5) ========================= -->
+  <div class="page" id="page-quicknotes">
+    <div class="section-header">
+      <div>
+        <div class="section-title"><i class="fas fa-sticky-note" style="color:#f39c12;margin-right:8px;"></i>Quick Notes Pad</div>
+        <div class="section-sub">Catatan cepat founder — ide, keputusan pending, reminder, dan insight sesi ini</div>
+      </div>
+      <span style="background:rgba(243,156,18,0.15);border:1px solid rgba(243,156,18,0.3);color:#f39c12;font-size:9px;font-weight:900;padding:4px 10px;border-radius:20px;">v5.0 NEW</span>
+    </div>
+
+    <!-- Quick Note Input -->
+    <div class="card" style="margin-bottom:14px;">
+      <div style="display:flex;gap:8px;margin-bottom:10px;">
+        <select id="qn-tag" style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);border-radius:6px;padding:7px 10px;font-size:10.5px;color:var(--text-main);outline:none;flex-shrink:0;">
+          <option value="idea">💡 Idea</option>
+          <option value="decision">⚡ Keputusan</option>
+          <option value="pending">⏳ Pending</option>
+          <option value="insight">🔍 Insight</option>
+          <option value="risk">⚠️ Risk</option>
+          <option value="action">✅ Action Item</option>
+        </select>
+        <input type="text" id="qn-input" placeholder="Tulis catatan cepat di sini..." onkeydown="if(event.key==='Enter')addNote()"
+          style="flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:6px;padding:8px 12px;font-size:11.5px;color:var(--text-main);outline:none;">
+        <button onclick="addNote()" style="background:var(--gold);color:#0b1120;padding:8px 18px;border-radius:6px;font-size:10.5px;font-weight:800;cursor:pointer;border:none;white-space:nowrap;">Tambah</button>
+      </div>
+    </div>
+
+    <!-- Notes List -->
+    <div id="qn-list" style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px;">
+      <div style="text-align:center;padding:30px;color:var(--text-muted);font-size:11px;">
+        <i class="fas fa-sticky-note" style="font-size:24px;margin-bottom:8px;display:block;opacity:0.3;"></i>
+        Belum ada catatan. Mulai tambahkan catatan di atas.
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button onclick="clearNotes()" style="background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);color:#e74c3c;padding:7px 14px;border-radius:6px;font-size:10.5px;font-weight:700;cursor:pointer;">Hapus Semua</button>
+      <button onclick="exportNotes()" style="background:rgba(52,152,219,0.1);border:1px solid rgba(52,152,219,0.3);color:#3498db;padding:7px 14px;border-radius:6px;font-size:10.5px;font-weight:700;cursor:pointer;">Export Catatan</button>
+      <div style="margin-left:auto;font-size:9.5px;color:var(--text-muted);display:flex;align-items:center;gap:5px;">
+        <i class="fas fa-save"></i> Auto-saved ke localStorage
+      </div>
+    </div>
+
+    <!-- Note Archive -->
+    <div class="card" style="margin-top:14px;">
+      <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:10px;"><i class="fas fa-archive" style="margin-right:6px;"></i>Ringkasan Catatan Sesi</div>
+      <div id="qn-summary" style="font-size:10.5px;color:var(--text-muted);">Tambahkan beberapa catatan untuk melihat ringkasan otomatis.</div>
+    </div>
+  </div>
+
+
   <!-- ========================= MONETIZATION LADDER ========================= -->
   <div class="page" id="page-monetladder">
     <div class="section-header">
@@ -2483,6 +2682,9 @@ const pageMap = {
   'tracker90': ['90-Day Execution Tracker','Tracker harian progress 90 hari'],
   'pilotpack': ['Pilot Pack Generator','Generate pilot doc per buyer'],
   'comparator': ['Product Comparator','Bandingkan tier/offer side-by-side'],
+  'scorecard': ['Founder Scorecard','KPI Tracker founder — lacak kemajuan nyata mingguan · v5'],
+  'canonfreeze': ['Canon Freeze Board','Bekukan keputusan strategis Sovereign · v5'],
+  'quicknotes': ['Quick Notes Pad','Catatan cepat founder — ide, keputusan, insight · v5'],
 };
 
 function showPage(id) {
@@ -2714,6 +2916,16 @@ const termCmds = {
   },
   pilot: () => { showPage('pilotpack'); return [{t:'t-success',v:'Membuka Pilot Pack Generator...'}]; },
   compare: () => { showPage('comparator'); return [{t:'t-success',v:'Membuka Product Comparator...'}]; },
+  scorecard: () => { showPage('scorecard'); return [{t:'t-success',v:'Membuka Founder Scorecard v5...'}]; },
+  canon: () => { showPage('canonfreeze'); return [{t:'t-success',v:'Membuka Canon Freeze Board v5...'}]; },
+  notes: () => { showPage('quicknotes'); return [{t:'t-success',v:'Membuka Quick Notes Pad v5...'}]; },
+  v5: () => [
+    {t:'t-success',v:'═══ SOVEREIGN v5.0 — ENHANCEMENTS ═══'},
+    {t:'t-output',v:'[NEW] Founder Scorecard — KPI tracker mingguan founder'},
+    {t:'t-output',v:'[NEW] Canon Freeze Board — bekukan keputusan strategis'},
+    {t:'t-output',v:'[NEW] Quick Notes Pad — catatan cepat dengan tag & export'},
+    {t:'t-cmd',v:'Ketik "scorecard", "canon", atau "notes" untuk akses langsung.'},
+  ],
   links: () => [
     {t:'t-success',v:'═══ ALL PLATFORM LINKS ═══'},
     {t:'t-cmd',v:'[L1] https://sovereign-os-platform.pages.dev'},
@@ -3362,7 +3574,191 @@ document.addEventListener('DOMContentLoaded', () => {
   // Focus terminal input when on terminal page
   const termInput = document.getElementById('terminal-input');
   if (termInput) termInput.addEventListener('focus', () => {});
+  // Init v5 features
+  loadNotes();
+  loadCanonCustom();
+  loadScorecard();
 });
+
+// ========================= V5: FOUNDER SCORECARD =========================
+function updateScorecard() {
+  const ids = ['sc-deals','sc-pipeline','sc-demos','sc-deploy','sc-canon','sc-validate'];
+  const total = ids.reduce((s,id) => s + (parseInt(document.getElementById(id)?.value)||0), 0);
+  const el = document.getElementById('sc-total-score');
+  const verdict = document.getElementById('sc-verdict');
+  const bar = document.getElementById('sc-progress-bar');
+  if(el) el.textContent = total;
+  const pct = Math.min(100, total * 4);
+  if(bar) bar.style.width = pct + '%';
+  if(verdict) {
+    if(total === 0) verdict.textContent = 'Isi scorecard untuk melihat verdict.';
+    else if(total < 5) { verdict.textContent = '⚠️ Minggu ini kurang aktif. Perlu lebih banyak aksi nyata.'; verdict.style.color = '#e74c3c'; }
+    else if(total < 12) { verdict.textContent = '🔄 Ada kemajuan. Tingkatkan frekuensi closing dan demo.'; verdict.style.color = '#f39c12'; }
+    else if(total < 20) { verdict.textContent = '✅ Solid. Sovereign bergerak ke arah yang benar.'; verdict.style.color = 'var(--green-bright)'; }
+    else { verdict.textContent = '🚀 Outstanding! Sovereign dalam momentum penuh.'; verdict.style.color = 'var(--gold)'; }
+  }
+  // Auto-save
+  const data = {ids: ids.map(id => document.getElementById(id)?.value || '0'), ts: new Date().toISOString()};
+  localStorage.setItem('sovereign_scorecard', JSON.stringify(data));
+}
+
+function saveScorecard() {
+  const notes = document.getElementById('sc-notes')?.value;
+  if(!notes) return;
+  const log = JSON.parse(localStorage.getItem('sovereign_sc_log') || '[]');
+  const week = 'Minggu ' + new Date().toLocaleDateString('id-ID');
+  log.unshift({week, notes, ts: new Date().toISOString()});
+  localStorage.setItem('sovereign_sc_log', JSON.stringify(log.slice(0,10)));
+  renderScLog();
+  document.getElementById('sc-notes').value = '';
+}
+
+function renderScLog() {
+  const log = JSON.parse(localStorage.getItem('sovereign_sc_log') || '[]');
+  const el = document.getElementById('sc-saved-log');
+  if(!el) return;
+  el.innerHTML = log.map(l => \`<div style="padding:8px 12px;border-radius:6px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);margin-bottom:6px;">
+    <div style="font-size:9px;color:var(--text-muted);margin-bottom:3px;">\${l.week}</div>
+    <div style="font-size:11px;color:var(--text-main);line-height:1.5;">\${l.notes}</div>
+  </div>\`).join('');
+}
+
+function resetScorecard() {
+  ['sc-deals','sc-pipeline','sc-demos','sc-deploy','sc-canon','sc-validate'].forEach(id => {
+    const el = document.getElementById(id); if(el) el.value = '0';
+  });
+  updateScorecard();
+}
+
+function loadScorecard() {
+  try {
+    const data = JSON.parse(localStorage.getItem('sovereign_scorecard') || 'null');
+    if(data && data.ids) {
+      const ids = ['sc-deals','sc-pipeline','sc-demos','sc-deploy','sc-canon','sc-validate'];
+      ids.forEach((id,i) => { const el = document.getElementById(id); if(el) el.value = data.ids[i] || '0'; });
+      updateScorecard();
+    }
+    renderScLog();
+  } catch(e) {}
+}
+
+// ========================= V5: CANON FREEZE BOARD =========================
+function addCanon() {
+  const title = document.getElementById('cf-new-title')?.value?.trim();
+  const desc = document.getElementById('cf-new-desc')?.value?.trim();
+  if(!title) { alert('Judul canon wajib diisi!'); return; }
+  const list = JSON.parse(localStorage.getItem('sovereign_canon_custom') || '[]');
+  const id = 'CF-' + String(list.length + 100).padStart(3,'0');
+  list.push({id, title, desc: desc||'', ts: new Date().toISOString()});
+  localStorage.setItem('sovereign_canon_custom', JSON.stringify(list));
+  document.getElementById('cf-new-title').value = '';
+  document.getElementById('cf-new-desc').value = '';
+  renderCanonCustom();
+}
+
+function renderCanonCustom() {
+  const list = JSON.parse(localStorage.getItem('sovereign_canon_custom') || '[]');
+  const el = document.getElementById('cf-custom-list');
+  if(!el) return;
+  if(!list.length) { el.innerHTML = ''; return; }
+  el.innerHTML = '<div style="font-size:10px;color:var(--text-muted);margin-bottom:8px;">Custom Canon yang Kamu Tambahkan:</div>' +
+  list.map((c,i) => \`<div style="display:flex;gap:10px;padding:10px 12px;border:1px solid rgba(201,168,76,0.15);border-radius:8px;margin-bottom:6px;background:rgba(201,168,76,0.03);">
+    <div style="flex-shrink:0;text-align:center;width:54px;">
+      <div style="font-size:8px;color:rgba(201,168,76,0.6);">\${c.id}</div>
+      <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:7px;font-weight:900;padding:2px 5px;border-radius:8px;margin-top:3px;display:inline-block;">FROZEN</span>
+    </div>
+    <div style="flex:1;">
+      <div style="font-size:11px;font-weight:800;color:var(--text-main);">\${c.title}</div>
+      <div style="font-size:10px;color:var(--text-muted);">\${c.desc}</div>
+    </div>
+    <button onclick="deleteCanon(\${i})" style="background:none;border:none;color:rgba(231,76,60,0.5);cursor:pointer;font-size:12px;padding:0 4px;" title="Hapus"><i class="fas fa-times"></i></button>
+  </div>\`).join('');
+}
+
+function deleteCanon(i) {
+  const list = JSON.parse(localStorage.getItem('sovereign_canon_custom') || '[]');
+  list.splice(i, 1);
+  localStorage.setItem('sovereign_canon_custom', JSON.stringify(list));
+  renderCanonCustom();
+}
+
+function loadCanonCustom() { renderCanonCustom(); }
+
+// ========================= V5: QUICK NOTES PAD =========================
+let notesData = [];
+
+function loadNotes() {
+  try {
+    notesData = JSON.parse(localStorage.getItem('sovereign_notes') || '[]');
+    renderNotes();
+  } catch(e) { notesData = []; }
+}
+
+function addNote() {
+  const input = document.getElementById('qn-input');
+  const tag = document.getElementById('qn-tag');
+  const text = input?.value?.trim();
+  if(!text) return;
+  const tagVal = tag?.value || 'idea';
+  const tagLabels = {idea:'💡 Idea', decision:'⚡ Keputusan', pending:'⏳ Pending', insight:'🔍 Insight', risk:'⚠️ Risk', action:'✅ Action'};
+  notesData.unshift({id: Date.now(), tag: tagVal, label: tagLabels[tagVal], text, ts: new Date().toLocaleString('id-ID')});
+  localStorage.setItem('sovereign_notes', JSON.stringify(notesData));
+  input.value = '';
+  renderNotes();
+}
+
+function renderNotes() {
+  const el = document.getElementById('qn-list');
+  if(!el) return;
+  if(!notesData.length) {
+    el.innerHTML = '<div style="text-align:center;padding:30px;color:var(--text-muted);font-size:11px;"><i class="fas fa-sticky-note" style="font-size:24px;margin-bottom:8px;display:block;opacity:0.3;"></i>Belum ada catatan. Mulai tambahkan catatan di atas.</div>';
+    document.getElementById('qn-summary').textContent = 'Tambahkan beberapa catatan untuk melihat ringkasan otomatis.';
+    return;
+  }
+  const tagColors = {idea:'#f39c12', decision:'var(--gold)', pending:'#e74c3c', insight:'#3498db', risk:'#e67e22', action:'var(--green-bright)'};
+  el.innerHTML = notesData.map((n,i) => \`
+  <div style="display:flex;gap:10px;padding:11px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.02);transition:all 0.15s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.2)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'">
+    <div style="flex-shrink:0;">
+      <span style="background:rgba(255,255,255,0.07);color:\${tagColors[n.tag]||'var(--gold)'};font-size:9.5px;font-weight:800;padding:3px 8px;border-radius:10px;">\${n.label}</span>
+    </div>
+    <div style="flex:1;font-size:11.5px;color:var(--text-main);line-height:1.5;">\${n.text}</div>
+    <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+      <div style="font-size:9px;color:var(--text-muted);">\${n.ts}</div>
+      <button onclick="deleteNote(\${i})" style="background:none;border:none;color:rgba(231,76,60,0.4);cursor:pointer;font-size:11px;padding:0;" title="Hapus"><i class="fas fa-trash"></i></button>
+    </div>
+  </div>\`).join('');
+
+  // Update summary
+  const counts = {};
+  notesData.forEach(n => { counts[n.tag] = (counts[n.tag]||0)+1; });
+  const summary = document.getElementById('qn-summary');
+  if(summary) {
+    summary.innerHTML = \`<strong>\${notesData.length} catatan</strong> tersimpan. \` +
+      Object.entries(counts).map(([k,v]) => \`\${v} \${k}\`).join(', ') + '.';
+  }
+}
+
+function deleteNote(i) {
+  notesData.splice(i, 1);
+  localStorage.setItem('sovereign_notes', JSON.stringify(notesData));
+  renderNotes();
+}
+
+function clearNotes() {
+  if(!confirm('Yakin hapus semua catatan?')) return;
+  notesData = [];
+  localStorage.removeItem('sovereign_notes');
+  renderNotes();
+}
+
+function exportNotes() {
+  const text = notesData.map(n => \`[\${n.label}] \${n.text} ()\${n.ts})\`).join('\\n');
+  const blob = new Blob([text], {type:'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'sovereign-notes.txt'; a.click();
+  URL.revokeObjectURL(url);
+}
 </script>
 
 </body>
