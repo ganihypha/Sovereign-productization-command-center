@@ -49,7 +49,7 @@ app.get('/', (c) => {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sovereign Productization Command Center v2 — PT Waskita Cakrawarti Digital</title>
+<title>Sovereign Productization Command Center v3.0 — PT Waskita Cakrawarti Digital</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
 <style>
@@ -514,10 +514,10 @@ app.get('/', (c) => {
 <!-- SIDEBAR -->
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-badge">Founder Level · v2.0</div>
+    <div class="logo-badge">Founder Level · v3.0</div>
     <div class="logo-title">Sovereign Productization<br>Command Center</div>
     <div class="logo-sub">PT WASKITA CAKRAWARTI DIGITAL · 2026</div>
-    <div class="logo-version">● P5 LIVE-VERIFIED / HUB-24 MATURE</div>
+    <div class="logo-version">● P5 LIVE-VERIFIED / HUB-24 MATURE · v3.0</div>
   </div>
 
   <div class="nav-section">
@@ -586,13 +586,31 @@ app.get('/', (c) => {
   </div>
 
   <div class="nav-section">
-    <div class="nav-section-label">Tools</div>
+    <div class="nav-section-label">Execution Tools</div>
+    <a class="nav-item" onclick="showPage('tracker90')" href="#">
+      <i class="fas fa-calendar-check"></i> 90-Day Tracker <span class="nav-badge nb-gold">NEW</span>
+    </a>
+    <a class="nav-item" onclick="showPage('pilotpack')" href="#">
+      <i class="fas fa-briefcase"></i> Pilot Pack Generator <span class="nav-badge nb-blue">NEW</span>
+    </a>
+    <a class="nav-item" onclick="showPage('comparator')" href="#">
+      <i class="fas fa-balance-scale"></i> Product Comparator <span class="nav-badge nb-orange">NEW</span>
+    </a>
     <a class="nav-item" onclick="showPage('terminal')" href="#">
-      <i class="fas fa-terminal"></i> Sovereign Command <span class="badge-new">NEW</span>
+      <i class="fas fa-terminal"></i> Sovereign Command
     </a>
     <a class="nav-item" onclick="showPage('masterarchitect')" href="#">
       <i class="fas fa-chess-queen"></i> Master Architect Prompt
     </a>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Progress Stats</div>
+    <div style="padding:8px 12px;">
+      <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:5px;">Sprint 4 Minggu</div>
+      <div class="progress-bar" style="height:5px;"><div class="progress-fill" id="sidebar-progress" style="width:0%;"></div></div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:3px;"><span id="sidebar-pct">0%</span> complete</div>
+    </div>
   </div>
 
   <div class="nav-section" style="margin-top: auto; padding-bottom: 12px;">
@@ -600,6 +618,10 @@ app.get('/', (c) => {
       <div style="color: var(--gold); font-weight: 800; margin-bottom: 3px; font-size: 10.5px;">Haidar Faras Maulia</div>
       <div>Arsitek Utama · PT Waskita Cakrawarti Digital</div>
       <div style="margin-top: 3px; color: rgba(138,155,176,0.6);">21 April 2026 · CONFIDENTIAL</div>
+      <div style="margin-top:6px;display:flex;gap:5px;">
+        <span style="background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.3);color:var(--green-bright);font-size:8px;font-weight:800;padding:2px 6px;border-radius:10px;">● P5 LIVE</span>
+        <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:8px;font-weight:800;padding:2px 6px;border-radius:10px;">v3.0</span>
+      </div>
     </div>
   </div>
 </nav>
@@ -617,7 +639,7 @@ app.get('/', (c) => {
     </div>
     <div style="display:flex;gap:10px;align-items:center;">
       <div id="global-progress-text" style="font-size:10px;color:var(--text-muted);"></div>
-      <div class="status-live">P5 LIVE-VERIFIED</div>
+      <div class="status-live" style="cursor:pointer;" onclick="showPage('tracker90')" title="Klik untuk lihat 90-Day Tracker">P5 LIVE-VERIFIED</div>
     </div>
   </div>
 
@@ -1692,7 +1714,7 @@ app.get('/', (c) => {
     <div class="card" style="margin-top:14px;">
       <div style="font-size:11.5px;font-weight:800;color:var(--gold);margin-bottom:10px;">Quick Commands</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        ${['help','status','layers','catalog','buyers','pricing','sprint','canon','roadmap','links'].map(cmd => `
+        ${['help','status','layers','catalog','buyers','pricing','sprint','tracker','canon','roadmap','links','pilot','compare','clear'].map(cmd => `
         <button onclick="runCommand('${cmd}')" style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);color:var(--gold-light);font-size:10.5px;font-weight:700;padding:4px 12px;border-radius:5px;cursor:pointer;font-family:'Fira Code','Courier New',monospace;transition:all 0.15s;" onmouseover="this.style.background='rgba(201,168,76,0.2)'" onmouseout="this.style.background='rgba(201,168,76,0.1)'">${cmd}</button>`).join('')}
       </div>
     </div>
@@ -1773,6 +1795,210 @@ Format: A. Objective | B. Decisions | C. Deliverables | D. Tasks
 - Proof before scaling
 - Sellable before expansion
 - JANGAN tambah fitur sebelum boundary produk final
+    </div>
+  </div>
+
+
+  <!-- ========================= 90-DAY TRACKER ========================= -->
+  <div class="page" id="page-tracker90">
+    <div class="section-header">
+      <div>
+        <div class="section-title">90-Day Execution Tracker</div>
+        <div class="section-sub">Tracker harian produktisasi Sovereign — klik hari untuk mark selesai</div>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button class="btn-export" onclick="resetTracker()"><i class="fas fa-redo"></i> Reset</button>
+        <button class="btn-export" onclick="exportTracker()"><i class="fas fa-download"></i> Export</button>
+      </div>
+    </div>
+
+    <div class="alert alert-gold" style="margin-bottom:16px;">
+      <i class="fas fa-calendar-alt" style="color:var(--gold);margin-top:2px;flex-shrink:0;"></i>
+      <div><strong>Panduan Tracker:</strong> Klik hari untuk mark selesai (hijau). Fase 1 = Hardening &amp; Decision, Fase 2 = Validation Scale, Fase 3 = Packaging B2B. Progress tersimpan otomatis.</div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px;" id="tracker-stats">
+      <div class="metric-card" style="text-align:center;">
+        <div class="metric-label">Total Progress</div>
+        <div class="metric-value" id="t90-pct" style="font-size:22px;">0%</div>
+        <div class="metric-sub" id="t90-done">0/90 hari</div>
+      </div>
+      <div class="metric-card" style="text-align:center;">
+        <div class="metric-label">Fase 1 (H1-30)</div>
+        <div class="metric-value" id="t90-f1" style="font-size:22px;color:var(--green-bright);">0%</div>
+        <div class="metric-sub">Hardening + Decisions</div>
+      </div>
+      <div class="metric-card" style="text-align:center;">
+        <div class="metric-label">Fase 2 (H31-60)</div>
+        <div class="metric-value" id="t90-f2" style="font-size:22px;color:var(--blue-bright);">0%</div>
+        <div class="metric-sub">Validation Scale</div>
+      </div>
+      <div class="metric-card" style="text-align:center;">
+        <div class="metric-label">Fase 3 (H61-90)</div>
+        <div class="metric-value" id="t90-f3" style="font-size:22px;color:var(--orange-bright);">0%</div>
+        <div class="metric-sub">Packaging B2B</div>
+      </div>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="card" style="margin-bottom:14px;">
+      <div class="card-header">
+        <div class="card-icon" style="background:rgba(39,174,96,0.12)"><i class="fas fa-tools" style="color:var(--green-bright)"></i></div>
+        <div>
+          <div class="card-title" style="color:var(--green-bright);">FASE 1 — Hari 1–30 · Hardening + Product Decision</div>
+          <div class="card-sub">Product boundary · Packaging · Deploy discipline</div>
+        </div>
+        <div style="margin-left:auto;font-size:10px;color:var(--text-muted);"><span id="f1-done">0</span>/30 hari</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:5px;" id="phase1-grid"></div>
+      <div class="progress-bar" style="margin-top:10px;height:6px;"><div class="progress-fill green" id="f1-bar" style="width:0%;"></div></div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="card" style="margin-bottom:14px;">
+      <div class="card-header">
+        <div class="card-icon" style="background:rgba(41,128,185,0.12)"><i class="fas fa-chart-line" style="color:var(--blue-bright)"></i></div>
+        <div>
+          <div class="card-title" style="color:var(--blue-bright);">FASE 2 — Hari 31–60 · Validation Scale</div>
+          <div class="card-sub">Proof · QA pass · Pilot pack · Scale trigger</div>
+        </div>
+        <div style="margin-left:auto;font-size:10px;color:var(--text-muted);"><span id="f2-done">0</span>/30 hari</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:5px;" id="phase2-grid"></div>
+      <div class="progress-bar" style="margin-top:10px;height:6px;"><div class="progress-fill" id="f2-bar" style="width:0%;background:linear-gradient(90deg,var(--blue),var(--blue-bright));"></div></div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="card" style="margin-bottom:14px;">
+      <div class="card-header">
+        <div class="card-icon" style="background:rgba(211,84,0,0.12)"><i class="fas fa-rocket" style="color:var(--orange-bright)"></i></div>
+        <div>
+          <div class="card-title" style="color:var(--orange-bright);">FASE 3 — Hari 61–90 · Packaging B2B</div>
+          <div class="card-sub">Sales assets · Onboarding · Pitch · Go-to-market</div>
+        </div>
+        <div style="margin-left:auto;font-size:10px;color:var(--text-muted);"><span id="f3-done">0</span>/30 hari</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:5px;" id="phase3-grid"></div>
+      <div class="progress-bar" style="margin-top:10px;height:6px;"><div class="progress-fill" id="f3-bar" style="width:0%;background:linear-gradient(90deg,var(--orange),var(--orange-bright));"></div></div>
+    </div>
+
+    <!-- Milestone Checklist -->
+    <div class="card-gold">
+      <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:12px;">Key Milestones 90 Hari</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div>
+          <div style="font-size:9.5px;color:var(--green-bright);font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;">Fase 1 Milestones</div>
+          ${['Product Decision Board final','Repo boundary semua dikunci','Webapp decision final','Offer sheet Lane selesai','Demo flow Barber selesai'].map((m,i) => `
+          <div class="checklist-item" onclick="toggleItem(this,'m1-${i}')"><div class="check-box" id="m1-${i}"></div><span>${m}</span></div>`).join('')}
+        </div>
+        <div>
+          <div style="font-size:9.5px;color:var(--blue-bright);font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;">Fase 2-3 Milestones</div>
+          ${['QA pass/fail semua platform','Pilot pack buyer 3 selesai','Sales sheet final siap','Master repo map dibekukan','Go-to-market materials ready'].map((m,i) => `
+          <div class="checklist-item" onclick="toggleItem(this,'m2-${i}')"><div class="check-box" id="m2-${i}"></div><span>${m}</span></div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= PILOT PACK GENERATOR ========================= -->
+  <div class="page" id="page-pilotpack">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Pilot Pack Generator</div>
+        <div class="section-sub">Generate dokumen pilot siap pakai per buyer segment — copy langsung</div>
+      </div>
+    </div>
+
+    <div class="alert alert-blue" style="margin-bottom:16px;">
+      <i class="fas fa-file-medical-alt" style="margin-top:2px;flex-shrink:0;"></i>
+      <div><strong>Pilot Pack</strong> adalah paket dokumen minimum yang diperlukan untuk membawa satu buyer ke sesi validasi nyata. Pilih buyer segment lalu generate.</div>
+    </div>
+
+    <!-- Buyer Selector -->
+    <div class="card" style="margin-bottom:16px;">
+      <div style="font-size:11.5px;font-weight:800;color:var(--gold);margin-bottom:12px;">Pilih Target Buyer Segment</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;" id="buyer-selector">
+        ${[
+          {id:'b1',label:'Buyer 1',name:'UMKM / Calon Owner',c:'green',icon:'fa-store'},
+          {id:'b2',label:'Buyer 2',name:'Agency / Konsultan',c:'blue',icon:'fa-handshake'},
+          {id:'b3',label:'Buyer 3',name:'Operator Multi-Brand',c:'orange',icon:'fa-cogs'},
+          {id:'b4',label:'Buyer 4',name:'Founder / Venture Builder',c:'purple',icon:'fa-chess-king'},
+          {id:'b5',label:'Buyer 5',name:'Enterprise / Holding',c:'red',icon:'fa-building'},
+        ].map(b => `
+        <div onclick="selectBuyer('${b.id}')" id="bcard-${b.id}" style="border:1px solid rgba(255,255,255,0.08);border-radius:9px;padding:12px;text-align:center;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.3)'" onmouseout="if(selectedBuyer!=='${b.id}') this.style.borderColor='rgba(255,255,255,0.08)'">
+          <div style="font-size:20px;margin-bottom:6px;"><i class="fas ${b.icon}" style="color:var(--${b.c}-bright,var(--${b.c}));"></i></div>
+          <div style="font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:3px;">${b.label}</div>
+          <div style="font-size:10.5px;font-weight:700;color:var(--text-main);">${b.name}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+
+    <!-- Generated Pilot Pack Output -->
+    <div id="pilot-output" style="display:none;">
+      <div class="card" style="margin-bottom:14px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div>
+            <div class="card-title" id="pilot-title">Pilot Pack — Buyer X</div>
+            <div class="card-sub" id="pilot-sub">Pack siap pakai untuk validasi pilot</div>
+          </div>
+          <button class="btn-export" onclick="copyPilotPack()"><i class="fas fa-copy"></i> Copy Pack</button>
+        </div>
+        <div id="pilot-content" style="display:grid;gap:10px;"></div>
+      </div>
+    </div>
+
+    <div id="pilot-placeholder" class="card-gold" style="text-align:center;padding:30px;">
+      <i class="fas fa-arrow-up" style="color:var(--gold);font-size:24px;margin-bottom:10px;display:block;"></i>
+      <div style="font-size:13px;font-weight:700;color:var(--gold-light);">Pilih buyer segment di atas</div>
+      <div style="font-size:10.5px;color:var(--text-muted);margin-top:5px;">Pilot pack akan digenerate otomatis sesuai layer produk</div>
+    </div>
+  </div>
+
+  <!-- ========================= PRODUCT COMPARATOR ========================= -->
+  <div class="page" id="page-comparator">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Product Comparator</div>
+        <div class="section-sub">Bandingkan tier/offer side-by-side untuk mempermudah keputusan buyer</div>
+      </div>
+    </div>
+
+    <div class="alert alert-gold" style="margin-bottom:16px;">
+      <i class="fas fa-balance-scale" style="color:var(--gold);margin-top:2px;flex-shrink:0;"></i>
+      <div><strong>Gunakan comparator</strong> ini untuk membantu buyer memilih antara 2-3 tier produk yang paling relevan. Cocok untuk sales conversation dan pitching.</div>
+    </div>
+
+    <!-- Compare Selector -->
+    <div class="card" style="margin-bottom:16px;">
+      <div style="font-size:11.5px;font-weight:800;color:var(--gold);margin-bottom:12px;">Pilih 2 Tier untuk Dibandingkan</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        ${[
+          {id:'t1',name:'Tier 1 — Entry Product',tag:'Vertical Business Kit'},
+          {id:'t2',name:'Tier 2 — White-Label',tag:'White-Label Vertical Builder'},
+          {id:'t3',name:'Tier 3 — Control Layer',tag:'Lane Control Pack'},
+          {id:'t4',name:'Tier 4 — Founder System',tag:'Founder Command Center'},
+          {id:'t5',name:'Tier 5 — Enterprise',tag:'Sovereign Governance Platform'},
+        ].map(t => `
+        <label style="display:flex;align-items:center;gap:7px;padding:7px 12px;border-radius:6px;border:1px solid rgba(201,168,76,0.15);cursor:pointer;transition:all 0.15s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'">
+          <input type="checkbox" id="cmp-${t.id}" name="compare-tier" value="${t.id}" onchange="updateComparator()" style="accent-color:var(--gold);">
+          <div><div style="font-size:11px;font-weight:700;color:var(--text-main);">${t.name}</div><div style="font-size:9.5px;color:var(--text-muted);">${t.tag}</div></div>
+        </label>`).join('')}
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div id="comparator-output" style="display:none;" class="card">
+      <table class="data-table" id="comp-table">
+        <thead id="comp-head"></thead>
+        <tbody id="comp-body"></tbody>
+      </table>
+    </div>
+
+    <div id="comparator-placeholder" class="card-gold" style="text-align:center;padding:30px;">
+      <i class="fas fa-compress-arrows-alt" style="color:var(--gold);font-size:24px;margin-bottom:10px;display:block;"></i>
+      <div style="font-size:13px;font-weight:700;color:var(--gold-light);">Centang minimal 2 tier</div>
+      <div style="font-size:10.5px;color:var(--text-muted);margin-top:5px;">Tabel perbandingan akan muncul otomatis</div>
     </div>
   </div>
 
@@ -1865,6 +2091,11 @@ function updateDashboardProgress() {
   if (dashLabel) dashLabel.textContent = totalDone + '/' + totalAll + ' tasks done';
   const globalText = document.getElementById('global-progress-text');
   if (globalText) globalText.textContent = overallPct + '% Sprint Complete';
+  // Update sidebar progress
+  const sidebarProg = document.getElementById('sidebar-progress');
+  const sidebarPct = document.getElementById('sidebar-pct');
+  if (sidebarProg) sidebarProg.style.width = overallPct + '%';
+  if (sidebarPct) sidebarPct.textContent = overallPct + '%';
 }
 
 function restoreState() {
@@ -1901,6 +2132,9 @@ const pageMap = {
   'governance': ['Sovereign Governance Laws','12 hukum operasional Sovereign'],
   'terminal': ['Sovereign Command Terminal','Interface command center interaktif'],
   'masterarchitect': ['Master Architect Prompt','Prompt AI Developer siap pakai'],
+  'tracker90': ['90-Day Execution Tracker','Tracker harian progress 90 hari'],
+  'pilotpack': ['Pilot Pack Generator','Generate pilot doc per buyer'],
+  'comparator': ['Product Comparator','Bandingkan tier/offer side-by-side'],
 };
 
 function showPage(id) {
@@ -2026,11 +2260,14 @@ const termCmds = {
     {t:'t-cmd',v:'  buyers    → Daftar 5 segmen buyer'},
     {t:'t-cmd',v:'  pricing   → Ringkasan price architecture'},
     {t:'t-cmd',v:'  sprint    → Progress sprint 4 minggu'},
+    {t:'t-cmd',v:'  tracker   → Progress 90-day tracker'},
     {t:'t-cmd',v:'  canon     → Kalimat canon bisnis'},
     {t:'t-cmd',v:'  roadmap   → Roadmap 90 hari'},
     {t:'t-cmd',v:'  links     → Semua URL live platform'},
+    {t:'t-cmd',v:'  pilot     → Buka Pilot Pack Generator'},
+    {t:'t-cmd',v:'  compare   → Buka Product Comparator'},
     {t:'t-cmd',v:'  clear     → Bersihkan terminal'},
-    {t:'t-cmd',v:'  nav <page> → Navigasi ke halaman (mis: nav dashboard)'},
+    {t:'t-cmd',v:'  nav <page>→ Navigasi halaman (mis: nav tracker90)'},
   ],
   status: () => [
     {t:'t-success',v:'═══ PLATFORM STATUS ═══'},
@@ -2112,6 +2349,23 @@ const termCmds = {
     {t:'t-gold',v:'Fase 2 (3-12bln) : Scale automation → Rp 70jt/minggu'},
     {t:'t-gold',v:'Fase 3 (12-24bln): SaaS licensing → Rp 50-75jt/bulan'},
   ],
+  tracker: () => {
+    let total = 0, f1 = 0, f2 = 0, f3 = 0;
+    for (let i = 1; i <= 30; i++) { if (tracker90['d' + i]) { f1++; total++; } }
+    for (let i = 31; i <= 60; i++) { if (tracker90['d' + i]) { f2++; total++; } }
+    for (let i = 61; i <= 90; i++) { if (tracker90['d' + i]) { f3++; total++; } }
+    const bF = (n,t) => Array(Math.floor(n/t*10)).fill('█').join('') + Array(10-Math.floor(n/t*10)).fill('░').join('');
+    return [
+      {t:'t-success',v:'═══ 90-DAY TRACKER PROGRESS ═══'},
+      {t:'t-success',v:'Fase 1 (H1-30) : ['+bF(f1,30)+'] '+f1+'/30 ('+Math.round(f1/30*100)+'%)'},
+      {t:'t-cmd',v:'Fase 2 (H31-60): ['+bF(f2,30)+'] '+f2+'/30 ('+Math.round(f2/30*100)+'%)'},
+      {t:'t-warn',v:'Fase 3 (H61-90): ['+bF(f3,30)+'] '+f3+'/30 ('+Math.round(f3/30*100)+'%)'},
+      {t:'t-output',v:'Total: '+total+'/90 hari ('+Math.round(total/90*100)+'%)'},
+      {t:'t-output',v:'Ketik "nav tracker90" untuk buka full tracker.'},
+    ];
+  },
+  pilot: () => { showPage('pilotpack'); return [{t:'t-success',v:'Membuka Pilot Pack Generator...'}]; },
+  compare: () => { showPage('comparator'); return [{t:'t-success',v:'Membuka Product Comparator...'}]; },
   links: () => [
     {t:'t-success',v:'═══ ALL PLATFORM LINKS ═══'},
     {t:'t-cmd',v:'[L1] https://sovereign-os-platform.pages.dev'},
@@ -2200,11 +2454,461 @@ function addTermLines(body, lines) {
   body.scrollTop = body.scrollHeight;
 }
 
+// ========================= 90-DAY TRACKER =========================
+const TRACKER_KEY = 'sovereign_90day_v3';
+let tracker90 = JSON.parse(localStorage.getItem(TRACKER_KEY) || '{}');
+
+const phase1Focus = [
+  'Audit semua repo, buat inventory',
+  'Tetapkan positioning Lane → Control Pack',
+  'Tetapkan positioning Barber → Entry Offer',
+  'Tetapkan Sovereign OS → Governance Platform',
+  'Keputusan webapp: merge/repurpose/archive',
+  'Buat ICP dan buyer map per repo',
+  'Buat sales one-liner per repo',
+  'Buat readiness baseline (red/yellow/green)',
+  'Susun gap register per repo',
+  'Finalisasi Product Decision Board',
+  'Ubah README Lane jadi product-facing',
+  'Bungkus Barber sebagai use-case bisnis',
+  'Packaging Sovereign OS → 3 tier value',
+  'Setup deploy checklist per repo',
+  'Buat env/secret checklist',
+  'Demo script Barber (UMKM buyer)',
+  'Demo script Lane (Operator buyer)',
+  'Demo script Sovereign OS (Enterprise)',
+  'Onboarding checklist Barber Kit',
+  'Onboarding checklist Lane Control',
+  'README komersial Lane selesai',
+  'Screenshot evidence per produk',
+  'Deploy Barber ke Cloudflare (stable)',
+  'Deploy Lane ke Cloudflare (stable)',
+  'Deploy Sovereign OS ke Cloudflare',
+  'Test semua endpoint 200 OK',
+  'Scope boundary per repo terdokumentasi',
+  'SKU naming final semua produk',
+  'Product Decision Board disetujui',
+  'Sprint Minggu 1-2 milestone selesai',
+];
+const phase2Focus = [
+  'Proof Lane: webhook live, budget log aktif',
+  'Proof Barber: kalkulator BEP, risk matrix',
+  'Proof Sovereign OS: 22 surfaces response',
+  'QA pass/fail review Lane (functional test)',
+  'QA pass/fail review Barber Coffee',
+  'QA pass/fail Sovereign OS core surfaces',
+  'Daftar gap ditutup sebelum pilot',
+  'Hubungkan Lane → narasi buyer 3',
+  'Hubungkan Sovereign OS → narasi buyer 4-5',
+  'Finalkan repo-to-product map di mother repo',
+  'Proof checklist per repo selesai',
+  'Pilot pack buyer 3 (Lane — Operator)',
+  'Pilot pack buyer 4 (Sovereign OS — Founder)',
+  'Onboarding pack pilot buyer 3 selesai',
+  'Onboarding pack pilot buyer 4 selesai',
+  'Integration map final di Sovereign Eco',
+  'Sales sheet + proof sheet buyer 3',
+  'Sales sheet + proof sheet buyer 4',
+  'Internal handoff pack penjualan',
+  'Pilot invite deck buyer 3',
+  'Pilot invite deck buyer 4',
+  'Identifikasi 3 prospect nyata (buyer 3)',
+  'Identifikasi 2 prospect nyata (buyer 4)',
+  'KV rate limiting diimplementasikan',
+  'Tenant namespace routing dirapikan',
+  'Observability/logging diaktifkan',
+  'Truth lock & governance penguatan',
+  'Mother repo jadi integration hub',
+  'Canon map final dibekukan',
+  'Sprint Minggu 3 milestone selesai',
+];
+const phase3Focus = [
+  'Sales one-liner sheet semua produk (final)',
+  'Product card / one-pager per repo utama',
+  'Price architecture + ROI calculator',
+  'Objection handler sheet',
+  'Ecosystem narrative untuk internal/investor',
+  'Repo-to-product map versi master document',
+  'Hubungan antar repo dijelaskan jelas',
+  'Lane pilot-ready: buyer 3 bisa jalan',
+  'Sovereign OS pilot-ready: founder buyer',
+  'Tutup semua blocker merah',
+  'Final sales assets list siap',
+  '30-day closeout memo ditulis',
+  'Backlog 31-60 hari disusun',
+  'Next 30/60/90 day recommendations',
+  'Sovereign narrative investor/partner ready',
+  'Pitch deck versi investor draft 1',
+  'Pitch deck versi klien draft 1',
+  'White-label mode dipersiapkan',
+  'Template/connector marketplace konsep',
+  'Upgrade path enterprise didokumentasikan',
+  'FashionKas/ResellerKas roadmap diputuskan',
+  'Official pilot dimulai (buyer 3)',
+  'Official pilot dimulai (buyer 4)',
+  'First revenue dari entry product',
+  'Case study dari pilot dibuat',
+  'Testimonial/proof dari buyer pertama',
+  'Packaging B2B selesai secara formal',
+  'Sprint Minggu 4 milestone selesai',
+  'Sovereign Ecosystem v1.0 commercial launch',
+  '90-day closeout memo final selesai',
+];
+
+function buildTrackerGrid(phase, focus, containerId, key) {
+  const grid = document.getElementById(containerId);
+  if (!grid) return;
+  grid.innerHTML = '';
+  for (let i = 0; i < 30; i++) {
+    const dayNum = (phase - 1) * 30 + i + 1;
+    const done = tracker90['d' + dayNum];
+    const tooltip = focus[i] || 'Hari ' + dayNum;
+    const btn = document.createElement('div');
+    btn.setAttribute('data-tip', 'H' + dayNum + ': ' + tooltip);
+    btn.style.cssText = 'aspect-ratio:1;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:800;cursor:pointer;transition:all 0.15s;border:1px solid;';
+    if (done) {
+      btn.style.background = 'rgba(39,174,96,0.25)';
+      btn.style.borderColor = 'rgba(39,174,96,0.5)';
+      btn.style.color = 'var(--green-bright)';
+    } else {
+      btn.style.background = 'rgba(255,255,255,0.03)';
+      btn.style.borderColor = 'rgba(255,255,255,0.08)';
+      btn.style.color = 'var(--text-muted)';
+    }
+    btn.textContent = dayNum;
+    btn.onclick = () => toggleDay(dayNum, btn, phase);
+    grid.appendChild(btn);
+  }
+  updateTrackerStats();
+}
+
+function toggleDay(dayNum, btn, phase) {
+  tracker90['d' + dayNum] = !tracker90['d' + dayNum];
+  localStorage.setItem(TRACKER_KEY, JSON.stringify(tracker90));
+  if (tracker90['d' + dayNum]) {
+    btn.style.background = 'rgba(39,174,96,0.25)';
+    btn.style.borderColor = 'rgba(39,174,96,0.5)';
+    btn.style.color = 'var(--green-bright)';
+  } else {
+    btn.style.background = 'rgba(255,255,255,0.03)';
+    btn.style.borderColor = 'rgba(255,255,255,0.08)';
+    btn.style.color = 'var(--text-muted)';
+  }
+  updateTrackerStats();
+}
+
+function updateTrackerStats() {
+  let total = 0, f1 = 0, f2 = 0, f3 = 0;
+  for (let i = 1; i <= 30; i++) { if (tracker90['d' + i]) { f1++; total++; } }
+  for (let i = 31; i <= 60; i++) { if (tracker90['d' + i]) { f2++; total++; } }
+  for (let i = 61; i <= 90; i++) { if (tracker90['d' + i]) { f3++; total++; } }
+
+  const el = (id) => document.getElementById(id);
+  if (el('t90-pct')) el('t90-pct').textContent = Math.round(total/90*100) + '%';
+  if (el('t90-done')) el('t90-done').textContent = total + '/90 hari';
+  if (el('t90-f1')) el('t90-f1').textContent = Math.round(f1/30*100) + '%';
+  if (el('t90-f2')) el('t90-f2').textContent = Math.round(f2/30*100) + '%';
+  if (el('t90-f3')) el('t90-f3').textContent = Math.round(f3/30*100) + '%';
+  if (el('f1-done')) el('f1-done').textContent = f1;
+  if (el('f2-done')) el('f2-done').textContent = f2;
+  if (el('f3-done')) el('f3-done').textContent = f3;
+  if (el('f1-bar')) el('f1-bar').style.width = Math.round(f1/30*100) + '%';
+  if (el('f2-bar')) el('f2-bar').style.width = Math.round(f2/30*100) + '%';
+  if (el('f3-bar')) el('f3-bar').style.width = Math.round(f3/30*100) + '%';
+}
+
+function resetTracker() {
+  if (!confirm('Reset semua progress 90 hari? Tindakan ini tidak bisa dibatalkan.')) return;
+  tracker90 = {};
+  localStorage.setItem(TRACKER_KEY, JSON.stringify(tracker90));
+  buildTrackerGrid(1, phase1Focus, 'phase1-grid', 'p1');
+  buildTrackerGrid(2, phase2Focus, 'phase2-grid', 'p2');
+  buildTrackerGrid(3, phase3Focus, 'phase3-grid', 'p3');
+  updateTrackerStats();
+}
+
+function exportTracker() {
+  let csv = 'Hari,Fase,Fokus,Status\\n';
+  for (let i = 1; i <= 90; i++) {
+    const fase = i <= 30 ? 'Fase 1 - Hardening' : i <= 60 ? 'Fase 2 - Validation' : 'Fase 3 - Packaging';
+    const focusArr = i <= 30 ? phase1Focus : i <= 60 ? phase2Focus : phase3Focus;
+    const focusIdx = (i - 1) % 30;
+    const status = tracker90['d' + i] ? 'SELESAI' : 'Pending';
+    csv += i + ',' + fase + ',"' + (focusArr[focusIdx] || 'Hari ' + i) + '",' + status + '\\n';
+  }
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'sovereign_90day_tracker_' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+}
+
+// ========================= PILOT PACK GENERATOR =========================
+let selectedBuyer = null;
+
+const pilotPacks = {
+  b1: {
+    title: 'Pilot Pack — Buyer 1: UMKM / Calon Owner',
+    sub: 'Entry offer vertical — Barber + Coffee Business Planner',
+    color: 'var(--green-bright)',
+    sections: [
+      {
+        title: '1. Positioning & Value Proposition',
+        content: 'Produk: Barber + Coffee Business Planner (Layer 4)\\n\\nNilai utama untuk UMKM / Calon Owner:\\n• Hitung modal buka usaha dengan tepat, bukan kira-kira\\n• Simulasi BEP (Break Even Point) interaktif\\n• Analisis risiko lokasi dan pasar\\n• Timeline pembukaan usaha yang realistis\\n• Checklist operasional siap pakai\\n\\nSales one-liner: "Kami bantu Anda menghitung dan menjalankan keputusan usaha dengan lebih pasti, bukan kira-kira."'
+      },
+      {
+        title: '2. Demo Flow (5 menit)',
+        content: 'Menit 1: Tampilkan dashboard utama — tunjukkan input modal\\nMenit 2: Isi simulasi RAB dan OPEX bulanan\\nMenit 3: Lihat hasil BEP dan pricing recommendation\\nMenit 4: Tampilkan risk matrix dan analisis lokasi\\nMenit 5: Tunjukkan timeline dan checklist operasional'
+      },
+      {
+        title: '3. Paket Harga',
+        content: 'Setup awal: Rp 3.000.000 – Rp 7.500.000\\nCustom sektor lain: + Rp 1.500.000 – Rp 4.000.000\\nWhite-label sederhana: + Rp 2.000.000 – Rp 5.000.000\\nMaintenance bulanan (opsional): Rp 300.000 – Rp 750.000/bulan'
+      },
+      {
+        title: '4. Deliverables Pilot',
+        content: '• Akses dashboard Barber + Coffee PWT (live)\\n• 1x sesi demo + walkthrough (30-45 menit)\\n• Panduan penggunaan (PDF/WhatsApp)\\n• Support WhatsApp selama 7 hari pilot\\n• 1x iterasi minor berdasarkan feedback'
+      },
+      {
+        title: '5. Acceptance Criteria',
+        content: '• Buyer bisa hitung modal dan BEP sendiri tanpa bingung\\n• Output dashboard bisa dipakai untuk keputusan nyata\\n• Buyer paham cara customize ke sektor mereka\\n• Tidak ada bug kritis selama demo'
+      },
+      {
+        title: '6. Next Step setelah Pilot',
+        content: 'Setelah pilot berhasil, buyer bisa naik ke:\\n→ White-Label Vertical Builder (Layer 4 upgrade) — Rp 10-25 jt\\n→ Lane Control Pack (Layer 2) jika sudah ada aktivitas AI\\n→ Custom Verticalization Sprint untuk sektor lain'
+      }
+    ]
+  },
+  b2: {
+    title: 'Pilot Pack — Buyer 2: Agency / Konsultan',
+    sub: 'White-label vertical system — Sector Playbook Pack',
+    color: 'var(--blue-bright)',
+    sections: [
+      {
+        title: '1. Positioning & Value Proposition',
+        content: 'Produk: White-Label Vertical Builder / Sector Playbook Pack (Layer 4)\\n\\nNilai utama untuk Agency / Konsultan:\\n• Template mesin bisnis yang bisa di-white-label untuk klien\\n• Deploy ke banyak klien tanpa bangun dari nol\\n• Branding custom per klien — terlihat eksklusif\\n• Support teknis dari tim Sovereign\\n\\nSales one-liner: "Gunakan engine kami sebagai sistem white-label agar Anda tidak membangun semuanya dari nol."'
+      },
+      {
+        title: '2. Demo Flow (5 menit)',
+        content: 'Menit 1: Tampilkan template vertical Barber sebagai base\\nMenit 2: Tunjukkan cara customisasi branding dan konten\\nMenit 3: Demo deploy ke subdomain custom\\nMenit 4: Tampilkan panel admin untuk manage konten\\nMenit 5: Tunjukkan potensi replikasi ke 5-10 klien'
+      },
+      {
+        title: '3. Paket Harga',
+        content: 'Setup white-label dasar: Rp 10.000.000 – Rp 25.000.000\\nCustom flow/data per klien: + Rp 3.000.000 – Rp 10.000.000\\nLicense fee: Rp 1.000.000 – Rp 3.000.000/bulan\\nMulti-cabang: + Rp 500.000/cabang/bulan\\nSupport retainer: negosiasi'
+      },
+      {
+        title: '4. Deliverables Pilot',
+        content: '• Akses white-label template framework\\n• 1 domain/subdomain custom dikonfigurasi\\n• Dokumentasi customisasi (panduan lengkap)\\n• 2x sesi onboarding (setup + training)\\n• Support 14 hari pilot period'
+      },
+      {
+        title: '5. Acceptance Criteria',
+        content: '• Agency bisa deploy ke 1 klien percobaan dalam 3 hari\\n• Branding custom berhasil diterapkan tanpa kendala teknis\\n• Agency bisa mengoperasikan panel admin secara mandiri\\n• ROI potential terlihat jelas dari demo klien'
+      },
+      {
+        title: '6. Next Step setelah Pilot',
+        content: 'Setelah pilot berhasil, agency bisa naik ke:\\n→ Sector Playbook Pack untuk 5+ sektor berbeda\\n→ Lane Control Pack jika klien butuh AI ops control\\n→ Founder Command Center jika agency berkembang ke holding'
+      }
+    ]
+  },
+  b3: {
+    title: 'Pilot Pack — Buyer 3: Operator Multi-Brand',
+    sub: 'Operational control layer — Lane Eco Budget Control',
+    color: 'var(--orange-bright)',
+    sections: [
+      {
+        title: '1. Positioning & Value Proposition',
+        content: 'Produk: Lane Control Pack (Layer 2)\\n\\nNilai utama untuk Operator Multi-Brand:\\n• Prompt AI terkunci — tidak bisa over-budget atau out-of-scope\\n• Semua sesi AI terdokumentasi dan bisa diaudit\\n• Budget per tim / per brand dipisah secara ketat\\n• Webhook integration ke workflow existing\\n\\nSales one-liner: "Satukan prompt, budget, dan alur kerja tim Anda dalam satu gateway operasional."'
+      },
+      {
+        title: '2. Demo Flow (7 menit)',
+        content: 'Menit 1-2: Tampilkan dashboard Lane — budget meter, lane status\\nMenit 3: Demo budget lock — AI berhenti ketika budget habis\\nMenit 4: Tampilkan session log — semua aktivitas tercatat\\nMenit 5: Tunjukkan webhook trigger ke sistem external\\nMenit 6-7: Tampilkan laporan penggunaan per brand/tim'
+      },
+      {
+        title: '3. Paket Harga',
+        content: 'Initial implementation: Rp 15.000.000 – Rp 40.000.000\\nPlatform fee bulanan: Rp 2.000.000 – Rp 6.000.000/bulan\\nIntegration/webhook setup: + Rp 2.000.000 – Rp 8.000.000\\nGovernance tuning retainer: Rp 1.500.000 – Rp 5.000.000/bulan'
+      },
+      {
+        title: '4. Deliverables Pilot',
+        content: '• Akses Lane Eco Budget Control platform (live)\\n• Konfigurasi untuk 1 brand / 1 tim dalam pilot\\n• Budget rules dikonfigurasi sesuai kebutuhan\\n• 1 webhook integration (jika diperlukan)\\n• 2x sesi training tim operasional\\n• Support 30 hari pilot + laporan usage'
+      },
+      {
+        title: '5. Acceptance Criteria',
+        content: '• AI prompt tidak bisa melebihi budget yang ditetapkan\\n• Tim bisa monitor penggunaan secara real-time\\n• Log eksekusi dapat diakses dan dipahami oleh ops lead\\n• Integrasi webhook berjalan tanpa error selama 7 hari'
+      },
+      {
+        title: '6. Next Step setelah Pilot',
+        content: 'Setelah pilot berhasil, operator bisa naik ke:\\n→ Full deployment multi-brand/multi-tim\\n→ Master Architect Context Pack untuk advanced governance\\n→ Founder Command Center (Layer 3) untuk visibility lebih tinggi\\n→ Sovereign OS Platform (Layer 1) untuk enterprise governance'
+      }
+    ]
+  },
+  b4: {
+    title: 'Pilot Pack — Buyer 4: Founder / Venture Builder',
+    sub: 'Private command center — Founder Command Center (Layer 3)',
+    color: '#c39bd3',
+    sections: [
+      {
+        title: '1. Positioning & Value Proposition',
+        content: 'Produk: Founder Command Center / Private Sovereign Tower (Layer 3)\\n\\nNilai utama untuk Founder / Venture Builder:\\n• Ruang kendali privat — orkestrasi semua agen bisnis\\n• Market intelligence dan revenue insight real-time\\n• Human confirmation gate untuk semua keputusan krusial\\n• Counterpart protocol untuk validasi bisnis terstruktur\\n\\nSales one-liner: "Kami bangun command center privat agar eksperimen dan eksekusi bisnis tetap dalam satu komando."'
+      },
+      {
+        title: '2. Demo Flow (10 menit)',
+        content: 'Menit 1-2: Tampilkan founder dashboard — overview semua aktivitas\\nMenit 3-4: Demo orchestration view — lihat semua agen/workflow\\nMenit 5: Tampilkan market intelligence snapshot\\nMenit 6-7: Demo counterpart protocol — structured decision flow\\nMenit 8: Human confirmation gate untuk aksi krusial\\nMenit 9-10: Anomaly detection + revenue tracking view'
+      },
+      {
+        title: '3. Paket Harga',
+        content: 'Setup private command center: Rp 35.000.000 – Rp 90.000.000\\nManaged orchestration bulanan: Rp 5.000.000 – Rp 15.000.000/bulan\\nStrategic advisory: + Rp 5.000.000 – Rp 20.000.000/bulan\\nPrivate deployment premium: mulai Rp 15.000.000'
+      },
+      {
+        title: '4. Deliverables Pilot',
+        content: '• Private deployment Sovereign Tower untuk 1 founder\\n• Konfigurasi 3-5 workflow inti bisnis founder\\n• Dashboard dengan minimal 4 data view\\n• Counterpart protocol untuk 2 decision category\\n• 3x sesi deep-work bersama (architecture + config)\\n• Support 30 hari pilot + weekly review'
+      },
+      {
+        title: '5. Acceptance Criteria',
+        content: '• Founder bisa melihat status seluruh operasi bisnis dalam 1 layar\\n• Minimal 1 keputusan krusial ter-validasi lewat system\\n• Tidak ada data bocor antar workspace\\n• Founder merasa "lebih terkendali" setelah 2 minggu pemakaian'
+      },
+      {
+        title: '6. Next Step setelah Pilot',
+        content: 'Setelah pilot berhasil, founder bisa naik ke:\\n→ Full enterprise deployment untuk semua portfolio\\n→ Revenue Intelligence Chamber untuk analytics lanjutan\\n→ Sovereign OS Platform (Layer 1) untuk enterprise governance\\n→ White-label Sovereign Tower ke venture lain'
+      }
+    ]
+  },
+  b5: {
+    title: 'Pilot Pack — Buyer 5: Enterprise / Holding',
+    sub: 'Enterprise governance platform — Sovereign OS Platform (Layer 1)',
+    color: '#f08080',
+    sections: [
+      {
+        title: '1. Positioning & Value Proposition',
+        content: 'Produk: Sovereign Governance Core / Multi-Tenant Control Platform (Layer 1)\\n\\nNilai utama untuk Enterprise / Holding:\\n• Governance atas AI — bukan hanya implementasi AI\\n• Tenant isolation ketat — data tidak bisa tercampur\\n• Audit trail lengkap untuk kepatuhan compliance\\n• Role-based access control yang tidak bisa di-override\\n• Multi-tenant untuk seluruh portfolio bisnis\\n\\nSales one-liner: "Kami melisensikan governance layer agar operasi AI korporat aman, patuh, dan terisolasi."'
+      },
+      {
+        title: '2. Demo Flow (15-20 menit)',
+        content: 'Menit 1-3: Tampilkan Sovereign OS Platform overview\\nMenit 4-6: Demo tenant isolation — 2 tenant tidak bisa akses data satu sama lain\\nMenit 7-9: Demo approval gate — aksi krusial harus disetujui\\nMenit 10-12: Audit trail — semua aksi tercatat dan bisa di-query\\nMenit 13-15: Role model — developer ≠ ops ≠ enterprise owner\\nMenit 16-20: API governance — rate limiting, policy enforcement'
+      },
+      {
+        title: '3. Paket Harga',
+        content: 'Discovery & architecture engagement: Rp 25.000.000 – Rp 75.000.000\\nDeployment & implementation: Rp 50.000.000 – Rp 200.000.000\\nRecurring platform license: Rp 5.000.000 – Rp 15.000.000/bulan\\nSLA / support premium: Rp 3.000.000 – Rp 20.000.000/bulan\\nSecurity/governance consulting: sesuai kebutuhan'
+      },
+      {
+        title: '4. Deliverables Pilot',
+        content: '• POC deployment Sovereign OS di environment enterprise\\n• Konfigurasi 2-3 tenant awal\\n• 5 governance rules dikonfigurasi dan ditest\\n• Audit trail demo dengan 30-day data retention\\n• Architecture document + governance blueprint\\n• 4x sesi engagement (discovery, design, deploy, review)'
+      },
+      {
+        title: '5. Acceptance Criteria',
+        content: '• Tenant isolation 100% — cross-tenant data access = 0\\n• Approval gate berfungsi untuk semua aksi kritis\\n• Audit trail dapat diquery dan diexport untuk compliance\\n• Platform tahan beban dengan SLA 99.5% uptime\\n• Legal/compliance team approve governance model'
+      },
+      {
+        title: '6. Next Step setelah Pilot',
+        content: 'Setelah pilot berhasil:\\n→ Full enterprise license negotiation\\n→ Rollout ke seluruh portfolio bisnis holding\\n→ Custom connector/integration ke sistem existing\\n→ Dedicated SLA + security audit\\n→ Potential for strategic partnership / equity conversation'
+      }
+    ]
+  }
+};
+
+function selectBuyer(id) {
+  selectedBuyer = id;
+  // Update card styles
+  document.querySelectorAll('#buyer-selector > div').forEach(c => {
+    c.style.borderColor = 'rgba(255,255,255,0.08)';
+    c.style.background = 'transparent';
+  });
+  const selected = document.getElementById('bcard-' + id);
+  if (selected) {
+    selected.style.borderColor = 'rgba(201,168,76,0.5)';
+    selected.style.background = 'rgba(201,168,76,0.06)';
+  }
+  // Generate pack
+  const pack = pilotPacks[id];
+  if (!pack) return;
+  document.getElementById('pilot-placeholder').style.display = 'none';
+  document.getElementById('pilot-output').style.display = 'block';
+  document.getElementById('pilot-title').textContent = pack.title;
+  document.getElementById('pilot-sub').textContent = pack.sub;
+  const content = document.getElementById('pilot-content');
+  content.innerHTML = pack.sections.map(s =>
+    '<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.12);border-radius:8px;padding:14px;">' +
+    '<div style="font-size:11px;font-weight:800;color:' + pack.color + ';margin-bottom:8px;">' + s.title + '</div>' +
+    '<div style="font-size:11px;color:var(--text-muted);white-space:pre-line;line-height:1.75;">' + s.content + '</div>' +
+    '</div>'
+  ).join('');
+}
+
+function copyPilotPack() {
+  if (!selectedBuyer) return;
+  const pack = pilotPacks[selectedBuyer];
+  const text = pack.title + '\\n' + pack.sub + '\\n\\n' +
+    pack.sections.map(s => s.title + '\\n' + s.content).join('\\n\\n===\\n\\n');
+  navigator.clipboard.writeText(text).then(() => {
+    alert('Pilot Pack berhasil dicopy ke clipboard!');
+  });
+}
+
+// ========================= PRODUCT COMPARATOR =========================
+const tierData = {
+  t1: {name:'Tier 1 — Entry Product',tag:'Vertical Business Kit',target:'UMKM, Calon Owner',setup:'Rp 3-7,5 jt',monthly:'Rp 300-750rb/bln',repo:'pre-barber-and-coffee',layer:'L4',sales:'Jual HASIL langsung',time:'1-2 minggu',onboard:'Mandiri / async',sla:'Tidak termasuk',whitelabel:'+ Rp 2-5 jt',ai:'AI assist only (L2)',moat:'Rendah',upsell:'→ Tier 2 atau Lane'},
+  t2: {name:'Tier 2 — White-Label',tag:'White-Label Vertical Builder',target:'Agency, Konsultan, Inkubator',setup:'Rp 10-25 jt',monthly:'Rp 1-3 jt/bln license',repo:'Barber + framework',layer:'L4',sales:'Jual REPLIKASI',time:'2-3 minggu',onboard:'2 sesi onboarding',sla:'Tidak termasuk',whitelabel:'Included',ai:'AI assist only (L2)',moat:'Sedang',upsell:'→ Tier 3 Lane'},
+  t3: {name:'Tier 3 — Control Layer',tag:'Lane Control Pack',target:'Operator Multi-Brand, AI-heavy team',setup:'Rp 15-40 jt',monthly:'Rp 2-6 jt/bln',repo:'Lane-eco-budget-control',layer:'L2',sales:'Jual KONTROL',time:'3-4 minggu',onboard:'3 sesi + training tim',sla:'Opsional +fee',whitelabel:'Tidak termasuk',ai:'AI governed (L2)',moat:'Tinggi',upsell:'→ Tier 4 Command Center'},
+  t4: {name:'Tier 4 — Founder System',tag:'Founder Command Center',target:'Founder, CEO, Venture Builder',setup:'Rp 35-90 jt',monthly:'Rp 5-15 jt/bln',repo:'Sovereign-ecosystem',layer:'L3',sales:'Jual ORKESTRASI',time:'4-6 minggu',onboard:'Deep-work 3 sesi',sla:'Included 30 hari',whitelabel:'Private deploy',ai:'AI orchestrated (L2+L3)',moat:'Sangat tinggi',upsell:'→ Tier 5 Enterprise'},
+  t5: {name:'Tier 5 — Enterprise',tag:'Sovereign Governance Platform',target:'Enterprise, Holding, Regulated',setup:'Rp 50-200 jt',monthly:'Rp 5-15 jt/bln license',repo:'Sovereign-os-platform',layer:'L1',sales:'Jual SISTEM',time:'6-12 minggu',onboard:'4 sesi engagement',sla:'SLA premium included',whitelabel:'Multi-tenant isolated',ai:'Governed AI (L1+L2)',moat:'Enterprise moat',upsell:'Marketplace + Ecosystem'}
+};
+
+const compRows = [
+  {key:'target',label:'Target Buyer'},
+  {key:'layer',label:'Layer Produk'},
+  {key:'sales',label:'Value Utama'},
+  {key:'repo',label:'Repo Utama'},
+  {key:'setup',label:'Harga Setup'},
+  {key:'monthly',label:'Biaya Bulanan'},
+  {key:'time',label:'Waktu Deploy'},
+  {key:'onboard',label:'Onboarding'},
+  {key:'sla',label:'SLA'},
+  {key:'whitelabel',label:'White-label'},
+  {key:'ai',label:'AI Model'},
+  {key:'moat',label:'Kompetitive Moat'},
+  {key:'upsell',label:'Upgrade Path'},
+];
+
+function updateComparator() {
+  const checked = Array.from(document.querySelectorAll('input[name="compare-tier"]:checked')).map(c => c.value);
+  if (checked.length < 2) {
+    document.getElementById('comparator-output').style.display = 'none';
+    document.getElementById('comparator-placeholder').style.display = 'block';
+    return;
+  }
+  document.getElementById('comparator-placeholder').style.display = 'none';
+  document.getElementById('comparator-output').style.display = 'block';
+
+  const colors = ['tag-green','tag-blue','tag-orange','tag-purple','tag-red'];
+  const tierColors = {t1:'tag-green',t2:'tag-blue',t3:'tag-orange',t4:'tag-purple',t5:'tag-red'};
+
+  // Build head
+  const head = document.getElementById('comp-head');
+  head.innerHTML = '<tr><th>Aspek</th>' + checked.map(t => {
+    const d = tierData[t];
+    return '<th><div style="font-size:11px;font-weight:800;color:var(--text-main);">' + d.name + '</div><div style="font-size:9.5px;color:var(--text-muted);">' + d.tag + '</div></th>';
+  }).join('') + '</tr>';
+
+  // Build body
+  const body = document.getElementById('comp-body');
+  body.innerHTML = compRows.map(row => {
+    const cells = checked.map(t => {
+      const val = tierData[t][row.key] || '-';
+      const isHighlight = row.key === 'setup' || row.key === 'monthly' || row.key === 'moat' || row.key === 'sales';
+      return '<td style="font-size:11.5px;' + (isHighlight ? 'color:var(--gold-light);font-weight:700;' : 'color:var(--text-muted);') + '">' + val + '</td>';
+    }).join('');
+    return '<tr><td style="font-size:10.5px;font-weight:700;color:var(--text-main);">' + row.label + '</td>' + cells + '</tr>';
+  }).join('');
+}
+
 // ========================= INIT =========================
 document.addEventListener('DOMContentLoaded', () => {
   restoreState();
+  // Build 90-day tracker grids
+  buildTrackerGrid(1, phase1Focus, 'phase1-grid', 'p1');
+  buildTrackerGrid(2, phase2Focus, 'phase2-grid', 'p2');
+  buildTrackerGrid(3, phase3Focus, 'phase3-grid', 'p3');
   // Focus terminal input when on terminal page
-  document.getElementById('terminal-input').addEventListener('focus', () => {});
+  const termInput = document.getElementById('terminal-input');
+  if (termInput) termInput.addEventListener('focus', () => {});
 });
 </script>
 
