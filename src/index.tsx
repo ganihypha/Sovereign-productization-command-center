@@ -49,7 +49,7 @@ app.get('/', (c) => {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sovereign Productization Command Center v3.0 — PT Waskita Cakrawarti Digital</title>
+<title>Sovereign Productization Command Center v4.0 — PT Waskita Cakrawarti Digital</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
 <style>
@@ -514,10 +514,10 @@ app.get('/', (c) => {
 <!-- SIDEBAR -->
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-badge">Founder Level · v3.0</div>
+    <div class="logo-badge">Founder Level · v4.0</div>
     <div class="logo-title">Sovereign Productization<br>Command Center</div>
     <div class="logo-sub">PT WASKITA CAKRAWARTI DIGITAL · 2026</div>
-    <div class="logo-version">● P5 LIVE-VERIFIED / HUB-24 MATURE · v3.0</div>
+    <div class="logo-version">● P5 LIVE-VERIFIED / HUB-24 MATURE · v4.0</div>
   </div>
 
   <div class="nav-section">
@@ -577,6 +577,12 @@ app.get('/', (c) => {
     <a class="nav-item" onclick="showPage('roadmap')" href="#">
       <i class="fas fa-road"></i> Roadmap Monetisasi
     </a>
+    <a class="nav-item" onclick="showPage('monetladder')" href="#">
+      <i class="fas fa-chart-line"></i> Monetization Ladder <span class="nav-badge nb-green">NEW</span>
+    </a>
+    <a class="nav-item" onclick="showPage('revcalc')" href="#">
+      <i class="fas fa-calculator"></i> Revenue Calculator <span class="nav-badge nb-gold">NEW</span>
+    </a>
     <a class="nav-item" onclick="showPage('buyermap')" href="#">
       <i class="fas fa-users"></i> Buyer Segment Map
     </a>
@@ -620,7 +626,7 @@ app.get('/', (c) => {
       <div style="margin-top: 3px; color: rgba(138,155,176,0.6);">21 April 2026 · CONFIDENTIAL</div>
       <div style="margin-top:6px;display:flex;gap:5px;">
         <span style="background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.3);color:var(--green-bright);font-size:8px;font-weight:800;padding:2px 6px;border-radius:10px;">● P5 LIVE</span>
-        <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:8px;font-weight:800;padding:2px 6px;border-radius:10px;">v3.0</span>
+        <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:8px;font-weight:800;padding:2px 6px;border-radius:10px;">v4.0</span>
       </div>
     </div>
   </div>
@@ -2002,6 +2008,346 @@ Format: A. Objective | B. Decisions | C. Deliverables | D. Tasks
     </div>
   </div>
 
+
+  <!-- ========================= MONETIZATION LADDER ========================= -->
+  <div class="page" id="page-monetladder">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Monetization Ladder</div>
+        <div class="section-sub">5 Fase komersialisasi — dari cashflow terdekat ke enterprise licensing</div>
+      </div>
+    </div>
+
+    <div class="alert alert-gold" style="margin-bottom:18px;">
+      <i class="fas fa-crown" style="color:var(--gold);margin-top:2px;flex-shrink:0;"></i>
+      <div><strong>Prinsip Ladder:</strong> Jangan menjual semua layer sekaligus. Buyer masuk dari pain point terdekat, lalu naik ladder sesuai kepercayaan dan kebutuhan. Revenue yang sehat = bertingkat + berulang.</div>
+    </div>
+
+    <!-- Ladder Visual -->
+    <div style="position:relative;margin-bottom:24px;">
+      <!-- Ladder Steps -->
+      <div style="display:flex;flex-direction:column;gap:0;position:relative;">
+        <!-- Phase 5 (top) -->
+        <div style="background:rgba(142,68,173,0.1);border:1px solid rgba(142,68,173,0.4);border-radius:12px 12px 0 0;padding:18px 22px;position:relative;overflow:hidden;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(142,68,173,0.18)'" onmouseout="this.style.background='rgba(142,68,173,0.1)'">
+          <div style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:48px;font-weight:900;color:rgba(142,68,173,0.08);">5</div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="background:rgba(142,68,173,0.25);width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="fas fa-crown" style="color:#c39bd3;font-size:18px;"></i>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:9px;color:#c39bd3;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">FASE 5 — MARKETPLACE & ECOSYSTEM REVENUE</div>
+              <div style="font-size:16px;font-weight:900;color:var(--text-main);margin-bottom:3px;">Connector/Template Marketplace</div>
+              <div style="font-size:11px;color:var(--text-muted);">Template, connectors, premium packs, sector playbooks, enterprise modules. Tail revenue berkelanjutan.</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:18px;font-weight:900;color:#c39bd3;">Rp 500rb+</div>
+              <div style="font-size:9px;color:var(--text-muted);">per module/pack</div>
+              <span class="tag tag-purple" style="margin-top:5px;display:inline-block;">L1-4 Marketplace</span>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;background:rgba(142,68,173,0.05);padding:2px;border-left:1px solid rgba(142,68,173,0.3);border-right:1px solid rgba(142,68,173,0.3);">
+          <i class="fas fa-arrow-down" style="color:rgba(201,168,76,0.4);font-size:10px;"></i>
+        </div>
+
+        <!-- Phase 4 -->
+        <div style="background:rgba(211,84,0,0.09);border:1px solid rgba(211,84,0,0.4);padding:18px 22px;position:relative;overflow:hidden;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(211,84,0,0.17)'" onmouseout="this.style.background='rgba(211,84,0,0.09)'">
+          <div style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:48px;font-weight:900;color:rgba(211,84,0,0.07);">4</div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="background:rgba(211,84,0,0.22);width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="fas fa-building" style="color:var(--orange-bright);font-size:18px;"></i>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:9px;color:var(--orange-bright);font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">FASE 4 — ENTERPRISE GOVERNANCE PLATFORM</div>
+              <div style="font-size:16px;font-weight:900;color:var(--text-main);margin-bottom:3px;">Sovereign OS Platform — Enterprise License</div>
+              <div style="font-size:11px;color:var(--text-muted);">Enterprise membeli governance framework: compliant, trackable, auditable, human-confirmed. Bukan chatbot — sistem tata kelola AI.</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:18px;font-weight:900;color:var(--orange-bright);">Rp 50-200 jt</div>
+              <div style="font-size:9px;color:var(--text-muted);">setup + Rp 5-15jt/bln</div>
+              <span class="tag tag-orange" style="margin-top:5px;display:inline-block;">Layer 1</span>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;background:rgba(211,84,0,0.04);padding:2px;border-left:1px solid rgba(211,84,0,0.25);border-right:1px solid rgba(211,84,0,0.25);">
+          <i class="fas fa-arrow-down" style="color:rgba(201,168,76,0.4);font-size:10px;"></i>
+        </div>
+
+        <!-- Phase 3 -->
+        <div style="background:rgba(41,128,185,0.08);border:1px solid rgba(41,128,185,0.38);padding:18px 22px;position:relative;overflow:hidden;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(41,128,185,0.15)'" onmouseout="this.style.background='rgba(41,128,185,0.08)'">
+          <div style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:48px;font-weight:900;color:rgba(41,128,185,0.07);">3</div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="background:rgba(41,128,185,0.2);width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="fas fa-cogs" style="color:var(--blue-bright);font-size:18px;"></i>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:9px;color:var(--blue-bright);font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">FASE 3 — WHITE-LABEL OPERATIONAL SYSTEM</div>
+              <div style="font-size:16px;font-weight:900;color:var(--text-main);margin-bottom:3px;">Lane Eco Budget Control — Operational Layer</div>
+              <div style="font-size:11px;color:var(--text-muted);">Buyer membeli sistem kontrol bisnis berbasis AI yang sudah dibatasi governance. Prompt, budget, session, alur — semua terkunci.</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:18px;font-weight:900;color:var(--blue-bright);">Rp 15-40 jt</div>
+              <div style="font-size:9px;color:var(--text-muted);">setup + Rp 2-6jt/bln</div>
+              <span class="tag tag-blue" style="margin-top:5px;display:inline-block;">Layer 2</span>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;background:rgba(41,128,185,0.04);padding:2px;border-left:1px solid rgba(41,128,185,0.2);border-right:1px solid rgba(41,128,185,0.2);">
+          <i class="fas fa-arrow-down" style="color:rgba(201,168,76,0.4);font-size:10px;"></i>
+        </div>
+
+        <!-- Phase 2 -->
+        <div style="background:rgba(22,160,133,0.07);border:1px solid rgba(22,160,133,0.38);padding:18px 22px;position:relative;overflow:hidden;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(22,160,133,0.14)'" onmouseout="this.style.background='rgba(22,160,133,0.07)'">
+          <div style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:48px;font-weight:900;color:rgba(22,160,133,0.07);">2</div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="background:rgba(22,160,133,0.2);width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="fas fa-clone" style="color:#58d6c0;font-size:18px;"></i>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:9px;color:#58d6c0;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">FASE 2 — REPEATABLE VERTICALIZATION</div>
+              <div style="font-size:16px;font-weight:900;color:var(--text-main);margin-bottom:3px;">Vertical Playbook Catalog — Setup + Deploy</div>
+              <div style="font-size:11px;color:var(--text-muted);">Setup fee + customization + paket deploy per sektor. Mudah dijual setelah 1 vertical berhasil. Model: Barber → Laundry → Salon → FnB.</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:18px;font-weight:900;color:#58d6c0;">Rp 10-25 jt</div>
+              <div style="font-size:9px;color:var(--text-muted);">per vertical playbook</div>
+              <span class="tag tag-teal" style="margin-top:5px;display:inline-block;">Layer 4</span>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;background:rgba(22,160,133,0.04);padding:2px;border-left:1px solid rgba(22,160,133,0.2);border-right:1px solid rgba(22,160,133,0.2);">
+          <i class="fas fa-arrow-down" style="color:rgba(201,168,76,0.4);font-size:10px;"></i>
+        </div>
+
+        <!-- Phase 1 (bottom) -->
+        <div style="background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.45);border-radius:0 0 12px 12px;padding:18px 22px;position:relative;overflow:hidden;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(39,174,96,0.15)'" onmouseout="this.style.background='rgba(39,174,96,0.08)'">
+          <div style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:48px;font-weight:900;color:rgba(39,174,96,0.08);">1</div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="background:rgba(39,174,96,0.2);width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="fas fa-rocket" style="color:var(--green-bright);font-size:18px;"></i>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:9px;color:var(--green-bright);font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">FASE 1 — CASHFLOW NEAREST · START HERE</div>
+              <div style="font-size:16px;font-weight:900;color:var(--text-main);margin-bottom:3px;">Barber + Coffee — Entry Offer / PoC</div>
+              <div style="font-size:11px;color:var(--text-muted);">Revenue awal, bukti engine bisa jadi produk nyata. Dashboard bisnis, feasibility calculator, white-label starter kit untuk UMKM.</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-size:18px;font-weight:900;color:var(--green-bright);">Rp 3-7,5 jt</div>
+              <div style="font-size:9px;color:var(--text-muted);">setup + Rp 300-750rb/bln</div>
+              <span class="tag tag-green" style="margin-top:5px;display:inline-block;">Entry Point</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Revenue Potential Summary -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px;">
+      <div class="card-gold">
+        <div style="font-size:9.5px;color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Total Addressable (Fase 1-2)</div>
+        <div style="font-size:22px;font-weight:900;color:var(--gold-light);">Rp 50-100 jt</div>
+        <div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;">3-5 klien UMKM/Agency · 3-6 bulan pertama</div>
+      </div>
+      <div class="card" style="border-color:rgba(41,128,185,0.3);">
+        <div style="font-size:9.5px;color:var(--blue-bright);font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Target Runway (Fase 3)</div>
+        <div style="font-size:22px;font-weight:900;color:var(--blue-bright);">Rp 150-400 jt</div>
+        <div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;">2-3 operator multi-brand · bulan 6-12</div>
+      </div>
+      <div class="card" style="border-color:rgba(142,68,173,0.3);">
+        <div style="font-size:9.5px;color:#c39bd3;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Ceiling Value (Fase 4-5)</div>
+        <div style="font-size:22px;font-weight:900;color:#c39bd3;">Rp 1-3 M/thn</div>
+        <div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;">1-2 enterprise + marketplace recurring</div>
+      </div>
+    </div>
+
+    <!-- Kalimat Canon -->
+    <div class="card-gold">
+      <div style="font-size:10px;color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;">Canon Monetisasi</div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
+        <div style="font-size:11.5px;color:var(--text-main);padding:8px;background:rgba(255,255,255,0.03);border-radius:6px;">
+          <strong style="color:var(--green-bright);">Barber</strong> menjual <em>hasil</em> → cashflow awal
+        </div>
+        <div style="font-size:11.5px;color:var(--text-main);padding:8px;background:rgba(255,255,255,0.03);border-radius:6px;">
+          <strong style="color:#58d6c0;">Vertical Pack</strong> menjual <em>replikasi</em> → scale model
+        </div>
+        <div style="font-size:11.5px;color:var(--text-main);padding:8px;background:rgba(255,255,255,0.03);border-radius:6px;">
+          <strong style="color:var(--blue-bright);">Lane</strong> menjual <em>kontrol</em> → recurring anchor
+        </div>
+        <div style="font-size:11.5px;color:var(--text-main);padding:8px;background:rgba(255,255,255,0.03);border-radius:6px;">
+          <strong style="color:#c39bd3;">Sovereign OS</strong> menjual <em>sistem</em> → licensing ceiling
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= REVENUE CALCULATOR ========================= -->
+  <div class="page" id="page-revcalc">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Revenue Projection Calculator</div>
+        <div class="section-sub">Simulasi proyeksi pendapatan berdasarkan mix produk dan jumlah klien</div>
+      </div>
+      <button class="btn-export" onclick="resetCalc()"><i class="fas fa-redo"></i> Reset</button>
+    </div>
+
+    <div class="alert alert-blue" style="margin-bottom:18px;">
+      <i class="fas fa-info-circle" style="margin-top:2px;flex-shrink:0;"></i>
+      <div><strong>Cara Pakai:</strong> Input jumlah klien per tier + bulan, kalkulator akan otomatis hitung proyeksi revenue setup, bulanan, dan tahunan.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;">
+      <!-- Input Panel -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(201,168,76,0.12);"><i class="fas fa-sliders-h" style="color:var(--gold);"></i></div>
+          <div><div class="card-title">Input Parameter</div><div class="card-sub">Isi jumlah klien per tier</div></div>
+        </div>
+
+        <!-- Tier 1 -->
+        <div style="margin-bottom:14px;padding:12px;background:rgba(39,174,96,0.05);border:1px solid rgba(39,174,96,0.2);border-radius:8px;">
+          <div style="font-size:10px;color:var(--green-bright);font-weight:800;text-transform:uppercase;margin-bottom:8px;"><i class="fas fa-circle" style="font-size:7px;margin-right:4px;"></i>Tier 1 — Entry (Barber & Vertical PoC)</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Jumlah Klien Baru</div>
+              <input type="number" id="t1-clients" value="3" min="0" max="50" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(39,174,96,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Setup Fee (juta)</div>
+              <input type="number" id="t1-setup" value="5" min="0" step="0.5" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(39,174,96,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Monthly Fee (juta)</div>
+              <input type="number" id="t1-monthly" value="0.5" min="0" step="0.1" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(39,174,96,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Bulan Aktif</div>
+              <input type="number" id="t1-months" value="6" min="1" max="12" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(39,174,96,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 2 -->
+        <div style="margin-bottom:14px;padding:12px;background:rgba(22,160,133,0.05);border:1px solid rgba(22,160,133,0.2);border-radius:8px;">
+          <div style="font-size:10px;color:#58d6c0;font-weight:800;text-transform:uppercase;margin-bottom:8px;"><i class="fas fa-circle" style="font-size:7px;margin-right:4px;"></i>Tier 2 — White-Label (Agency/Konsultan)</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Jumlah Klien</div>
+              <input type="number" id="t2-clients" value="2" min="0" max="20" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(22,160,133,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Setup Fee (juta)</div>
+              <input type="number" id="t2-setup" value="15" min="0" step="1" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(22,160,133,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Monthly Fee (juta)</div>
+              <input type="number" id="t2-monthly" value="2" min="0" step="0.5" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(22,160,133,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Bulan Aktif</div>
+              <input type="number" id="t2-months" value="8" min="1" max="12" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(22,160,133,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 3 -->
+        <div style="margin-bottom:14px;padding:12px;background:rgba(41,128,185,0.05);border:1px solid rgba(41,128,185,0.2);border-radius:8px;">
+          <div style="font-size:10px;color:var(--blue-bright);font-weight:800;text-transform:uppercase;margin-bottom:8px;"><i class="fas fa-circle" style="font-size:7px;margin-right:4px;"></i>Tier 3 — Control Layer (Operator Multi-Brand)</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Jumlah Klien</div>
+              <input type="number" id="t3-clients" value="1" min="0" max="10" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(41,128,185,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Setup Fee (juta)</div>
+              <input type="number" id="t3-setup" value="25" min="0" step="1" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(41,128,185,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Monthly Fee (juta)</div>
+              <input type="number" id="t3-monthly" value="4" min="0" step="0.5" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(41,128,185,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Bulan Aktif</div>
+              <input type="number" id="t3-months" value="10" min="1" max="12" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(41,128,185,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 4 -->
+        <div style="padding:12px;background:rgba(142,68,173,0.05);border:1px solid rgba(142,68,173,0.2);border-radius:8px;">
+          <div style="font-size:10px;color:#c39bd3;font-weight:800;text-transform:uppercase;margin-bottom:8px;"><i class="fas fa-circle" style="font-size:7px;margin-right:4px;"></i>Tier 4-5 — Enterprise + Marketplace</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Jumlah Klien</div>
+              <input type="number" id="t4-clients" value="0" min="0" max="5" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(142,68,173,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Setup Fee (juta)</div>
+              <input type="number" id="t4-setup" value="80" min="0" step="5" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(142,68,173,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Monthly Fee (juta)</div>
+              <input type="number" id="t4-monthly" value="10" min="0" step="1" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(142,68,173,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+            <div>
+              <div style="font-size:9.5px;color:var(--text-muted);margin-bottom:3px;">Bulan Aktif</div>
+              <input type="number" id="t4-months" value="12" min="1" max="12" oninput="calcRevenue()" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(142,68,173,0.3);border-radius:5px;padding:6px 10px;color:var(--text-main);font-size:12px;outline:none;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Output Panel -->
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <!-- Total Revenue Card -->
+        <div class="card-gold" style="text-align:center;padding:24px;">
+          <div style="font-size:10px;color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;">Proyeksi Total Revenue</div>
+          <div style="font-size:36px;font-weight:900;color:var(--gold-light);letter-spacing:-1px;" id="calc-total">Rp 0</div>
+          <div style="font-size:10.5px;color:var(--text-muted);margin-top:5px;" id="calc-period">Periode: 1 tahun</div>
+          <div class="glow-line" style="margin:12px 0;"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left;">
+            <div>
+              <div style="font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Setup Revenue</div>
+              <div style="font-size:16px;font-weight:800;color:var(--text-main);" id="calc-setup">Rp 0</div>
+            </div>
+            <div>
+              <div style="font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Recurring Revenue</div>
+              <div style="font-size:16px;font-weight:800;color:var(--green-bright);" id="calc-recurring">Rp 0</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Per Tier Breakdown -->
+        <div class="card">
+          <div style="font-size:10.5px;font-weight:800;color:var(--gold-light);margin-bottom:12px;">Breakdown per Tier</div>
+          <div id="calc-breakdown" style="display:flex;flex-direction:column;gap:8px;"></div>
+        </div>
+
+        <!-- MRR Target -->
+        <div class="card" style="border-color:rgba(46,204,113,0.25);">
+          <div style="font-size:10.5px;font-weight:800;color:var(--green-bright);margin-bottom:10px;"><i class="fas fa-chart-bar" style="margin-right:5px;"></i>Monthly Recurring Revenue (MRR)</div>
+          <div style="font-size:28px;font-weight:900;color:var(--green-bright);" id="calc-mrr">Rp 0/bln</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:4px;">Dari semua klien aktif × monthly fee</div>
+          <div class="progress-bar" style="margin-top:10px;">
+            <div class="progress-fill green" id="calc-mrr-bar" style="width:0%;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:4px;">
+            <div style="font-size:9px;color:var(--text-muted);">0</div>
+            <div style="font-size:9px;color:var(--green-bright);" id="calc-mrr-pct">Target: Rp 20jt MRR</div>
+            <div style="font-size:9px;color:var(--text-muted);">Rp 20jt</div>
+          </div>
+        </div>
+
+        <!-- Insight Box -->
+        <div class="card">
+          <div style="font-size:10.5px;font-weight:800;color:var(--gold-light);margin-bottom:10px;"><i class="fas fa-lightbulb" style="margin-right:5px;color:var(--gold);"></i>Sovereign Insight</div>
+          <div id="calc-insight" style="font-size:11.5px;color:var(--text-muted);line-height:1.75;">
+            Set parameter di kiri untuk melihat proyeksi dan insight strategis.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main><!-- end main-content -->
 
 <script>
@@ -2128,6 +2474,8 @@ const pageMap = {
   'pricing': ['Price Architecture','5 tier harga komersial'],
   'salessheet': ['Sales One-Liner Sheet','Kalimat jual per layer dan buyer'],
   'roadmap': ['Roadmap Monetisasi','Jalur komersialisasi bertahap'],
+  'monetladder': ['Monetization Ladder','5 fase visual komersialisasi ekosistem'],
+  'revcalc': ['Revenue Projection Calculator','Simulasi proyeksi revenue mix produk'],
   'buyermap': ['Buyer Segment Map','5 segmen buyer dengan pain & one-liner'],
   'governance': ['Sovereign Governance Laws','12 hukum operasional Sovereign'],
   'terminal': ['Sovereign Command Terminal','Interface command center interaktif'],
@@ -2899,6 +3247,109 @@ function updateComparator() {
   }).join('');
 }
 
+
+// ========================= REVENUE CALCULATOR =========================
+function fmtIDR(val) {
+  if (val >= 1000000000) return 'Rp ' + (val/1000000000).toFixed(1) + ' M';
+  if (val >= 1000000) return 'Rp ' + (val/1000000).toFixed(1) + ' jt';
+  if (val >= 1000) return 'Rp ' + (val/1000).toFixed(0) + 'rb';
+  return 'Rp ' + val.toFixed(0);
+}
+
+function calcRevenue() {
+  const tiers = [
+    { id:'t1', name:'Tier 1 — Entry', color:'#2ecc71' },
+    { id:'t2', name:'Tier 2 — White-Label', color:'#58d6c0' },
+    { id:'t3', name:'Tier 3 — Control Layer', color:'#3498db' },
+    { id:'t4', name:'Tier 4-5 — Enterprise', color:'#c39bd3' },
+  ];
+
+  let totalSetup = 0, totalRecurring = 0, totalMRR = 0;
+  const breakdown = [];
+
+  tiers.forEach(t => {
+    const clients = parseFloat(document.getElementById(t.id + '-clients')?.value || 0);
+    const setup   = parseFloat(document.getElementById(t.id + '-setup')?.value || 0) * 1000000;
+    const monthly = parseFloat(document.getElementById(t.id + '-monthly')?.value || 0) * 1000000;
+    const months  = parseFloat(document.getElementById(t.id + '-months')?.value || 1);
+
+    const tierSetup     = clients * setup;
+    const tierRecurring = clients * monthly * months;
+    const tierMRR       = clients * monthly;
+
+    totalSetup     += tierSetup;
+    totalRecurring += tierRecurring;
+    totalMRR       += tierMRR;
+
+    if (clients > 0) {
+      breakdown.push({ name: t.name, color: t.color, clients, setup: tierSetup, recurring: tierRecurring, total: tierSetup + tierRecurring });
+    }
+  });
+
+  const total = totalSetup + totalRecurring;
+
+  // Update totals
+  document.getElementById('calc-total').textContent = fmtIDR(total);
+  document.getElementById('calc-setup').textContent = fmtIDR(totalSetup);
+  document.getElementById('calc-recurring').textContent = fmtIDR(totalRecurring);
+  document.getElementById('calc-mrr').textContent = fmtIDR(totalMRR) + '/bln';
+
+  // MRR bar (target 20jt)
+  const mrrTarget = 20000000;
+  const mrrPct = Math.min((totalMRR / mrrTarget) * 100, 100);
+  document.getElementById('calc-mrr-bar').style.width = mrrPct + '%';
+  document.getElementById('calc-mrr-pct').textContent = Math.round(mrrPct) + '% dari target Rp 20jt MRR';
+
+  // Breakdown
+  const bEl = document.getElementById('calc-breakdown');
+  if (breakdown.length === 0) {
+    bEl.innerHTML = '<div style="font-size:11px;color:var(--text-muted);text-align:center;padding:10px;">Belum ada klien di-input</div>';
+  } else {
+    bEl.innerHTML = breakdown.map(b => {
+      const pct = total > 0 ? (b.total / total * 100).toFixed(0) : 0;
+      return '<div style="padding:8px;background:rgba(255,255,255,0.03);border-radius:6px;border-left:2px solid ' + b.color + ';">' +
+        '<div style="display:flex;justify-content:space-between;align-items:center;">' +
+        '<span style="font-size:10.5px;font-weight:700;color:' + b.color + ';">' + b.name + '</span>' +
+        '<span style="font-size:11.5px;font-weight:800;color:var(--text-main);">' + fmtIDR(b.total) + '</span>' +
+        '</div>' +
+        '<div style="font-size:9.5px;color:var(--text-muted);margin-top:3px;">' + b.clients + ' klien · Setup: ' + fmtIDR(b.setup) + ' · Recurring: ' + fmtIDR(b.recurring) + ' · ' + pct + '% total</div>' +
+        '<div class="progress-bar" style="margin-top:5px;"><div class="progress-fill" style="width:' + pct + '%;background:' + b.color + ';"></div></div>' +
+        '</div>';
+    }).join('');
+  }
+
+  // Insight
+  let insight = '';
+  if (total === 0) {
+    insight = 'Input minimal 1 klien untuk mendapatkan proyeksi dan rekomendasi strategis.';
+  } else if (totalMRR < 5000000) {
+    insight = '⚠️ MRR masih di bawah Rp 5jt. Fokus dulu ke Fase 1: tambah 3-5 klien Entry dengan setup fee yang solid sebelum naik tier.';
+  } else if (totalMRR < 10000000) {
+    insight = '🟡 MRR sudah bagus. Mulai pertimbangkan 1-2 klien White-Label untuk mendongkrak recurring revenue secara signifikan.';
+  } else if (totalMRR < 20000000) {
+    insight = '🟢 MRR kuat! Saatnya mulai approach buyer Tier 3 (operator multi-brand). 1 klien Lane Eco = tambah Rp 4-6jt MRR instant.';
+  } else {
+    insight = '🏆 MRR sudah di atas target. Sovereign Ecosystem siap untuk enterprise conversation. Pertimbangkan 1 klien Tier 4 untuk ceiling revenue di atas Rp 1M/thn.';
+  }
+  document.getElementById('calc-insight').textContent = insight;
+}
+
+function resetCalc() {
+  ['t1-clients','t1-setup','t1-monthly','t1-months'].forEach((id,i) => {
+    document.getElementById(id).value = ['3','5','0.5','6'][i];
+  });
+  ['t2-clients','t2-setup','t2-monthly','t2-months'].forEach((id,i) => {
+    document.getElementById(id).value = ['2','15','2','8'][i];
+  });
+  ['t3-clients','t3-setup','t3-monthly','t3-months'].forEach((id,i) => {
+    document.getElementById(id).value = ['1','25','4','10'][i];
+  });
+  ['t4-clients','t4-setup','t4-monthly','t4-months'].forEach((id,i) => {
+    document.getElementById(id).value = ['0','80','10','12'][i];
+  });
+  calcRevenue();
+}
+
 // ========================= INIT =========================
 document.addEventListener('DOMContentLoaded', () => {
   restoreState();
@@ -2906,6 +3357,8 @@ document.addEventListener('DOMContentLoaded', () => {
   buildTrackerGrid(1, phase1Focus, 'phase1-grid', 'p1');
   buildTrackerGrid(2, phase2Focus, 'phase2-grid', 'p2');
   buildTrackerGrid(3, phase3Focus, 'phase3-grid', 'p3');
+  // Init revenue calculator
+  calcRevenue();
   // Focus terminal input when on terminal page
   const termInput = document.getElementById('terminal-input');
   if (termInput) termInput.addEventListener('focus', () => {});
